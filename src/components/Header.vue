@@ -1,65 +1,82 @@
 <template>
-  <div class="container">
-        <div class="row">
-          <div
-            class="col-lg-10"
-            style="
+  <div class="ud-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10" style="
               background-color: #0087ff;
               border-top-left-radius: 14px;
               border-top-right-radius: 14px;
-            "
-          >
-            <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="index.html">
-                <img src="#" alt="Logo" />
+              align-items: end;
+            ">
+          <nav class="navbar navbar-expand-lg">
+            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+              <a class="navbar-brand" href="#">
+                <h6>TKB0: 96.39%</h6>
               </a>
-            </nav>
-          </div>
-          <div
-            class="col-lg-10"
-            style="
+            </div>
+            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+              <a class="navbar-brand" href="#">
+                <h6>TKB0: 96.39%</h6>
+              </a>
+            </div>
+            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+              <a class="navbar-brand" href="#">
+                <h6>TKB0: 96.39%</h6>
+              </a>
+            </div>
+            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+              <a class="navbar-brand" href="#">
+                <h6>TKB0: 96.39%</h6>
+              </a>
+            </div>
+          </nav>
+        </div>
+        <div class="col-lg-10" style="
               background-color: white;
               border-bottom-left-radius: 14px;
               border-bottom-right-radius: 14px;
-            "
-          >
-            <nav
-              class="navbar navbar-expand-lg"
-              style="justify-content: center"
-            >
-              <button class="navbar-toggler">
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-                <span class="toggler-icon"> </span>
-              </button>
+            ">
+          <nav class="navbar navbar-expand-lg" style="justify-content: center">
+            <button class="navbar-toggler">
+              <span class="toggler-icon"> </span>
+              <span class="toggler-icon"> </span>
+              <span class="toggler-icon"> </span>
+            </button>
 
-              <div class="navbar-collapse">
-                <ul id="nav" class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#home">Beranda</a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#about">Tentang Kami</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#service">Layanan Kami</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#team">Team Kami</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#client">Klien Kami</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="ud-menu-scroll" href="#contact">Hubungi Kami</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
-          </div>
+            <div class="navbar-collapse">
+              <ul id="nav" class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#">
+                    <img src="../assets/image/logo_pjd.png" alt="Logo" />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#">
+                    <img src="../assets/image/logo_afpi.png" alt="Logo" />
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#about">Pendanaan</a>
+                </li>
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#service">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#team">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="ud-menu-scroll" href="#client">Bantuan</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
       </div>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -82,7 +99,10 @@ u {
 </style>
 
 <script>
-  export default {
-    name : 'Header',
-  }
+
+import '@/assets/main.css'
+
+export default {
+  name: 'Header',
+}
 </script>
