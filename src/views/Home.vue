@@ -45,15 +45,14 @@ export default {
   display: flex;
   justify-content: space-around;
   background-color: white;
-
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 20px;
   padding-bottom: 10px;
   margin: 20px auto;
-  max-width: 750px;
+  max-width: 900px;
   position: relative;
-  top: -50px; /* Adjust the vertical position for the floating effect */
+  top: -200px; /* Adjust the vertical position for the floating effect */
   z-index: 100;
 }
 
@@ -80,9 +79,7 @@ export default {
   color: #666;
 }
 
-.icon {
-  margin-bottom: 15px;
-}
+
 
 .icon img {
   width: 60px; /* Adjust based on your icon size */
