@@ -1,18 +1,18 @@
 <template>
-    <section class="ud-hero" id="home">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10">
-            <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
-            </div>
-            <div
+  <section class="ud-hero" id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10">
+          <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
+          </div>
+          <div
               class="ud-hero-brands-wrapper wow fadeInUp"
               data-wow-delay=".3s"
-            ></div>
-          </div>
+          ></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   <section class="floating-widget">
     <div class="feature">
       <img src="@/assets/image/ic_verifikasi_cepat.png" alt="Verifikasi Cepat">
@@ -36,7 +36,7 @@
 
 <script>
 export default {
-    name: 'Home',
+  name: 'Home',
 }
 </script>
 
@@ -65,10 +65,12 @@ export default {
   text-align: center;
   max-width: 30%;
 }
+
 .feature img {
   width: 50px;
   margin-bottom: 10px;
 }
+
 .feature2 img {
   width: 50px;
   margin-bottom: 21px;
@@ -78,7 +80,6 @@ export default {
   font-size: 14px;
   color: #666;
 }
-
 
 
 .icon img {
