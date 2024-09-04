@@ -1,9 +1,9 @@
 @import './base.css';
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 
 body {
-  font-family: var(--font);
+  font-family: 'DM Sans';
   font-weight: normal;
   font-style: normal;
   color: var(--body-color);
@@ -293,7 +293,10 @@ p {
 .navbar-nav .nav-item {
   position: relative;
   padding: 0px 15px;
+  display: flex;
+  align-items: center;
 }
+
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .navbar-nav .nav-item {
@@ -308,14 +311,22 @@ p {
   }
 }
 
+.navbar-tkb {
+  background-color: #0777DA ;
+  border-radius: 8px; 
+  margin: 0 2px;
+}
+
 .navbar-nav .nav-item > a {
+  font-family: 'DM Sans';
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   color: black;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-  padding: 25px 25px;
+  padding: 6px 15px;
   position: relative;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
