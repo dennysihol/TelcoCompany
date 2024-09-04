@@ -9,22 +9,22 @@
               align-items: end;
             ">
           <nav class="navbar navbar-expand-lg">
-            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+            <div class="navbar-tkb">
               <a class="navbar-brand" href="#">
                 <h6>TKB0: 96.39%</h6>
               </a>
             </div>
-            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+            <div class="navbar-tkb">
               <a class="navbar-brand" href="#">
                 <h6>TKB0: 96.39%</h6>
               </a>
             </div>
-            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+            <div class="navbar-tkb">
               <a class="navbar-brand" href="#">
                 <h6>TKB0: 96.39%</h6>
               </a>
             </div>
-            <div style="background-color: #0777DA; border-radius: 14px; margin: 0 5px;">
+            <div class="navbar-tkb">
               <a class="navbar-brand" href="#">
                 <h6>TKB0: 96.39%</h6>
               </a>
@@ -45,30 +45,28 @@
 
             <div class="navbar-collapse">
               <ul id="nav" class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <a class="ud-menu-scroll" href="#">
-                    <img src="../assets/image/logo_pjd.png" alt="Logo" />
+                <li class="nav-item" style="margin-left: -36px;">
+                  <a class="ud-menu-scroll" href="/">
+                    <img src="../assets/image/logo_pjd.png" alt="Logo" style="height: 34px; margin-right: 8px;" />
+                    <img src="../assets/image/logo_afpi.png" alt="Logo" style="height: 24px;" />
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="ud-menu-scroll" href="#">
-                    <img src="../assets/image/logo_afpi.png" alt="Logo" />
-                  </a>
+                <li class="nav-item" style="width: 291px;">
                 </li>
                 <li class="nav-item">
-                  <a class="ud-menu-scroll" href="#home">Home</a>
+                  <a class="ud-menu-scroll" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="ud-menu-scroll" href="#about">Pendanaan</a>
+                  <a class="ud-menu-scroll" href="/pendanaan">Pendanaan</a>
                 </li>
                 <li class="nav-item">
-                  <a class="ud-menu-scroll" href="#service">Tentang Kami</a>
+                  <a class="ud-menu-scroll" href="/tentang">Tentang Kami</a>
                 </li>
                 <li class="nav-item">
-                  <a class="ud-menu-scroll" href="#team">Blog</a>
+                  <a class="ud-menu-scroll" href="/blog">Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="ud-menu-scroll" href="#client">Bantuan</a>
+                  <a class="ud-menu-scroll" href="/bantuan">Bantuan</a>
                 </li>
               </ul>
             </div>
