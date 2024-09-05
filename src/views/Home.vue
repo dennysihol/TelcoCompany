@@ -12,16 +12,21 @@
   </div>
   <section class="ud-hero" id="home">
       <Advantages />
+      <Article />
   </section>
 </template>
 
 <script>
-import { Advantages } from './home/index.js';
+import {
+  Advantages,
+  Article,
+} from './home/index.js';
 
 export default {
   name: 'Home',
   components: {
-    Advantages
+    Advantages,
+    Article,
   },
   data() {
     return {

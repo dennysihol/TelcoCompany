@@ -3,7 +3,7 @@
         <div class="position-absolute top-0 start-0 w-100">
             <img src="@/assets/image/bg-advantages.png" class="d-block w-100 bg-advantages" alt="bg-advantages">
         </div>
-        <div class="container position-relative">
+        <div class="container position-relative vh-100">
             <div class="row" style="padding-top: 5rem;">
                 <div class="col-lg-10 advantages-gap">
                     <div class="fs-3 fw-bold text-center mb-3">Mengapa Memilih Aplikasi PinjamDuit?</div>
