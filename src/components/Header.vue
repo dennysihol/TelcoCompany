@@ -45,31 +45,33 @@
             </button>
 
             <div class="navbar-collapse">
-              <ul id="nav" class="navbar-nav mx-auto">
-                <li class="nav-item" style="margin-left: -36px;">
+              <div class="d-flex justify-content-between w-100">
+                <div>
                   <a class="ud-menu-scroll" href="/">
                     <img src="../assets/image/logo_pjd.png" alt="Logo" style="height: 34px; margin-right: 8px;" />
                     <img src="../assets/image/logo_afpi.png" alt="Logo" style="height: 24px;" />
                   </a>
-                </li>
-                <li class="nav-item" style="width: 291px;">
-                </li>
-                <li class="nav-item">
-                  <a class="ud-menu-scroll" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="ud-menu-scroll" href="/pendanaan">Pendanaan</a>
-                </li>
-                <li class="nav-item">
-                  <a class="ud-menu-scroll" href="/tentang">Tentang Kami</a>
-                </li>
-                <li class="nav-item">
-                  <a class="ud-menu-scroll" href="/blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a class="ud-menu-scroll" href="/bantuan">Bantuan</a>
-                </li>
-              </ul>
+                </div>
+                <div>
+                  <ul id="nav" class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                      <a class="ud-menu-scroll" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="ud-menu-scroll" href="/pendanaan">Pendanaan</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="ud-menu-scroll" href="/tentang">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="ud-menu-scroll" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="ud-menu-scroll" href="/bantuan">Bantuan</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </nav>
         </div>
@@ -95,7 +97,6 @@
 u {
   text-decoration-color: #e91e63;
 }
-
 </style>
 
 <script>
