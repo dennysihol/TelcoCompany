@@ -10,11 +10,19 @@
       </div>
     </div>
   </div>
+  <section class="ud-hero" id="home">
+      <Advantages />
+  </section>
 </template>
 
 <script>
+import { Advantages } from './home/index.js';
+
 export default {
   name: 'Home',
+  components: {
+    Advantages
+  },
   data() {
     return {
       intervalBanner: 8000,
