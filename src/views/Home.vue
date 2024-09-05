@@ -1,24 +1,46 @@
 <template>
-    <section class="ud-hero" id="home">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-10">
-            <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
-            </div>
-            <div
-              class="ud-hero-brands-wrapper wow fadeInUp"
-              data-wow-delay=".3s"
-            ></div>
-          </div>
-        </div>
+  <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
+    :data-bs-interval="intervalBanner" data-bs-pause="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="@/assets/image/home-banner-1.png" class="d-block w-100" alt="home-banner-1">
       </div>
-    </section>
+      <div class="carousel-item">
+        <img src="@/assets/image/home-banner-2.png" class="d-block w-100" alt="home-banner-2">
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Home',
+  name: 'Home',
+  data() {
+    return {
+      intervalBanner: 8000,
+      loading: true,
+      error: null,
+    };
+  },
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+
+
+.carousel-item {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Set this to the desired height for full screen */
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+</style>
