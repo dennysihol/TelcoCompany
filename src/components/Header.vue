@@ -106,4 +106,20 @@ import '@/assets/main.css'
 export default {
   name: 'Header',
 }
+
+
+"use strict";
+
+// ======= Sticky
+window.onscroll = function () {
+  const ud_header = document.querySelector(".ud-header");
+  const sticky = ud_header.offsetTop;
+
+  if (window.pageYOffset > sticky) {
+    ud_header.classList.add("sticky");
+  } else {
+    ud_header.classList.remove("sticky");
+  }
+
+}
 </script>
