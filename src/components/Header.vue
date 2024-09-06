@@ -2,33 +2,27 @@
   <div class="ud-header">
     <div class="container">
       <div class="row">
-        <div class="col-lg-10" style="
-              background-color: #0087ff;
-              border-top-left-radius: 14px;
-              border-top-right-radius: 14px;
-              align-items: end;
-              box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-            ">
+        <div class="col-lg-10 navbar-float">
           <nav class="navbar navbar-expand-lg">
             <div class="navbar-tkb">
-              <a class="navbar-brand" href="#">
-                <h6>TKB0: 96.39%</h6>
-              </a>
+              <div class="navbar-brand" >
+                <p>TKB0: 96.39%</p>
+              </div>
             </div>
             <div class="navbar-tkb">
-              <a class="navbar-brand" href="#">
-                <h6>TKB0: 96.39%</h6>
-              </a>
+              <div class="navbar-brand">
+                <p>TKB30: 96.39%</p>
+              </div>
             </div>
             <div class="navbar-tkb">
-              <a class="navbar-brand" href="#">
-                <h6>TKB0: 96.39%</h6>
-              </a>
+              <div class="navbar-brand">
+                <p>TKB60: 96.39%</p>
+              </div>
             </div>
             <div class="navbar-tkb">
-              <a class="navbar-brand" href="#">
-                <h6>TKB0: 96.39%</h6>
-              </a>
+              <div class="navbar-brand">
+                <p>TKB90: 96.39%</p>
+              </div>
             </div>
           </nav>
         </div>
@@ -55,19 +49,19 @@
                 <div>
                   <ul id="nav" class="navbar-nav mx-auto">
                     <li class="nav-item">
-                      <a class="ud-menu-scroll" href="/">Home</a>
+                      <router-link to="/" exact-active-class="active-link">Home</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="ud-menu-scroll" href="/pendanaan">Pendanaan</a>
+                      <router-link to="/pendanaan" exact-active-class="active-link">Pendanaan</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="ud-menu-scroll" href="/tentang">Tentang Kami</a>
+                      <router-link to="/tentang" exact-active-class="active-link">Tentang Kami</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="ud-menu-scroll" href="/blog">Blog</a>
+                      <router-link to="/blog" exact-active-class="active-link">Blog</router-link>
                     </li>
                     <li class="nav-item">
-                      <a class="ud-menu-scroll" href="/bantuan">Bantuan</a>
+                      <router-link to="/bantuan" exact-active-class="active-link">Bantuan</router-link>
                     </li>
                   </ul>
                 </div>

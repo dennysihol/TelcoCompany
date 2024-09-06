@@ -1,4 +1,4 @@
-@import './base.css';
+@import "./base.css";
 /* @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
@@ -205,7 +205,6 @@ p {
   padding-top: 0px;
 }
 
-
 .navbar {
   padding: 0px 0;
   border-radius: 5px;
@@ -214,8 +213,30 @@ p {
   transition: all 0.3s ease-out 0s;
 }
 
+.navbar-float {
+  background-color: #0087ff;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  align-items: end;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.sticky .navbar-float {
+  background-color: #0087ff;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  align-items: end;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
 .navbar-brand {
-  padding: 10px 20px;
+  padding: 0px 10px;
+}
+
+.navbar-brand p {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--body-color);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
@@ -290,11 +311,12 @@ p {
 
 .navbar-nav .nav-item {
   position: relative;
-  padding: 0px 15px;
+  padding-top: 8px;
+  padding-left: 50px;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
-
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .navbar-nav .nav-item {
@@ -310,9 +332,9 @@ p {
 }
 
 .navbar-tkb {
-  background-color: #0777DA ;
-  border-radius: 8px; 
-  margin: 0 2px;
+  background-color: #0777da;
+  border-radius: 8px;
+  margin-left: 15px;
 }
 
 .navbar-nav .nav-item > a {
@@ -321,9 +343,16 @@ p {
   color: black;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-  padding: 6px 15px;
   position: relative;
   text-decoration: none;
+}
+
+.navbar-nav .nav-item .router-link-active {
+  color: #0087ff;
+}
+
+.navbar-nav .nav-item > a:hover {
+  color: #0065bf;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
@@ -335,17 +364,11 @@ p {
   }
 }
 
-.navbar-nav .nav-item > a:hover,
-.navbar-nav .nav-item > a.active {
-  color: #0087ff;
-  opacity: 0.5;
-}
-
 @media only screen and (min-width: 768px) and (max-width: 991px),
   (max-width: 767px) {
   .navbar-nav .nav-item > a:hover,
   .navbar-nav .nav-item > a.active {
-    color: #0087ff;
+    color: #0065bf;
     opacity: 1;
   }
 }
@@ -389,19 +412,15 @@ p {
   font-size: 14px;
 }
 
-.navbar-nav .nav-item .ud-submenu .ud-submenu-link:hover {
-  color: var(--primary-color);
-}
-
 .navbar-nav .nav-item:hover > a {
-  color: #0087ff;
-  opacity: 0.5;
+  color: #0065bf;
+  opacity: 1;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
   (max-width: 767px) {
   .navbar-nav .nav-item:hover > a {
-    color: var(--primary-color);
+    color: #0065bf;
     opacity: 1;
   }
 }
@@ -481,9 +500,13 @@ p {
   color: var(--heading-color);
 }
 
+.sticky .navbar-nav .nav-item .router-link-active {
+  color: #0087ff;
+}
+
 .sticky .navbar-nav .nav-item a.active,
 .sticky .navbar-nav .nav-item a:hover {
-  color: var(--primary-color);
+  color: #0065bf;
   opacity: 1;
 }
 
@@ -509,7 +532,7 @@ p {
 .ud-hero {
   background: var(--primary-color);
   /* background-image: url("./image/banner1.png"); */
-  background-size:cover;
+  background-size: cover;
   background-position: center center;
   /* padding-top: 700px; */
 }
@@ -522,12 +545,11 @@ p {
 
 @media (max-width: 767px) {
   .ud-hero {
-    padding-top: 130px;    
+    padding-top: 130px;
     background-image: url("/assets/images/banner/mobile_banner.png");
     background-position: center center;
   }
 }
-
 
 .ud-hero-content {
   margin-top: 150px;
@@ -808,24 +830,24 @@ p {
 .ud-service-img-top {
   width: 80%;
   border-radius: 3%;
-} 
+}
 
 @media (max-width: 767px) {
   .ud-service-img-top {
     width: 100%;
     border-radius: 3%;
     margin-bottom: 30px;
-  } 
+  }
 }
 
 .ud-service-card {
   width: 85%;
-} 
+}
 
 @media (max-width: 767px) {
   .ud-service-card {
     width: 100%;
-  } 
+  }
 }
 
 .service-card {
@@ -932,16 +954,16 @@ p {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
 }
 
-.ud-about-image{
+.ud-about-image {
   height: 520px;
-  border-radius: 4%; 
+  border-radius: 4%;
   overflow: hidden;
 }
 
 @media (max-width: 767px) {
-  .ud-about-image{
+  .ud-about-image {
     height: 300px;
-    border-radius: 4%; 
+    border-radius: 4%;
     overflow: hidden;
   }
 }
@@ -949,9 +971,9 @@ p {
 @media only screen and (min-width: 768px) and (max-width: 991px),
   (max-width: 767px) {
   .ud-about-image {
-  height: 300px;
-  border-radius: 4%; 
-  overflow: hidden;
+    height: 300px;
+    border-radius: 4%;
+    overflow: hidden;
   }
 }
 
@@ -962,12 +984,12 @@ p {
 }
 
 .ud-service-title {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
 }
 
 @media (max-width: 767px) {
   .ud-service-title {
-    font-family: 'DM Sans';
+    font-family: "DM Sans";
     margin-bottom: 20px;
   }
 }
@@ -982,7 +1004,7 @@ p {
 .ud-alur {
   padding-top: 120px;
   padding-bottom: 90px;
-  background-color: #F6FBFF;
+  background-color: #f6fbff;
 }
 
 @media (max-width: 767px) {
@@ -999,15 +1021,14 @@ p {
 }
 
 .ud-card-alur {
-  margin-top: 20px
+  margin-top: 20px;
 }
 
 @media (max-width: 767px) {
   .ud-card-alur {
-    margin-top: 0px
+    margin-top: 0px;
   }
 }
-
 
 .ud-single-service {
   margin-bottom: 40px;
@@ -1128,7 +1149,7 @@ p {
 .ud-client {
   padding-top: 150px;
   padding-bottom: 150px;
-  background: #F6FBFF;
+  background: #f6fbff;
   position: relative;
   z-index: 1;
 }
@@ -1606,7 +1627,7 @@ p {
 
 /* ===== Footer CSS ===== */
 .ud-footer {
-  background: #0087FF;
+  background: #0087ff;
   padding-top: 150px;
   position: relative;
   z-index: 1;
@@ -1725,7 +1746,7 @@ p {
 }
 
 .ud-footer-bottom {
-  background-color: #0060B5;
+  background-color: #0060b5;
   padding: 35px 0;
   border-top: 1px solid rgba(136, 144, 164, 0.43);
 }
@@ -2796,7 +2817,7 @@ p {
 .btn-custom-1.active {
   background: rgba(0, 61, 115, 1);
 }
-.btn-custom-1:disabled  {
+.btn-custom-1:disabled {
   background: rgba(217, 237, 255, 1);
   color: rgba(176, 218, 255, 1);
 }
@@ -2816,7 +2837,7 @@ p {
   background: rgba(0, 135, 255, 1);
   color: rgba(255, 255, 255, 1);
 }
-.btn-custom-2:disabled  {
+.btn-custom-2:disabled {
   background: rgba(217, 237, 255, 1);
   color: rgba(176, 218, 255, 1);
 }
