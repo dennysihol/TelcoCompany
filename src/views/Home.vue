@@ -1,84 +1,62 @@
 <template>
-  <section class="ud-hero" id="home">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10">
-          <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
-          </div>
-          <div
-              class="ud-hero-brands-wrapper wow fadeInUp"
-              data-wow-delay=".3s"
-          ></div>
-        </div>
+  <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
+       :data-bs-interval="intervalBanner" data-bs-pause="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="@/assets/image/home-banner-1.png" class="d-block w-100" alt="home-banner-1">
+      </div>
+      <div class="carousel-item">
+        <img src="@/assets/image/home-banner-2.png" class="d-block w-100" alt="home-banner-2">
       </div>
     </div>
-  </section>
-  <section class="floating-widget">
-    <div class="feature">
-      <img src="@/assets/image/ic_verifikasi_cepat.png" alt="Verifikasi Cepat">
-      <h3>Verifikasi Cepat</h3>
-      <p>Verifikasi cepat dan tidak perlu menunggu lama untuk proses pinjaman</p>
-    </div>
-    <div class="divider"></div>
-    <div class="feature2">
-      <img src="@/assets/image/ic_sistem_online.png" alt="Sistem Online">
-      <h3>Sistem Online</h3>
-      <p>Sistem online 24 jam, pinjaman dapat diajukan kapanpun dan dimanapun</p>
-    </div>
-    <div class="divider"></div>
-    <div class="feature">
-      <img src="@/assets/image/ic_security_info.png" alt="Keamanan Informasi">
-      <h3>Keamanan Informasi</h3>
-      <p>Keamanan informasi, perlindungan privasi ganda untuk mencegah kebocoran informasi</p>
-    </div>
+  </div>
+  <section class="ud-hero" id="home">
+    <Information/>
+    <Advantages/>
+    <Article/>
   </section>
 </template>
 
 <script>
+import {
+  Advantages,
+  Article,
+  Information,
+} from './home/index.js';
+
 export default {
   name: 'Home',
+  components: {
+    Advantages,
+    Article,
+    Information,
+  },
+  data() {
+    return {
+      intervalBanner: 8000,
+      loading: true,
+      error: null,
+    };
+  },
 }
 </script>
 
 <style scoped>
-.floating-widget {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  padding-bottom: 10px;
-  margin: 20px auto;
-  max-width: 900px;
+
+
+.carousel-item {
   position: relative;
-  top: -200px; /* Adjust the vertical position for the floating effect */
-  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Set this to the desired height for full screen */
 }
 
-.feature {
-  text-align: center;
-  max-width: 30%;
-}
-
-.feature2 {
-  text-align: center;
-  max-width: 30%;
-}
-
-.feature img {
-  width: 50px;
-  margin-bottom: 10px;
-}
-
-.feature2 img {
-  width: 50px;
-  margin-bottom: 21px;
-}
-
-.floating-widget p {
-  font-size: 14px;
-  color: #666;
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 
@@ -103,4 +81,5 @@ p {
   background-color: #ddd;
   margin: 0 20px;
 }
+
 </style>
