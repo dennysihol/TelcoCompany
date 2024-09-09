@@ -36,8 +36,8 @@ export default {
   margin: 20px auto;
   max-width: 900px;
   position: relative;
-  top: -160px; /* Adjust the vertical position for the floating effect */
-  z-index: 100;
+  top: -130px; /* Adjust the vertical position for the floating effect */
+  z-index: 1;
 }
 
 .feature {
