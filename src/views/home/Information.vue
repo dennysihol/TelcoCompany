@@ -64,4 +64,9 @@ export default {
   font-size: 14px;
   color: #666;
 }
+.divider {
+  width: 1px;
+  background-color: #ddd;
+  margin: 0 20px;
+}
 </style>

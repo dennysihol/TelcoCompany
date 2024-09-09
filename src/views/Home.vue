@@ -13,23 +13,44 @@
   <section class="ud-hero" id="home">
     <Information/>
     <Advantages/>
+    <BusinessPartners/>
     <Article/>
   </section>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Autoplay, Pagination, Navigation, Scrollbar, Keyboard } from 'swiper/modules';
+
+// If you use pagination
 import {
   Advantages,
   Article,
+  BusinessPartners,
   Information,
 } from './home/index.js';
 
 export default {
   name: 'Home',
   components: {
+    Swiper,
+    SwiperSlide,
     Advantages,
     Article,
     Information,
+    BusinessPartners
+  },
+  setup() {
+    return {
+      modules: [Keyboard, Scrollbar, Navigation, Pagination, Autoplay],
+    };
   },
   data() {
     return {
@@ -59,7 +80,6 @@ export default {
   object-fit: cover;
 }
 
-
 .icon img {
   width: 60px; /* Adjust based on your icon size */
   height: auto;
@@ -76,10 +96,7 @@ p {
   display: block;
 }
 
-.divider {
-  width: 1px;
-  background-color: #ddd;
-  margin: 0 20px;
-}
+
+
 
 </style>
