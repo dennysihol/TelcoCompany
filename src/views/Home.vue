@@ -1,105 +1,88 @@
 <template>
-  <section class="ud-hero" id="home">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10">
-          <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
-          </div>
-          <div
-              class="ud-hero-brands-wrapper wow fadeInUp"
-              data-wow-delay=".3s"
-          ></div>
-        </div>
+  <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
+       :data-bs-interval="intervalBanner" data-bs-pause="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="@/assets/image/home-banner-1.png" class="d-block w-100" alt="home-banner-1">
+      </div>
+      <div class="carousel-item">
+        <img src="@/assets/image/home-banner-2.png" class="d-block w-100" alt="home-banner-2">
       </div>
     </div>
-  </section>
-  <section class="floating-widget">
-    <div class="feature">
-      <img src="@/assets/image/ic_verifikasi_cepat.png" alt="Verifikasi Cepat">
-      <h3>Verifikasi Cepat</h3>
-      <p>Verifikasi cepat dan tidak perlu menunggu lama untuk proses pinjaman</p>
-    </div>
-    <div class="divider"></div>
-    <div class="feature2">
-      <img src="@/assets/image/ic_sistem_online.png" alt="Sistem Online">
-      <h3>Sistem Online</h3>
-      <p>Sistem online 24 jam, pinjaman dapat diajukan kapanpun dan dimanapun</p>
-    </div>
-    <div class="divider"></div>
-    <div class="feature">
-      <img src="@/assets/image/ic_security_info.png" alt="Keamanan Informasi">
-      <h3>Keamanan Informasi</h3>
-      <p>Keamanan informasi, perlindungan privasi ganda untuk mencegah kebocoran informasi</p>
-    </div>
-  </section>
-  <section class="partner-section">
-    <div class="partner-text">
-      <h3>Mitra Bisnis Kami</h3>
-    </div>
-    <div class="partner-swiper">
-      <swiper
-          :slidesPerView="4"
-          :centeredSlides="false"
-          :slidesPerGroupSkip="0"
-          :grabCursor="true"
-          :spaceBetween="0"
-          :keyboard="{
+  </div>
+  <section class="ud-hero" id="home">
+    <Information/>
+    <Advantages/>
+    <Article/>
+    <section class="partner-section">
+      <div class="partner-text">
+        <h3>Mitra Bisnis Kami</h3>
+      </div>
+      <div class="partner-swiper">
+        <swiper
+            :slidesPerView="4"
+            :centeredSlides="false"
+            :slidesPerGroupSkip="0"
+            :grabCursor="true"
+            :spaceBetween="0"
+            :keyboard="{
         enabled: true,
       }"
-          :breakpoints="{
+            :breakpoints="{
         '769': {
           slidesPerView: 4,
           slidesPerGroup: 4,
         },
       }"
-          :scrollbar="false"
-          :navigation="false"
+            :scrollbar="false"
+            :navigation="false"
 
-          :autoplay="{
+            :autoplay="{
         delay: 3000, // Delay between slides in milliseconds
         disableOnInteraction: false, // Continue autoplay after interaction
       }"
-          :modules="modules"
-          class="mySwiper"
-      >
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_1.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_2.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_3.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_4.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_5.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_6.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_7.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_8.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_9.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_10.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_11.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_12.png" />
-        </swiper-slide>
-      </swiper>
-    </div>
+            :modules="modules"
+            class="mySwiper"
+        >
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_1.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_2.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_3.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_4.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_5.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_6.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_7.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_8.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_9.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_10.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_11.png" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="@/assets/image/ic_partner_12.png" />
+          </swiper-slide>
+        </swiper>
+      </div>
+    </section>
   </section>
 </template>
 
@@ -115,60 +98,52 @@ import 'swiper/css/pagination';
 import { Autoplay, Pagination, Navigation, Scrollbar, Keyboard } from 'swiper/modules';
 
 // If you use pagination
+import {
+  Advantages,
+  Article,
+  Information,
+} from './home/index.js';
+
 export default {
   name: 'Home',
   components: {
     Swiper,
     SwiperSlide,
+    Advantages,
+    Article,
+    Information,
   },
   setup() {
     return {
       modules: [Keyboard, Scrollbar, Navigation, Pagination, Autoplay],
     };
   },
-
+  data() {
+    return {
+      intervalBanner: 8000,
+      loading: true,
+      error: null,
+    };
+  },
 }
 </script>
 
 <style scoped>
-.floating-widget {
-  display: flex;
-  justify-content: space-around;
-  background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 20px;
-  padding-bottom: 10px;
-  margin: 20px auto;
-  max-width: 900px;
+
+
+.carousel-item {
   position: relative;
-  top: -200px; /* Adjust the vertical position for the floating effect */
-  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Set this to the desired height for full screen */
 }
 
-.feature {
-  text-align: center;
-  max-width: 30%;
-}
-
-.feature2 {
-  text-align: center;
-  max-width: 30%;
-}
-
-.feature img {
-  width: 50px;
-  margin-bottom: 10px;
-}
-
-.feature2 img {
-  width: 50px;
-  margin-bottom: 21px;
-}
-
-.floating-widget p {
-  font-size: 14px;
-  color: #666;
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
 }
 
 .icon img {
@@ -192,6 +167,7 @@ p {
   background-color: #ddd;
   margin: 0 20px;
 }
+
 
 .partner-section {
   display: flex;
