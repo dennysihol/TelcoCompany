@@ -1,20 +1,20 @@
 <template>
   <section id="information" class="floating-widget">
     <div class="feature">
-      <img src="@/assets/image/ic_verifikasi_cepat.png" alt="Verifikasi Cepat">
-      <h3>Verifikasi Cepat</h3>
+      <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_verifikasi_cepat.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" alt="Verifikasi Cepat">
+      <h5>Verifikasi Cepat</h5>
       <p>Verifikasi cepat dan tidak perlu menunggu lama untuk proses pinjaman</p>
     </div>
     <div class="divider"></div>
     <div class="feature2">
-      <img src="@/assets/image/ic_sistem_online.png" alt="Sistem Online">
-      <h3>Sistem Online</h3>
+      <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_sistem_online.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" alt="Sistem Online">
+      <h5>Sistem Online</h5>
       <p>Sistem online 24 jam, pinjaman dapat diajukan kapanpun dan dimanapun</p>
     </div>
     <div class="divider"></div>
     <div class="feature">
-      <img src="@/assets/image/ic_security_info.png" alt="Keamanan Informasi">
-      <h3>Keamanan Informasi</h3>
+      <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_security_info.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" alt="Keamanan Informasi">
+      <h5>Keamanan Informasi</h5>
       <p>Keamanan informasi, perlindungan privasi ganda untuk mencegah kebocoran informasi</p>
     </div>
   </section>

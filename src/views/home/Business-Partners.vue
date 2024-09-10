@@ -29,41 +29,8 @@
           :modules="modules"
           class="mySwiper"
       >
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_1.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_2.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_3.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_4.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_5.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_6.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_7.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_8.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_9.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_10.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_11.png" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/image/ic_partner_12.png" />
+        <swiper-slide v-for="item in dataPartner" :key="item.id">
+          <img :src="item.urlImage" />
         </swiper-slide>
       </swiper>
     </div>
@@ -83,10 +50,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 import { Autoplay, Pagination, Navigation, Scrollbar, Keyboard } from 'swiper/modules';
-import {Advantages, Article, Information} from "@/views/home/index.js";
 
 export default {
-    name: 'Business-partners',
+  name: 'Business-partners',
   components: {
     Swiper,
     SwiperSlide,
@@ -95,7 +61,63 @@ export default {
     return {
       modules: [Keyboard, Scrollbar, Navigation, Pagination, Autoplay],
     };
-  }
+  },
+  data() {
+    return {
+        dataPartner: [
+          {
+            "id": 1,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 2,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 3,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 4,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 5,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_5.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 6,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_6.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 7,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_7.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 8,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_8.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 9,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_9.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 10,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_10.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 11,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_11.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+            "id": 12,
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_12.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+        ],
+        loading: false,
+        error: null,
+    };
+  },
 
 }
 </script>

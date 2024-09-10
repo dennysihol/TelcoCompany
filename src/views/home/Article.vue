@@ -35,12 +35,6 @@
     </section>
 </template>
 <script>
-import { Article } from '.';
-import imageArticle1 from '@/assets/image/item-article-1.png';
-import imageArticle2 from '@/assets/image/item-article-2.png';
-import imageArticle3 from '@/assets/image/item-article-3.png';
-import imageArticle4 from '@/assets/image/item-article-4.png';
-
 export default {
     name: 'Article',
     data() {
@@ -52,28 +46,28 @@ export default {
                     "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
                     "location": "Jakarta",
                     "dateArticle": "26 Mar 2023",
-                    "urlImage": imageArticle1
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 },
                 {
                     "id": 2,
                     "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
                     "location": "Bandar Lampung",
                     "dateArticle": "13 Maret 2022",
-                    "urlImage": imageArticle2
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 },
                 {
                     "id": 3,
                     "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
                     "location": "Palembang",
                     "dateArticle": "2-3 Mei 2019",
-                    "urlImage": imageArticle3
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 },
                 {
                     "id": 4,
                     "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
                     "location": "Bandung",
                     "dateArticle": "30 April 2019",
-                    "urlImage": imageArticle4
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 }
             ],
             dataEvent: [
@@ -82,28 +76,28 @@ export default {
                     "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
                     "location": "Bandung",
                     "dateArticle": "30 April 2019",
-                    "urlImage": imageArticle4
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 },
                 {
                     "id": 3,
                     "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
                     "location": "Palembang",
                     "dateArticle": "2-3 Mei 2019",
-                    "urlImage": imageArticle3
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 },
                 {
                     "id": 2,
                     "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
                     "location": "Bandar Lampung",
                     "dateArticle": "13 Maret 2022",
-                    "urlImage": imageArticle2
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 },
                 {
                     "id": 1,
                     "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
                     "location": "Jakarta",
                     "dateArticle": "26 Mar 2023",
-                    "urlImage": imageArticle1
+                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                 }
             ],
             loading: false,
