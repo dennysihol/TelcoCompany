@@ -1,0 +1,1 @@
+export { default as Information } from './InformationPendanaan.vue';
