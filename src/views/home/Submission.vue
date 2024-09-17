@@ -77,10 +77,10 @@ export default {
       currentIndex: 0, // Track the current active slide
       swiperInstance: null, // Store the swiper instance
       slides: [
-        { title: '1. Isi Data', image: 'src/assets/image/phone-mockup-1.png', description: 'Daftar akun dengan mengisi informasi yang dibutuhkan', icon: 'src/assets/image/ic_submission_1.png' },
-        { title: '2. Verifikasi', image: 'src/assets/image/phone-mockup-2.png', description: 'Sistem sedang memverifikasi data kamu untuk mendapatkan limit pinjaman', icon: 'src/assets/image/ic_submission_2.png' },
-        { title: '3. Ajukan Pinjaman', image: 'src/assets/image/phone-mockup-3.png', description: 'Ajukan besaran pinjaman yang kamu inginkan', icon: 'src/assets/image/ic_submission_3.png' },
-        { title: '4. Pengembalian Pinjaman', image: 'src/assets/image/phone-mockup-4.png', description: 'Proses pengembalian pinjaman sangat mudah', icon: 'src/assets/image/ic_submission_4.png' }
+        { title: '1. Isi Data', image: 'src/assets/image/phone-mockup-1.png', description: 'Daftar akun dengan mengisi informasi yang dibutuhkan', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' },
+        { title: '2. Verifikasi', image: 'src/assets/image/phone-mockup-2.png', description: 'Sistem sedang memverifikasi data kamu untuk mendapatkan limit pinjaman', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' },
+        { title: '3. Ajukan Pinjaman', image: 'src/assets/image/phone-mockup-3.png', description: 'Ajukan besaran pinjaman yang kamu inginkan', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' },
+        { title: '4. Pengembalian Pinjaman', image: 'src/assets/image/phone-mockup-4.png', description: 'Proses pengembalian pinjaman sangat mudah', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' }
       ],
     };
   },
