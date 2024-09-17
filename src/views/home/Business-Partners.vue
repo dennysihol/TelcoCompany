@@ -1,38 +1,41 @@
 <template>
-  <section id="business-partners" class="partner-section">
-    <div class="partner-text">
-      <h5><b>Mitra Bisnis Kami</b></h5>
-    </div>
-    <div class="partner-swiper">
-      <swiper
-          :slidesPerView="4"
-          :centeredSlides="false"
-          :slidesPerGroupSkip="0"
-          :grabCursor="true"
-          :spaceBetween="0"
-          :keyboard="{
-        enabled: true,
-      }"
-          :breakpoints="{
-        '769': {
-          slidesPerView: 4,
-          slidesPerGroup: 4,
-        },
-      }"
-          :scrollbar="false"
-          :navigation="false"
+  <section id="business-partners" class="container mt-5 d-flex justify-content-center partner-section">
+    <div class="col-10 row">
+      <div class="col-3">
+        <div class="title fs-20">Mitra Bisnis Kami</div>
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <swiper
+            :slidesPerView="4"
+            :centeredSlides="false"
+            :slidesPerGroupSkip="0"
+            :grabCursor="true"
+            :spaceBetween="0"
+            :keyboard="{
+              enabled: true,
+            }"
+            :breakpoints="{
+              '769': {
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+              },
+            }"
+            :scrollbar="false"
+            :navigation="false"
 
-          :autoplay="{
-        delay: 3000, // Delay between slides in milliseconds
-        disableOnInteraction: false, // Continue autoplay after interaction
-      }"
-          :modules="modules"
-          class="mySwiper"
-      >
-        <swiper-slide v-for="item in dataPartner" :key="item.id">
-          <img :src="item.urlImage" />
-        </swiper-slide>
-      </swiper>
+            :autoplay="{
+              delay: 3000, // Delay between slides in milliseconds
+              disableOnInteraction: false, // Continue autoplay after interaction
+            }"
+            :modules="modules"
+          >
+            <swiper-slide v-for="item in dataPartner" :key="item.id">
+              <img :src="item.urlImage" />
+            </swiper-slide>
+          </swiper>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -123,30 +126,17 @@ export default {
 </script>
 <style scoped>
 .partner-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 15rem;
-  gap: 20px; /* space between the columns */
+  height: 5rem;
 }
 
-.partner-text {
-  font-size: 18px;
-  font-family:  Arial, sans-serif;}
-
-.partner-swiper {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 40px;
+.fs-20 {
+  font-size: 20px;
 }
 
-body {
-  font-family: Arial, sans-serif;
+.title {
+  font-weight: 700;
+  width: 14rem;
 }
-
 
 .swiper-slide img {
   max-width: 177px; /* Adjust the size of the logos */

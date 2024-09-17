@@ -1,0 +1,183 @@
+<template>
+  <section id="testimonial" class="container mt-5 d-flex justify-content-center testimonial-section">
+    <div class="col-10 row">
+      <div class="col-3">
+        <div class="mb-3 fs-20">Testimonial</div>
+        <div class="title fs-20">Apa yang mereka katakan tentang kami</div>
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <swiper
+              :slidesPerView="2"
+              :centeredSlides="false"
+              :slidesPerGroupSkip="0"
+              :grabCursor="true"
+              :spaceBetween="0"
+              :keyboard="{
+                enabled: true,
+              }"
+              :breakpoints="{
+                '769': {
+                  slidesPerView: 2,
+                  slidesPerGroup: 2,
+                },
+              }"
+              :scrollbar="false"
+              :navigation="false"
+
+              :autoplay="{
+                delay: 3000, // Delay between slides in milliseconds
+                disableOnInteraction: false, // Continue autoplay after interaction
+              }"
+              :modules="modules"
+          >
+            <swiper-slide v-for="item in dataTestimonial" :key="item.id">
+              <div class="col-11">
+                <div class="card-testimonial">
+                  <div class="comment">
+                    {{ item.comment }}
+                  </div>
+                  <div class="d-flex flex-row justify-content-between">
+                    <div class="col-4">
+                      <div class="user-name">{{ item.username }}</div>
+                      <div>
+                        <img v-for="number in Array.from({ length: item.star }, (_, i) => i * 5 )" :key="number" class="icon-star" src="@/assets/image/icon-star.png" alt="icon-star">
+                      </div>
+                    </div>
+                    <img :src="item.urlImage" :alt="'img-user-'+item.id">
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+</template>
+<script>
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { Autoplay, Pagination, Navigation, Scrollbar, Keyboard } from 'swiper/modules';
+
+export default {
+  name: 'Business-partners',
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  setup() {
+    return {
+      modules: [Keyboard, Scrollbar, Navigation, Pagination, Autoplay],
+    };
+  },
+  data() {
+    return {
+        dataTestimonial: [
+          {
+            "id": 1,
+            "comment": "Transfer cepat setelah Anda diverifikasi, tetapi saya hanya bisa membayar melalui transfer di BNI saja, tidak ada opsi bank lain. Mohon pertimbangkan untuk menambah lebih banyak akun bank. Tetap semangat, tim pinjamduit. Terima kasih",
+            "star": 5,
+            "username": "Clara Shinta",
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-female.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
+          },
+          {
+            "id": 2,
+            "comment": "Saya tidak pernah berpikir meminjam uang bisa semudah ini. Aplikasi ini membuat prosesnya cepat, aman, dan bebas stres.",
+            "star": 4,
+            "username": "Google User",
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-male.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
+          },
+          {
+            "id": 3,
+            "comment": "Bagus, Simple, Cepat",
+            "star": 5,
+            "username": "Justinus U",
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-male.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
+          },
+          {
+            "id": 4,
+            "comment": "Aplikasi ini mudah digunakan dan proses verifikasinya cukup cepat. Sangat membantu saat saya membutuhkan dana darurat. Terima kasih",
+            "star": 5,
+            "username": "Shinta Rusli",
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-male.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
+          },
+        ],
+        loading: false,
+        error: null,
+    };
+  },
+
+}
+</script>
+<style scoped>
+.testimonial-section {
+  height: 15rem;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.title {
+  font-weight: 700;
+  width: 14rem;
+}
+
+.card-testimonial {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(230, 230, 230, 1);
+  border-radius: 10px;
+  padding: 1rem;
+  
+  .comment {
+    text-align: justify;
+    height: 10rem;
+    font-size: 14px;
+  }
+
+  .user-name {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .icon-star {
+    max-width: 177px; /* Adjust the size of the logos */
+    max-height: 16px;
+    object-fit: contain;
+  }
+}
+/* 
+.testimonial-text {
+  font-size: 18px;
+  font-family:  Arial, sans-serif;}
+
+.testimonial-swiper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+} */
+
+/* body {
+  font-family: Arial, sans-serif;
+} */
+
+
+.swiper-slide img {
+  max-width: 177px; /* Adjust the size of the logos */
+  max-height: 56px;
+  object-fit: contain;
+}
+</style>
