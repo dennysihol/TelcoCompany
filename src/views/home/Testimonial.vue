@@ -12,7 +12,7 @@
               :centeredSlides="false"
               :slidesPerGroupSkip="0"
               :grabCursor="true"
-              :spaceBetween="0"
+              :spaceBetween="20"
               :keyboard="{
                 enabled: true,
               }"
@@ -89,7 +89,7 @@ export default {
             "comment": "Transfer cepat setelah Anda diverifikasi, tetapi saya hanya bisa membayar melalui transfer di BNI saja, tidak ada opsi bank lain. Mohon pertimbangkan untuk menambah lebih banyak akun bank. Tetap semangat, tim pinjamduit. Terima kasih",
             "star": 5,
             "username": "Google User",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-female.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-male.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
           },
           {
             "id": 2,
@@ -103,7 +103,7 @@ export default {
             "comment": "Sangat membantu.. terima kasih banyak. Aplikasi pinjaman yang nyata.. proses cepat, mudah digunakan, dan dapat dipercaya",
             "star": 5,
             "username": "Clara Shinta",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-male.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-female.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
           },
           {
             "id": 4,
@@ -124,7 +124,7 @@ export default {
             "comment": "Aplikasi ini mudah digunakan dan proses verifikasinya cukup cepat. Sangat membantu saat saya membutuhkan dana darurat. Terima kasih",
             "star": 5,
             "username": "Shinta Rusli",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-male.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
+            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fimg-account-female.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
           },
         ],
         loading: false,
