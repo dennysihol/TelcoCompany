@@ -10,17 +10,20 @@
   </div>
   <section class="ud-hero" id="pendanaan">
     <Information />
+    <CalculateSimulation />
   </section>
 </template>
 
 <script>
 import {
-  Information
+  Information,
+  CalculateSimulation
 } from './pendanaan/index.js'
 export default {
-  name: 'Pendanaan',
+  name: 'InformationPendanaan',
   components: {
-    Information
+    Information,
+    CalculateSimulation,
   },
   data() {
     return {
@@ -54,9 +57,9 @@ export default {
   .banner-title {
     position: relative;
     z-index: 1;
-    font-weight: 700;
-    font-size: 2.5rem;
-    width: 45rem;
+    font-weight: 600;
+    font-size: 3rem;
+    width: 60rem;
   }
 }
 

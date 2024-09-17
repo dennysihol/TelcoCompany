@@ -1,7 +1,7 @@
 <template>
     <section id="information-pendanaan" class="container">
       <div class="row">
-        <div class="col-10">
+        <div class="col-10 position-relative">
           <div class="floating-widget d-flex flex-row">
             <div class="col-3" v-for="(item, index) in dataInformation" :key="item.id">
               <div :class="index === dataInformation.length-1 ? 'card-information last-item' : 'card-information'">
@@ -55,9 +55,8 @@
     background-color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    /* max-width: 900px; */
-    position: relative;
-    top: -120px; /* Adjust the vertical position for the floating effect */
+    position: absolute;
+    top: -12rem; /* Adjust the vertical position for the floating effect */
     z-index: 1;
 
     .card-information {
@@ -69,14 +68,14 @@
 
       .title {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 20px;
         margin-top: 1rem;
         height: 3rem;
       }
       
       .description {
         font-size: 14px;
-        padding: 0 1rem 1rem 1rem;
+        padding: 0 2rem 1rem 2rem;
         height: 10rem;
       }
     }
@@ -85,8 +84,8 @@
     }
 
     .image-information {
-      width: 4rem;
-      height: 4rem;
+      width: 6rem;
+      height: 6rem;
       object-fit: contain;
     }
   }

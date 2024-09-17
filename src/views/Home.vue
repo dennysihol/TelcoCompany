@@ -10,6 +10,7 @@
   <section class="ud-hero" id="home">
     <Information/>
     <Advantages/>
+    <Testimonial/>
     <BusinessPartners/>
     <Article/>
   </section>
@@ -32,6 +33,7 @@ import {
   Article,
   BusinessPartners,
   Information,
+  Testimonial,
 } from './home/index.js';
 
 export default {
@@ -42,7 +44,8 @@ export default {
     Advantages,
     Article,
     Information,
-    BusinessPartners
+    BusinessPartners,
+    Testimonial,
   },
   setup() {
     return {
