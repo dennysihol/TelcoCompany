@@ -10,27 +10,27 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: () => Home,
+    component: Home,
   },
   {
     path: "/pendanaan",
     name: "Pendanaan",
-    component: () => Pendanaan,
+    component: Pendanaan,
   },
   {
     path: "/tentang",
     name: "Tentang",
-    component: () => Tentang,
+    component: Tentang,
   },
   {
     path: "/blog",
     name: "Blog",
-    component: () => Blog,
+    component: Blog,
   },
   {
     path: "/bantuan",
     name: "Bantuan",
-    component: () => Bantuan,
+    component: Bantuan,
   },
 ];
 
