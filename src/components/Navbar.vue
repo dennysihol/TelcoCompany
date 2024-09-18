@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- Second Navbar (The sticky one) -->
-    <div class="navbar-collapse">
 
       <nav class="navbar">
+        <div class="navbar-collapse">
         <ul class="navbar-links">
           <li>
             <a
@@ -46,8 +46,9 @@
             </a>
           </li>
         </ul>
+      </div>
       </nav>
-    </div>
+
 
     <!-- Content Section -->
     <div class="content-section">
