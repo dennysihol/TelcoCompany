@@ -8,8 +8,6 @@
 <script>
 import Header from '@/components/Header.vue'
 
-console.log('test jalan')
-
 export default {
   name: 'app',
   components: {

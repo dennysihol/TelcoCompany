@@ -1,0 +1,168 @@
+<template>
+  <section id="calculation-calculate" class="container container-calculate">
+    <div class="row">
+      <div class="col-10 text-center ps-0 pe-0">
+        <h2>Simulasi Perhitungan Pinjaman</h2>
+        <div class="body-calculate position-relative mt-5 mb-5 text-start">
+          <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-simulasi-calculate.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" alt="bg-calculate-simulation" class="bg-calculate-simulation">
+          <div class="card-calculate">
+            <div class="row">
+              <div class="d-flex flex-row justify-content-between fw-semibold">
+                <div class="fw-medium fs-14">Jumah Pinjaman (Rp)</div>
+                <div class="fw-bold fs-18">{{ formatNumber(rangeValue) }}</div>
+              </div>
+              <div>
+                <input 
+                  type="range"
+                  class="inputRange"
+                  min="100000"
+                  max="20000000"
+                  step="100000"
+                  v-model="rangeValue" 
+                  @input="updateSliderBackground"
+                  :style="{ background: sliderBackground }"
+                  ref="range">
+              </div>
+              <div class="d-flex flex-row justify-content-between fw-semibold">
+                <div class="fw-normal fs-12">100.000</div>
+                <div class="fw-normal fs-12">20.000.000</div>
+              </div>
+              <div class="pt-3 pb-3">
+                <div class="hr"></div>
+              </div>
+              <div class="d-flex flex-row justify-content-between fw-semibold">
+                <div class="fw-medium fs-14">Lama Pinjaman</div>
+                <div class="fw-bold fs-18">150 Hari</div>
+              </div>
+              <div class="d-flex flex-row justify-content-between fw-semibold">
+                <div class="fw-medium fs-14">Bunga</div>
+                <div class="fw-bold fs-18">0,3 % Per Hari</div>
+              </div>
+              <div class="pt-3 pb-3">
+                <div class="hr"></div>
+              </div>
+              <div class="d-flex flex-row justify-content-between fw-semibold">
+                <div class="fw-medium fs-14 w-18-rm">Jumlah yang harus dibayarkan (Termasuk bunga)</div>
+                <div class="fw-bold fs-18">Rp. {{ formatNumber(totalPay) }}</div>
+              </div>
+              <div class="pt-3 pb-3">
+                <div class="hr"></div>
+              </div>
+              <div class="text-center">
+                <button class="btn-custom btn-custom-1" type="button">Ajukan Sekarang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+<script>
+export default {
+    name: 'CalculationSimulation',
+    data() {
+      return {
+        data: [],
+        rangeValue: 10000000, // Initial range value
+        sliderBackground: '', // To hold the dynamic background
+        percentagePlatformFee: 0.45,
+        percentagePPN: 0.0385,
+        percentageBorrower: 1,
+        percentageSumRepaymentBorrower: 0,
+        totalPay: 0,
+      }
+    },
+    methods: {
+      updateSliderBackground() {
+        // Calculate the percentage based on the current slider value
+        const percentage = ((this.rangeValue - this.$refs.range.min) / (this.$refs.range.max - this.$refs.range.min)) * 100;
+        
+        // Update the background style dynamically
+        this.sliderBackground = `linear-gradient(to right, rgba(0, 135, 255, 1) ${percentage}%, rgba(230, 243, 255, 1) ${percentage}%)`;
+        this.percentageSumRepaymentBorrower = this.percentagePlatformFee + this.percentagePPN + this.percentageBorrower;
+        this.totalPay = this.percentageSumRepaymentBorrower * this.rangeValue
+      },
+      formatNumber(value) {
+        // Use a regular expression to add thousand separators
+        return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      }
+    },
+    mounted() {
+      // Initialize the slider background on component mount
+      this.updateSliderBackground();
+    }
+}
+</script>
+<style scoped>
+  .container-calculate {
+    margin-top: 16rem; 
+
+    .body-calculate {
+      width: 100%;
+      
+      .fs-12 {
+        font-size: 12px;
+      }
+      .fs-14 {
+        font-size: 14px;
+      }
+      .fs-18 {
+        font-size: 18px;
+      }
+      .w-18-rm {
+        width: 18rem;
+      }
+      .hr {
+        width: 100%;
+        border: 1px solid rgba(231, 244, 254, 1);
+      }
+      
+      .bg-calculate-simulation {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      .card-calculate {
+        position: absolute;
+        background-color: rgba(255, 255, 255, 1);
+        width: 33rem;
+        top: 5rem;
+        left: 4rem;
+        padding: 2rem;
+        border-radius: 8px;
+
+        .inputRange {
+          -webkit-appearance: none;
+          width: 100%;
+          height: 10px;
+          background: rgba(230, 243, 255, 1);
+          border-radius: 10px;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: .2s;
+          transition: opacity .2s;
+        }
+        .inputRange::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          background: rgba(255, 193, 11, 1);
+          border: 1px solid rgba(255, 255, 255, 1);
+          cursor: pointer;
+        }
+
+        .inputRange::-moz-range-thumb {
+          width: 25px;
+          height: 25px;
+          background-color: blue;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+</style>

@@ -2,17 +2,16 @@
   <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
        :data-bs-interval="intervalBanner" data-bs-pause="false">
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="@/assets/image/home-banner-1.png" class="d-block w-100" alt="home-banner-1">
-      </div>
-      <div class="carousel-item">
-        <img src="@/assets/image/home-banner-2.png" class="d-block w-100" alt="home-banner-2">
+      <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(item, index) in dataBanner" :key="item.id">
+        <img :src="item.urlImage" class="d-block w-100" :alt="'home-banner-'+item.id">
       </div>
     </div>
   </div>
   <section class="ud-hero" id="home">
     <Information/>
+    <Submission/>
     <Advantages/>
+    <Testimonial/>
     <BusinessPartners/>
     <Article/>
   </section>
@@ -35,6 +34,8 @@ import {
   Article,
   BusinessPartners,
   Information,
+  Submission,
+  Testimonial,
 } from './home/index.js';
 
 export default {
@@ -45,7 +46,10 @@ export default {
     Advantages,
     Article,
     Information,
-    BusinessPartners
+    BusinessPartners,
+    Submission,
+    BusinessPartners,
+    Testimonial,
   },
   setup() {
     return {
@@ -55,6 +59,16 @@ export default {
   data() {
     return {
       intervalBanner: 8000,
+      dataBanner: [
+        {
+          "id": 1,
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fhome-banner-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        },
+        {
+          "id": 2,
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fhome-banner-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        }
+      ],
       loading: true,
       error: null,
     };
