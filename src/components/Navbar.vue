@@ -1,50 +1,53 @@
 <template>
   <div>
     <!-- Second Navbar (The sticky one) -->
-    <nav :class="['navbar', { sticky: isSticky }]" ref="navbar">
-      <ul class="navbar-links">
-        <li>
-          <a
-              href="#"
-              class="navbar-link"
-              :class="{ active: selected === 'direksi' }"
-              @click.prevent="selected = 'direksi'"
-          >
-            Direksi & Komisaris
-          </a>
-        </li>
-        <li>
-          <a
-              href="#"
-              class="navbar-link"
-              :class="{ active: selected === 'sertifikasi' }"
-              @click.prevent="selected = 'sertifikasi'"
-          >
-            Sertifikasi
-          </a>
-        </li>
-        <li>
-          <a
-              href="#"
-              class="navbar-link"
-              :class="{ active: selected === 'statistik' }"
-              @click.prevent="selected = 'statistik'"
-          >
-            Statistik
-          </a>
-        </li>
-        <li>
-          <a
-              href="#"
-              class="navbar-link"
-              :class="{ active: selected === 'laporan' }"
-              @click.prevent="selected = 'laporan'"
-          >
-            Laporan Keuangan
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <div class="navbar-collapse">
+
+      <nav class="navbar">
+        <ul class="navbar-links">
+          <li>
+            <a
+                href="#"
+                class="navbar-link"
+                :class="{ active: selected === 'direksi' }"
+                @click.prevent="selected = 'direksi'"
+            >
+              Direksi & Komisaris
+            </a>
+          </li>
+          <li>
+            <a
+                href="#"
+                class="navbar-link"
+                :class="{ active: selected === 'sertifikasi' }"
+                @click.prevent="selected = 'sertifikasi'"
+            >
+              Sertifikasi
+            </a>
+          </li>
+          <li>
+            <a
+                href="#"
+                class="navbar-link"
+                :class="{ active: selected === 'statistik' }"
+                @click.prevent="selected = 'statistik'"
+            >
+              Statistik
+            </a>
+          </li>
+          <li>
+            <a
+                href="#"
+                class="navbar-link"
+                :class="{ active: selected === 'laporan' }"
+                @click.prevent="selected = 'laporan'"
+            >
+              Laporan Keuangan
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <!-- Content Section -->
     <div class="content-section">
@@ -79,7 +82,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      const contentAboveNavbar  = document.querySelector(".ud-header");
+      const contentAboveNavbar = document.querySelector(".ud-header");
 
       // Get the height of the content above the navbar
       const contentHeight = contentAboveNavbar ? contentAboveNavbar.offsetHeight : 0;
@@ -119,41 +122,29 @@ export default {
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: -300px auto;
-  max-width: 1000px;
+  margin: -300px 130px;
+  max-width: 83%;
   z-index: 2;
   transition: top 0.3s;
 
 }
 
-/* Sticky navbar class applied when scrolling */
-.sticky {
-  position: sticky;
-  top: 110px; /* Adjust the value based on the height of your first navbar */
-  background-color: white;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 10px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin: -300px auto;
-  max-width: 1000px;
-  z-index: 2;
-  transition: top 0.3s;
-}
 
 .navbar-links {
   list-style: none;
   display: flex;
+  flex-grow: 1; /* Makes the links take up equal space */
+  justify-content: space-evenly;
   margin: 0;
   padding: 0;
 }
 
 .navbar-link {
+  -webkit-text-size-adjust: auto;
   text-decoration: none;
   color: black;
   font-weight: 500;
-  padding: 10px 60px;
+  padding: 10px 0;
   cursor: pointer;
 }
 
@@ -173,7 +164,7 @@ export default {
 .content-section {
   height: 100rem;
   padding: 20px;
-  max-width: 1000px;
+  max-width: 83%;
   margin: 0 auto;
   background-color: #ffffff;
   border-radius: 10px;
