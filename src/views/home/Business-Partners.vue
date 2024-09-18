@@ -11,7 +11,7 @@
             :centeredSlides="false"
             :slidesPerGroupSkip="0"
             :grabCursor="true"
-            :spaceBetween="0"
+            :spaceBetween="15"
             :keyboard="{
               enabled: true,
             }"
