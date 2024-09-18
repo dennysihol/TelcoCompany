@@ -1,7 +1,7 @@
 <template>
     <section id="information-pendanaan" class="container">
       <div class="row">
-        <div class="col-10 position-relative">
+        <div class="col-10 position-relative ps-0">
           <div class="floating-widget d-flex flex-row">
             <div class="col-3" v-for="(item, index) in dataInformation" :key="item.id">
               <div :class="index === dataInformation.length-1 ? 'card-information last-item' : 'card-information'">
