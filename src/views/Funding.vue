@@ -8,7 +8,7 @@
       </div>
     </div>
   </div>
-  <section class="ud-hero" id="pendanaan">
+  <section class="ud-hero" id="funding">
     <Information />
     <CalculateSimulation />
   </section>
@@ -18,9 +18,9 @@
 import {
   Information,
   CalculateSimulation
-} from './pendanaan/index.js'
+} from '@/views/funding/index.js'
 export default {
-  name: 'InformationPendanaan',
+  name: 'Funding',
   components: {
     Information,
     CalculateSimulation,

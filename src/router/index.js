@@ -1,10 +1,10 @@
 
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
-import Pendanaan from "@/views/Pendanaan.vue";
-import Tentang from "@/views/Tentang.vue";
+import Funding from "@/views/Funding.vue";
+import Tentang from "@/views/About.vue";
 import Blog from "@/views/Blog.vue";
-import Bantuan from "@/views/Bantuan.vue";
+import Help from "@/views/Help.vue";
 
 const routes = [
   {
@@ -15,7 +15,7 @@ const routes = [
   {
     path: "/pendanaan",
     name: "Pendanaan",
-    component: Pendanaan,
+    component: Funding,
   },
   {
     path: "/tentang",
@@ -30,7 +30,7 @@ const routes = [
   {
     path: "/bantuan",
     name: "Bantuan",
-    component: Bantuan,
+    component: Help,
   },
 ];
 

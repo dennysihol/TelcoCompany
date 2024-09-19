@@ -1,5 +1,5 @@
 <template>
-    <section id="information-pendanaan" class="container">
+    <section id="funding-information" class="container">
       <div class="row">
         <div class="col-10 position-relative ps-0">
           <div class="floating-widget d-flex flex-row">
@@ -17,7 +17,7 @@
   </template>
   <script>
   export default {
-      name: 'InformationPendanaan',
+      name: 'FundingInformation',
       data() {
         return {
           dataInformation: [

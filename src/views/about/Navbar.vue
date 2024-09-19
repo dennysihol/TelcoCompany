@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import {DireksiKomisaris} from "@/views/tentang/index.js";
+import {DireksiKomisaris} from "@/views/about/index.js";
 
 export default {
   name: "Navbar",

@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import {Navbar} from "@/views/tentang/index.js";
+import {Navbar} from "@/views/about/index.js";
 
 export default {
   name: "About",
