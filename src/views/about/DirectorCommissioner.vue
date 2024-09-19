@@ -1,5 +1,5 @@
 <template>
-    <section id="direksi-komisaris">
+    <section id="director-commissioner">
       <div class="row">
         <h2>Direksi & Komisaris</h2>
         <p>Content for Direksi & Komisaris goes here...</p>
@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-    name: 'DireksiKomisaris',
+    name: 'DirectorCommissioner',
     data() {
     return {
         data: [],
