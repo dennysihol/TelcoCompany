@@ -21,6 +21,8 @@
                   v-model="rangeValue" 
                   @input="updateSliderBackground"
                   :style="{ background: sliderBackground }"
+                  @mousedown="onHoldRangeValue"
+                  @mouseup="onReleaseRangeValue"
                   ref="range">
               </div>
               <div class="d-flex flex-row justify-content-between fw-semibold">
@@ -36,20 +38,24 @@
               </div>
               <div class="d-flex flex-row justify-content-between fw-semibold">
                 <div class="fw-medium fs-14">Bunga</div>
-                <div class="fw-bold fs-18">0,3 % Per Hari</div>
+                <div class="fw-bold fs-18">0,3 % / Hari</div>
               </div>
               <div class="pt-3 pb-3">
                 <div class="hr"></div>
               </div>
               <div class="d-flex flex-row justify-content-between fw-semibold">
                 <div class="fw-medium fs-14 w-18-rm">Jumlah yang harus dibayarkan (Termasuk bunga)</div>
-                <div class="fw-bold fs-18">Rp. {{ formatNumber(totalPay) }}</div>
+                <div class="fw-bold fs-18 w-18-rm text-end">Rp. {{ formatNumber(totalPay) }} / Bulan</div>
               </div>
               <div class="pt-3 pb-3">
                 <div class="hr"></div>
               </div>
               <div class="text-center">
-                <button class="btn-custom btn-custom-1" type="button">Ajukan Sekarang</button>
+                <button class="btn-custom btn-custom-1" type="button" @click="applyNow">Ajukan Sekarang</button>
+              </div>
+              <div class="pt-3">
+                <div class="fw-bold fs-10">* Disclaimer </div>
+                <div class="fs-10">Hasil simulasi tidak mengikat dan dapat berubah tergantung pada hasil Analisa kredit, suku bunga, jangka Waktu pinjaman dan kebijakan platform.</div>
               </div>
             </div>
           </div>
@@ -66,10 +72,12 @@ export default {
         data: [],
         rangeValue: 10000000, // Initial range value
         sliderBackground: '', // To hold the dynamic background
+        isHeldSlider: false,
         percentagePlatformFee: 0.45,
         percentagePPN: 0.0385,
         percentageBorrower: 1,
         percentageSumRepaymentBorrower: 0,
+        periodOfMonth: 5,
         totalPay: 0,
       }
     },
@@ -81,11 +89,54 @@ export default {
         // Update the background style dynamically
         this.sliderBackground = `linear-gradient(to right, rgba(0, 135, 255, 1) ${percentage}%, rgba(230, 243, 255, 1) ${percentage}%)`;
         this.percentageSumRepaymentBorrower = this.percentagePlatformFee + this.percentagePPN + this.percentageBorrower;
-        this.totalPay = this.percentageSumRepaymentBorrower * this.rangeValue
+        this.percentageSumwithoutPPN = this.percentagePlatformFee + this.percentageBorrower;
+        this.totalPay = (this.percentageSumwithoutPPN * this.rangeValue) / this.periodOfMonth;
+        this.updateThumbColor();
+      },
+      onHoldRangeValue() {
+        this.isHeldSlider = true;
+        this.updateThumbColor();
+      },
+      onReleaseRangeValue() {
+        this.isHeldSlider = false;
+        this.updateThumbColor();
+      },
+      updateThumbColor() {
+        const boxShadow = this.isHeldSlider ? '0px 0px 10px 0px rgba(0, 0, 0, 0.25)' : 'none';
+        this.$refs.range.style.setProperty('--thumb-box-shadow', boxShadow);
       },
       formatNumber(value) {
         // Use a regular expression to add thousand separators
         return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+      },
+      applyNow() {
+        const userAgent = window.navigator.userAgent,
+            platform = window.navigator?.userAgentData?.platform || window.navigator.platform,
+            macosPlatforms = ['macos', 'macintosh', 'macintel', 'macppc', 'mac68k'],
+            windowsPlatforms = ['win32', 'win64', 'windows', 'wince'],
+            iosPlatforms = ['iphone', 'ipad', 'ipod'];
+        let os = null;
+        let urlDirectApp = null;
+
+        if (macosPlatforms.indexOf(platform.toLowerCase()) !== -1) {
+          os = 'Mac OS';
+        } else if (iosPlatforms.indexOf(platform.toLowerCase()) !== -1) {
+          os = 'iOS';
+        } else if (windowsPlatforms.indexOf(platform.toLowerCase()) !== -1) {
+          os = 'Windows';
+        } else if (/Android/.test(userAgent)) {
+          os = 'Android';
+        } else if (/Linux/.test(platform)) {
+          os = 'Linux';
+        }
+
+        if (os == 'Mac OS' || os == 'iOS') {
+          urlDirectApp = 'https://apps.apple.com/id/app/pinjamduit-kta-dana-cepat/id6476541604';
+        } else {
+          urlDirectApp = 'https://play.google.com/store/apps/details?id=com.stanfordtek.pinjamduit&hl=id';
+        }
+
+        window.open(urlDirectApp, '_blank');
       }
     },
     mounted() {
@@ -101,6 +152,9 @@ export default {
     .body-calculate {
       width: 100%;
       
+      .fs-10 {
+        font-size: 10px;
+      }
       .fs-12 {
         font-size: 12px;
       }
@@ -123,12 +177,14 @@ export default {
         position: absolute;
         left: 0;
         top: 0;
+        height: calc(100vh - 200px);
+        object-fit: cover;
       }
 
       .card-calculate {
         position: absolute;
         background-color: rgba(255, 255, 255, 1);
-        width: 33rem;
+        width: 35rem;
         top: 5rem;
         left: 4rem;
         padding: 2rem;
@@ -154,6 +210,7 @@ export default {
           background: rgba(255, 193, 11, 1);
           border: 1px solid rgba(255, 255, 255, 1);
           cursor: pointer;
+          box-shadow: var(--thumb-box-shadow, none);
         }
 
         .inputRange::-moz-range-thumb {

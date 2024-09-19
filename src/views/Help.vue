@@ -1,12 +1,12 @@
 <template>
-    <section id="tentang">
-      <h1>Tentang</h1>
+    <section id="help">
+      <h1>Bantuan</h1>
     </section>
 </template>
 
 <script>
 export default {
-    name: 'Tentang',
+    name: 'Help',
 }
 </script>
 

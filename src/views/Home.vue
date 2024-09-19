@@ -46,7 +46,6 @@ export default {
     Advantages,
     Article,
     Information,
-    BusinessPartners,
     Submission,
     BusinessPartners,
     Testimonial,
