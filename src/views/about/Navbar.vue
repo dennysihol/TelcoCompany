@@ -53,8 +53,24 @@
           <!-- Content Section -->
           <div class="content-section">
             <div v-if="selected === 'direksi'" class="content-widget">
-              <h2>Direksi & Komisaris</h2>
-              <p>Content for Direksi & Komisaris goes here...</p>
+              <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-3" v-for="item in (tabSelected == 'article' ? dataArticle : dataEvent)" :key="item.id">
+                  <div class="card-article d-flex flex-column gap-3 pb-3">
+                    <div class="card-article-image">
+                      <img :src="item.urlImage" class="w-100" alt="item-article-1">
+                    </div>
+                    <div class="card-article-title">{{ item.name }}</div>
+                    <div class="card-article-date d-flex">
+                      {{ item.role }}
+                    </div>
+                    <div class="card-article-read-more">
+                      Lihat Profile
+                      <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div v-if="selected === 'sertifikasi'" class="content-widget">
               <h2>Sertifikasi</h2>
@@ -78,12 +94,12 @@
 </template>
 
 <script>
-import {DirectorCommissioner} from "@/views/about/index.js";
+import {DirectorCommissioner, Direksi} from "@/views/about/index.js";
 
 export default {
   name: "Navbar",
   components: {
-    // DireksiKomisaris,
+    Direksi,
   },
   data() {
     return {

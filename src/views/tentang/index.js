@@ -1,1 +1,0 @@
-export { default as Direksi } from './Direksi.vue';
