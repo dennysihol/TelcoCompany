@@ -15,17 +15,11 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import {Swiper, SwiperSlide} from "swiper/vue";
-import {Advantages, Information} from "@/views/home/index.js";
+import {Navbar} from "@/views/tentang/index.js";
 
 export default {
   name: "About",
   components: {
-    Information,
-    Swiper,
-    SwiperSlide,
-    Advantages,
     Navbar,
   },
 };
