@@ -1,2 +1,2 @@
 export { default as Navbar } from './Navbar.vue';
-export { DirectorCommissioner as DireksiKomisaris } from './DirectorCommissioner.vue';
+export { default as DirectorCommissioner } from './DirectorCommissioner.vue';

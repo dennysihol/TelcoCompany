@@ -53,8 +53,24 @@
           <!-- Content Section -->
           <div class="content-section">
             <div v-if="selected === 'direksi'" class="content-widget">
-              <h2>Direksi & Komisaris</h2>
-              <p>Content for Direksi & Komisaris goes here...</p>
+              <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-3" v-for="item in dataDirectorCommissioner" :key="item.id">
+                  <div class="card-article d-flex flex-column gap-3 pb-3">
+                    <div class="card-article-image">
+                      <img :src="item.urlImage" class="w-100" alt="item-article-1">
+                    </div>
+                    <div class="card-article-title">{{ item.name }}</div>
+                    <div class="card-article-date d-flex">
+                      {{ item.role }}
+                    </div>
+                    <div class="card-article-read-more">
+                      Lihat Profile
+                      <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div v-if="selected === 'sertifikasi'" class="content-widget">
               <h2>Sertifikasi</h2>
@@ -83,12 +99,29 @@ import {DirectorCommissioner} from "@/views/about/index.js";
 export default {
   name: "Navbar",
   components: {
-    // DireksiKomisaris,
+    // DirectorCommissioner,
   },
   data() {
     return {
       selected: "direksi", // Default selected content
       isSticky: false, // To manage sticky state
+      tabSelected: "directorCommissioner",
+      dataDirectorCommissioner: [
+          {
+              "id": 1,
+              "name": 'Hendri',
+              "role": "Direktur Utama",
+              "dateArticle": "26 Mar 2023",
+              "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirut.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          },
+          {
+              "id": 2,
+              "name": 'Jun Zhang',
+              "role": "Direktur",
+              "dateArticle": "13 Maret 2022",
+              "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirektur.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          }
+      ],
     };
   },
   methods: {
