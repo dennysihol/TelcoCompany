@@ -1,97 +1,108 @@
 <template>
-  <div class="col-lg-10 article-gap w-100">
-    <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
-    <div class="row d-flex justify-content-center gap-5">
-      <div class="col-md-3"
-        v-for="item in (tabSelected == 'directorCommissioner' ? dataDirectorCommissioner : dataEvent)" :key="item.id">
-        <div class="card-article d-flex flex-column pb-3">
-          <div class="card-article-image">
-            <img :src="item.urlImage" class="w-100" alt="item-article-1">
-          </div>
-          <div class="card-article-title">{{ item.name }}</div>
-          <div class="card-article-date d-flex">
-            {{ item.role }}
-          </div>
-          <div class="card-article-read-more" style="margin-top: 10px;">
-            Lihat Profile
-            <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="margin: 50px 0 0 20px;">
-    <span style="color: #2B2B2B;">Direksi adalah organ Perusahaan yang bertanggung jawab atas pengurusan Perusahaan.
-      Direksi wajib dengan itikad
-      baik dan penuh tanggung jawab demi sebesar-besar kepentingan Perusahaan, mengelola bisnis dan urusan Perusahaan
-      dengan tetap memperhatikan keseimbangan kepentingan seluruh pihak yang berkepentingan dengan aktivitas
-      Perusahaan.
-    </span>
-    <span style="margin-top: 30px; color: #525252; font-weight: 700;">
-      Secara umum, tugas utama Direksi adalah sebagai berikut:
-    </span>
-    <ul style="list-style-type: disc; margin-top: 30px; text-align: justify; margin-right: 30px;">
-      <li>Menetapkan kebijakan pengurusan Perseroan;</li>
-      <li>Mengatur penyerahan kekuasaan Direksi untuk mewakili Perseroan di dalam dan di luar pengadilan kepada seorang
-        atau beberapa orang anggota Direksi yang khusus ditunjuk untuk itu atau kepada seorang atau beberapa orang
-        pegawai Perseroan baik sendiri-sendiri maupun bersama-sama atau kepada orang lain;</li>
-      <li>Mengatur ketentuan-ketentuan tentang kepegawaian Perseroan termasuk penetapan gaji, pensiun atau jaminan hari
-        tua dan penghasilan lain (jika ada) bagi pegawai Perseroan berdasarkan peraturan perundang-undangan yang
-        berlaku;</li>
-      <li>Mengangkat dan memberhentikan pegawai Perseroan berdasarkan peraturan kepegawaian Perseroan dan peraturan
-        perundang-undangan yang berlaku;</li>
-      <li>Melakukan segala tindakan dan perbuatan lainnya mengenai pengurusan maupun pemilikan kekayaan Perseroan,
-        mengikat Perseroan dengan pihak lain dan/atau pihak lain dengan Perseroan, serta mewakili Perseroan di dalam dan
-        di luar pengadilan tentang segala hal dan segala kejadian, dengan pembatasan sebagaimana diatur dalam peraturan
-        perundang-undangan, Anggaran Dasar dan/atau Keputusan RUPS.</li>
-    </ul>
-  </div>
-  <div class="col-lg-10 article-gap w-100">
-    <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
-    <div class="row d-flex justify-content-center gap-5">
-      <div class="col-md-3"
-        v-for="item in (tabSelected == 'directorCommissioner' ? dataDirectorCommissioner : dataEvent)" :key="item.id">
-        <div class="card-article d-flex flex-column pb-3">
-          <div class="card-article-image">
-            <img :src="item.urlImage" class="w-100" alt="item-article-1">
-          </div>
-          <div class="card-article-title">{{ item.name }}</div>
-          <div class="card-article-date d-flex">
-            {{ item.role }}
-          </div>
-          <div class="card-article-read-more" style="margin-top: 10px;">
-            Lihat Profile
-            <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs" />
+  <div class="content-section2">
+    <div class="col-lg-10 article-gap w-100">
+      <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
+      <div class="row d-flex justify-content-center gap-5">
+        <div class="col-md-3" v-for="item in dataDirector" :key="item.id">
+          <div class="card-article d-flex flex-column pb-3">
+            <div class="card-article-image">
+              <img :src="item.urlImage" class="w-100" alt="item-article-1">
+            </div>
+            <div class="card-article-title">{{ item.name }}</div>
+            <div class="card-article-date d-flex">
+              {{ item.role }}
+            </div>
+            <div class="card-article-read-more" style="margin-top: 10px;">
+              Lihat Profile
+              <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs" />
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div style="margin: 50px 0 0 20px;">
+      <span style="color: #2B2B2B;">Direksi adalah organ Perusahaan yang bertanggung jawab atas pengurusan Perusahaan.
+        Direksi wajib dengan itikad
+        baik dan penuh tanggung jawab demi sebesar-besar kepentingan Perusahaan, mengelola bisnis dan urusan Perusahaan
+        dengan tetap memperhatikan keseimbangan kepentingan seluruh pihak yang berkepentingan dengan aktivitas
+        Perusahaan.
+      </span>
+      <span style="margin-top: 30px; color: #525252; font-weight: 700;">
+        Secara umum, tugas utama Direksi adalah sebagai berikut:
+      </span>
+      <ul style="list-style-type: disc; margin-top: 30px; text-align: justify; margin-right: 30px;">
+        <li>Menetapkan kebijakan pengurusan Perseroan;</li>
+        <li>Mengatur penyerahan kekuasaan Direksi untuk mewakili Perseroan di dalam dan di luar pengadilan kepada
+          seorang
+          atau beberapa orang anggota Direksi yang khusus ditunjuk untuk itu atau kepada seorang atau beberapa orang
+          pegawai Perseroan baik sendiri-sendiri maupun bersama-sama atau kepada orang lain;</li>
+        <li>Mengatur ketentuan-ketentuan tentang kepegawaian Perseroan termasuk penetapan gaji, pensiun atau jaminan
+          hari
+          tua dan penghasilan lain (jika ada) bagi pegawai Perseroan berdasarkan peraturan perundang-undangan yang
+          berlaku;</li>
+        <li>Mengangkat dan memberhentikan pegawai Perseroan berdasarkan peraturan kepegawaian Perseroan dan peraturan
+          perundang-undangan yang berlaku;</li>
+        <li>Melakukan segala tindakan dan perbuatan lainnya mengenai pengurusan maupun pemilikan kekayaan Perseroan,
+          mengikat Perseroan dengan pihak lain dan/atau pihak lain dengan Perseroan, serta mewakili Perseroan di dalam
+          dan
+          di luar pengadilan tentang segala hal dan segala kejadian, dengan pembatasan sebagaimana diatur dalam
+          peraturan
+          perundang-undangan, Anggaran Dasar dan/atau Keputusan RUPS.</li>
+      </ul>
+    </div>
   </div>
-  <div style="margin: 50px 0 0 20px;">
-    <span style="color: #2B2B2B;">Direksi adalah organ Perusahaan yang bertanggung jawab atas pengurusan Perusahaan.
-      Direksi wajib dengan itikad
-      baik dan penuh tanggung jawab demi sebesar-besar kepentingan Perusahaan, mengelola bisnis dan urusan Perusahaan
-      dengan tetap memperhatikan keseimbangan kepentingan seluruh pihak yang berkepentingan dengan aktivitas
-      Perusahaan.
-    </span>
-    <span style="margin-top: 30px; color: #525252; font-weight: 700;">
-      Secara umum, tugas utama Direksi adalah sebagai berikut:
-    </span>
-    <ul style="list-style-type: disc; margin-top: 30px; text-align: justify; margin-right: 30px;">
-      <li>Menetapkan kebijakan pengurusan Perseroan;</li>
-      <li>Mengatur penyerahan kekuasaan Direksi untuk mewakili Perseroan di dalam dan di luar pengadilan kepada seorang
-        atau beberapa orang anggota Direksi yang khusus ditunjuk untuk itu atau kepada seorang atau beberapa orang
-        pegawai Perseroan baik sendiri-sendiri maupun bersama-sama atau kepada orang lain;</li>
-      <li>Mengatur ketentuan-ketentuan tentang kepegawaian Perseroan termasuk penetapan gaji, pensiun atau jaminan hari
-        tua dan penghasilan lain (jika ada) bagi pegawai Perseroan berdasarkan peraturan perundang-undangan yang
-        berlaku;</li>
-      <li>Mengangkat dan memberhentikan pegawai Perseroan berdasarkan peraturan kepegawaian Perseroan dan peraturan
-        perundang-undangan yang berlaku;</li>
-      <li>Melakukan segala tindakan dan perbuatan lainnya mengenai pengurusan maupun pemilikan kekayaan Perseroan,
-        mengikat Perseroan dengan pihak lain dan/atau pihak lain dengan Perseroan, serta mewakili Perseroan di dalam dan
-        di luar pengadilan tentang segala hal dan segala kejadian, dengan pembatasan sebagaimana diatur dalam peraturan
-        perundang-undangan, Anggaran Dasar dan/atau Keputusan RUPS.</li>
-    </ul>
+  <div class="content-section2" style="margin: 50px 0 50px 0;">
+    <div class="col-lg-10 article-gap w-100">
+      <h1 style="margin-top: 20px; margin-left: 20px;">Komisaris</h1>
+      <div class="row d-flex justify-content-center gap-5">
+        <div class="col-md-3" v-for="item in dataCommissioner" :key="item.id">
+          <div class="card-article d-flex flex-column pb-3">
+            <div class="card-article-image">
+              <img :src="item.urlImage" class="w-100" alt="item-article-1">
+            </div>
+            <div class="card-article-title">{{ item.name }}</div>
+            <div class="card-article-date d-flex">
+              {{ item.role }}
+            </div>
+            <div class="card-article-read-more" style="margin-top: 10px;">
+              Lihat Profile
+              <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="margin: 50px 0 0 20px;">
+      <span style="color: #2B2B2B;">Dewan Komisaris adalah organ Perseroan yang mengawasi kebijakan Direksi dan
+        memberikan saran kepada Direksi dalam melaksanakan tugas manajemennya.
+      </span>
+      <span style="margin-top: 30px; color: #525252; font-weight: 700;">
+        Secara umum, tugas utama Dewan Komisaris adalah sebagai berikut:
+      </span>
+      <ul style="list-style-type: disc; margin-top: 30px; text-align: justify; margin-right: 30px;">
+        <li>
+          Memberikan nasihat kepada Direksi dalam melaksanakan pengurusan Perseroan;
+        </li>
+        <li>
+          Mengikuti perkembangan kegiatan Perseroan, memberikan pendapat dan saran kepada RUPS mengenai setiap masalah
+          yang dianggap penting bagi kepengurusan Perseroan;
+        </li>
+        <li>
+          Meneliti dan menelaah laporan berkala dan laporan tahunan yang disiapkan Direksi serta menandatangani
+          laporan tahunan;
+        </li>
+        <li>
+          Membuat risalah rapat Dewan Komisaris dan menyimpan salinannya;
+        </li>
+        <li>
+          Memberikan laporan tentang tugas pengawasan yang telah dilakukan selama tahun buku sebelumnya kepada RUPS;
+        </li>
+        <li>
+          Melaksanakan kewajiban lainnya dalam rangka tugas pengawasan dan pemberian nasihat, sepanjang tidak
+          bertentangan dengan peraturan perundang-undangan, Anggaran Dasar, dan/atau keputusan RUPS.
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -100,8 +111,8 @@ export default {
   name: 'DirectorCommissioner',
   data() {
     return {
-      tabSelected: "directorCommissioner",
-      dataDirectorCommissioner: [
+      tabSelected: "director",
+      dataDirector: [
         {
           "id": 1,
           "name": 'Hendri',
@@ -117,6 +128,15 @@ export default {
           "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirektur.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         }
       ],
+      dataCommissioner: [
+        {
+          "id": 1,
+          "name": 'Maximilianus Maria Kolbe Fair Antero',
+          "role": "Komisaris",
+          "dateArticle": "26 Mar 2023",
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fkomisaris.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        },
+      ],
       loading: false,
       error: null,
     };
@@ -130,13 +150,15 @@ export default {
 }
 </script>
 <style scoped>
-.floating-widget {
+/* Content Section Styling */
+.content-section2 {
   background-color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  position: absolute;
-  top: -12rem;
-  /* Adjust the vertical position for the floating effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 0 30px 0;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
   z-index: 1;
 }
 
@@ -186,7 +208,6 @@ export default {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
   }
 

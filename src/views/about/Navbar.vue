@@ -82,12 +82,14 @@
 
 import {Statistic} from "@/views/statistic/index.js";
 import {Information} from "@/views/home/index.js";
+import DirectorCommissioner from "./DirectorCommissioner.vue";
 
 export default {
   name: "Navbar",
   components: {
     Information,
-    Statistic
+    Statistic,
+    DirectorCommissioner
   },
   data() {
     return {
