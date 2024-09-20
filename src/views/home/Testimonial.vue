@@ -1,55 +1,61 @@
 <template>
-  <section id="testimonial" class="container mt-5 d-flex justify-content-center testimonial-section">
-    <div class="col-10 row">
-      <div class="col-3">
-        <div class="mb-3 fs-20">Testimonial</div>
-        <div class="title fs-20">Apa yang mereka katakan tentang kami</div>
-      </div>
-      <div class="col-9">
-        <div class="row">
-          <swiper
-              :slidesPerView="2"
-              :centeredSlides="false"
-              :slidesPerGroupSkip="0"
-              :grabCursor="true"
-              :spaceBetween="20"
-              :keyboard="{
-                enabled: true,
-              }"
-              :breakpoints="{
-                '769': {
-                  slidesPerView: 2,
-                  slidesPerGroup: 2,
-                },
-              }"
-              :scrollbar="false"
-              :navigation="false"
+  <section id="testimonial" class="container mt-5 d-flex justify-content-center testimonial-section ps-0 pe-0">
+    <div class="col-10">
+      <div class="row d-flex justify-content-between">
+        <div class="col-md-3 col-sm-3 pb-3">
+          <div class="mb-2 fs-20">Testimonial</div>
+          <div class="title fs-20">Apa yang mereka katakan tentang kami</div>
+        </div>
+        <div class="col-xl-9 col-md-8 col-sm-6">
+          <div class="row w-sm-24">
+            <swiper
+                :slidesPerView="2"
+                :centeredSlides="false"
+                :slidesPerGroupSkip="0"
+                :grabCursor="true"
+                :spaceBetween="20"
+                :keyboard="{
+                  enabled: true,
+                }"
+                :breakpoints="{
+                  320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                  },
+                  1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                  },
+                }"
+                :scrollbar="false"
+                :navigation="false"
 
-              :autoplay="{
-                delay: 3000, // Delay between slides in milliseconds
-                disableOnInteraction: false, // Continue autoplay after interaction
-              }"
-              :modules="modules"
-          >
-            <swiper-slide v-for="item in dataTestimonial" :key="item.id">
-              <div class="col-11">
-                <div class="card-testimonial">
-                  <div class="comment">
-                    {{ item.comment }}
-                  </div>
-                  <div class="d-flex flex-row justify-content-between">
-                    <div class="col-4">
-                      <div class="user-name">{{ item.username }}</div>
-                      <div>
-                        <img v-for="number in Array.from({ length: item.star }, (_, i) => i * 5 )" :key="number" class="icon-star" src="@/assets/image/icon-star.png" alt="icon-star">
-                      </div>
+                :autoplay="{
+                  delay: 3000, // Delay between slides in milliseconds
+                  disableOnInteraction: false, // Continue autoplay after interaction
+                }"
+                :modules="modules"
+            >
+              <swiper-slide v-for="item in dataTestimonial" :key="item.id">
+                <div class="col-11">
+                  <div class="card-testimonial">
+                    <div class="comment">
+                      {{ item.comment }}
                     </div>
-                    <img :src="item.urlImage" :alt="'img-user-'+item.id">
+                    <div class="d-flex flex-row justify-content-between">
+                      <div class="col-4">
+                        <div class="user-name">{{ item.username }}</div>
+                        <div>
+                          <img v-for="number in Array.from({ length: item.star }, (_, i) => i * 5 )" :key="number" class="icon-star" src="@/assets/image/icon-star.png" alt="icon-star">
+                        </div>
+                      </div>
+                      <img :src="item.urlImage" :alt="'img-user-'+item.id">
+                    </div>
                   </div>
                 </div>
-              </div>
-            </swiper-slide>
-          </swiper>
+              </swiper-slide>
+            </swiper>
+          </div>
         </div>
       </div>
     </div>
@@ -136,7 +142,7 @@ export default {
 </script>
 <style scoped>
 .testimonial-section {
-  height: 15rem;
+  height: 100%;
 }
 
 .fs-20 {
@@ -158,6 +164,10 @@ export default {
     text-align: justify;
     height: 10rem;
     font-size: 14px;
+    overflow-y: scroll;
+  }
+  .comment::-webkit-scrollbar {
+    display: none;
   }
 
   .user-name {
@@ -171,27 +181,19 @@ export default {
     object-fit: contain;
   }
 }
-/* 
-.testimonial-text {
-  font-size: 18px;
-  font-family:  Arial, sans-serif;}
-
-.testimonial-swiper {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 40px;
-} */
-
-/* body {
-  font-family: Arial, sans-serif;
-} */
-
 
 .swiper-slide img {
   max-width: 177px; /* Adjust the size of the logos */
   max-height: 56px;
   object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .title {
+    width: 100%;
+  }
+  .w-sm-24 {
+    width: 24rem;
+  }
 }
 </style>
