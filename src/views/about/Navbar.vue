@@ -6,49 +6,49 @@
         <div class="col-10 ps-0 pe-0">
           <nav class="navbar">
             <div class="navbar-collapse">
-            <ul class="navbar-links">
-              <li>
-                <a
-                    href="#"
-                    class="navbar-link"
-                    :class="{ active: selected === 'direksi' }"
-                    @click.prevent="selected = 'direksi'"
-                >
-                  Direksi & Komisaris
-                </a>
-              </li>
-              <li>
-                <a
-                    href="#"
-                    class="navbar-link"
-                    :class="{ active: selected === 'sertifikasi' }"
-                    @click.prevent="selected = 'sertifikasi'"
-                >
-                  Sertifikasi
-                </a>
-              </li>
-              <li>
-                <a
-                    href="#"
-                    class="navbar-link"
-                    :class="{ active: selected === 'statistik' }"
-                    @click.prevent="selected = 'statistik'"
-                >
-                  Statistik
-                </a>
-              </li>
-              <li>
-                <a
-                    href="#"
-                    class="navbar-link"
-                    :class="{ active: selected === 'laporan' }"
-                    @click.prevent="selected = 'laporan'"
-                >
-                  Laporan Keuangan
-                </a>
-              </li>
-            </ul>
-          </div>
+              <ul class="navbar-links">
+                <li>
+                  <a
+                      href="#"
+                      class="navbar-link"
+                      :class="{ active: selected === 'direksi' }"
+                      @click.prevent="selected = 'direksi'"
+                  >
+                    Direksi & Komisaris
+                  </a>
+                </li>
+                <li>
+                  <a
+                      href="#"
+                      class="navbar-link"
+                      :class="{ active: selected === 'sertifikasi' }"
+                      @click.prevent="selected = 'sertifikasi'"
+                  >
+                    Sertifikasi
+                  </a>
+                </li>
+                <li>
+                  <a
+                      href="#"
+                      class="navbar-link"
+                      :class="{ active: selected === 'statistik' }"
+                      @click.prevent="selected = 'statistik'"
+                  >
+                    Statistik
+                  </a>
+                </li>
+                <li>
+                  <a
+                      href="#"
+                      class="navbar-link"
+                      :class="{ active: selected === 'laporan' }"
+                      @click.prevent="selected = 'laporan'"
+                  >
+                    Laporan Keuangan
+                  </a>
+                </li>
+              </ul>
+            </div>
           </nav>
           <!-- Content Section -->
           <div class="content-section">
@@ -77,8 +77,9 @@
               <p>Content for Sertifikasi goes here...</p>
             </div>
             <div v-if="selected === 'statistik'" class="content-widget">
-              <h2>Statistik</h2>
-              <p>Content for Statistik goes here...</p>
+              <p>
+                <Statistic/>
+              </p>
             </div>
             <div v-if="selected === 'laporan'" class="content-widget">
               <h2>Laporan Keuangan</h2>
@@ -89,17 +90,20 @@
       </div>
     </div>
 
-    
+
   </div>
 </template>
 
 <script>
-import {DirectorCommissioner} from "@/views/about/index.js";
+
+import {Statistic} from "@/views/statistic/index.js";
+import {Information} from "@/views/home/index.js";
 
 export default {
   name: "Navbar",
   components: {
-    // DirectorCommissioner,
+    Information,
+    Statistic
   },
   data() {
     return {
@@ -107,20 +111,20 @@ export default {
       isSticky: false, // To manage sticky state
       tabSelected: "directorCommissioner",
       dataDirectorCommissioner: [
-          {
-              "id": 1,
-              "name": 'Hendri',
-              "role": "Direktur Utama",
-              "dateArticle": "26 Mar 2023",
-              "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirut.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-              "id": 2,
-              "name": 'Jun Zhang',
-              "role": "Direktur",
-              "dateArticle": "13 Maret 2022",
-              "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirektur.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          }
+        {
+          "id": 1,
+          "name": 'Hendri',
+          "role": "Direktur Utama",
+          "dateArticle": "26 Mar 2023",
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirut.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        },
+        {
+          "id": 2,
+          "name": 'Jun Zhang',
+          "role": "Direktur",
+          "dateArticle": "13 Maret 2022",
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirektur.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        }
       ],
     };
   },
@@ -159,7 +163,7 @@ export default {
 /* Second Navbar Styling */
 .navbar {
   position: sticky;
-  top: 110px; /* Adjust the value based on the height of your first navbar */
+  top: 100px; /* Adjust the value based on the height of your first navbar */
   background-color: white;
   display: flex;
   justify-content: space-evenly;
@@ -206,24 +210,16 @@ export default {
 
 /* Content Section Styling */
 .content-section {
-  height: 100rem;
-  padding: 20px;
+
+  padding: 0;
   width: 100%;
   margin: 0 auto;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   top: 320px;
   z-index: 1;
 }
 
-.content-widget {
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 .content-widget h2 {
   margin-top: 0;
