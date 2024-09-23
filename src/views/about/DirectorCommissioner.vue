@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div style="margin: 50px 0 0 20px;">
+    <div style="margin: 50px 40px 40px 40px;">
       <span style="color: #2B2B2B;">Direksi adalah organ Perusahaan yang bertanggung jawab atas pengurusan Perusahaan.
         Direksi wajib dengan itikad
         baik dan penuh tanggung jawab demi sebesar-besar kepentingan Perusahaan, mengelola bisnis dan urusan Perusahaan
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-    <div style="margin: 50px 0 0 20px;">
+    <div style="margin: 50px 40px 40px 40px;">
       <span style="color: #2B2B2B;">Dewan Komisaris adalah organ Perseroan yang mengawasi kebijakan Direksi dan
         memberikan saran kepada Direksi dalam melaksanakan tugas manajemennya.
       </span>

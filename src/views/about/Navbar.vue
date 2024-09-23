@@ -56,8 +56,7 @@
               <DirectorCommissioner/>
             </div>
             <div v-if="selected === 'sertifikasi'" class="content-widget">
-              <h2>Sertifikasi</h2>
-              <p>Content for Sertifikasi goes here...</p>
+              <Certification/>
             </div>
             <div v-if="selected === 'statistik'" class="content-widget">
               <p>
@@ -83,35 +82,20 @@
 import {Statistic} from "@/views/statistic/index.js";
 import {Information} from "@/views/home/index.js";
 import DirectorCommissioner from "./DirectorCommissioner.vue";
+import Certification from "./Certification.vue";
 
 export default {
   name: "Navbar",
   components: {
     Information,
     Statistic,
-    DirectorCommissioner
+    DirectorCommissioner,
+    Certification,
   },
   data() {
     return {
       selected: "direksi", // Default selected content
       isSticky: false, // To manage sticky state
-      tabSelected: "directorCommissioner",
-      dataDirectorCommissioner: [
-        {
-          "id": 1,
-          "name": 'Hendri',
-          "role": "Direktur Utama",
-          "dateArticle": "26 Mar 2023",
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirut.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-        },
-        {
-          "id": 2,
-          "name": 'Jun Zhang',
-          "role": "Direktur",
-          "dateArticle": "13 Maret 2022",
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirektur.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-        }
-      ],
     };
   },
   methods: {
@@ -130,7 +114,6 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
-    DirectorCommissioner;
   },
   beforeDestroy() {
     window.removeEventListener('scroll',
