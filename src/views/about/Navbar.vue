@@ -17,6 +17,7 @@
                     Direksi & Komisaris
                   </a>
                 </li>
+                <a class="divider"></a>
                 <li>
                   <a
                       href="#"
@@ -27,6 +28,7 @@
                     Sertifikasi
                   </a>
                 </li>
+                <a class="divider"></a>
                 <li>
                   <a
                       href="#"
@@ -37,6 +39,7 @@
                     Statistik
                   </a>
                 </li>
+                <a class="divider"></a>
                 <li>
                   <a
                       href="#"
@@ -71,7 +74,6 @@
         </div>
       </div>
     </div>
-
 
 
   </div>
@@ -117,7 +119,7 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('scroll',
-      this.handleScroll);
+        this.handleScroll);
   },
 };
 </script>
@@ -191,7 +193,6 @@ export default {
 }
 
 
-
 .content-widget h2 {
   margin-top: 0;
   font-size: 24px;
@@ -201,5 +202,12 @@ export default {
 .content-widget p {
   color: #666;
 }
+
+.divider {
+  width: 1px;
+  background-color: #dddddd;
+  margin: 0 20px;
+}
+
 
 </style>
