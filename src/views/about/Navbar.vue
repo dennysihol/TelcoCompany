@@ -52,25 +52,8 @@
           </nav>
           <!-- Content Section -->
           <div class="content-section">
-            <div v-if="selected === 'direksi'" class="content-widget">
-              <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
-              <div class="row d-flex justify-content-center">
-                <div class="col-md-3" v-for="item in dataDirectorCommissioner" :key="item.id">
-                  <div class="card-article d-flex flex-column gap-3 pb-3">
-                    <div class="card-article-image">
-                      <img :src="item.urlImage" class="w-100" alt="item-article-1">
-                    </div>
-                    <div class="card-article-title">{{ item.name }}</div>
-                    <div class="card-article-date d-flex">
-                      {{ item.role }}
-                    </div>
-                    <div class="card-article-read-more">
-                      Lihat Profile
-                      <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs"/>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div v-if="selected === 'direksi'">
+              <DirectorCommissioner/>
             </div>
             <div v-if="selected === 'sertifikasi'" class="content-widget">
               <h2>Sertifikasi</h2>
@@ -91,6 +74,7 @@
     </div>
 
 
+
   </div>
 </template>
 
@@ -98,12 +82,14 @@
 
 import {Statistic} from "@/views/statistic/index.js";
 import {Information} from "@/views/home/index.js";
+import DirectorCommissioner from "./DirectorCommissioner.vue";
 
 export default {
   name: "Navbar",
   components: {
     Information,
-    Statistic
+    Statistic,
+    DirectorCommissioner
   },
   data() {
     return {
@@ -144,10 +130,11 @@ export default {
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    DirectorCommissioner;
   },
   beforeDestroy() {
     window.removeEventListener('scroll',
-        this.handleScroll);
+      this.handleScroll);
   },
 };
 </script>
@@ -181,7 +168,8 @@ export default {
 .navbar-links {
   list-style: none;
   display: flex;
-  flex-grow: 1; /* Makes the links take up equal space */
+  flex-grow: 1;
+  /* Makes the links take up equal space */
   justify-content: space-evenly;
   margin: 0;
   padding: 0;
@@ -230,4 +218,5 @@ export default {
 .content-widget p {
   color: #666;
 }
+
 </style>
