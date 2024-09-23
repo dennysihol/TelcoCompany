@@ -170,7 +170,7 @@ export default {
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: -300px 0;
+  margin: -240px 0 -320px 0;
   width: 100%;
   z-index: 2;
   transition: top 0.3s;

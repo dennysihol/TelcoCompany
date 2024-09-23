@@ -144,7 +144,7 @@ export default {
 }
 
 .col-4 {
-  padding: 5px;
+  padding: 16px;
 }
 
 .card-icon img {
@@ -176,7 +176,7 @@ export default {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
