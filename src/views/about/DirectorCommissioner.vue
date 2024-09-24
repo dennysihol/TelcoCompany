@@ -4,7 +4,7 @@
       <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
       <div class="row d-flex justify-content-center gap-5">
         <div class="col-md-3" v-for="item in dataDirector" :key="item.id">
-          <div class="card-article2 d-flex flex-column pb-3" @click="selectedProfile(item)">
+          <div class="card-article2 d-flex flex-column pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="selectedProfile(item)">
             <div class="card-article-image">
               <img :src="item.urlImage" class="w-100" alt="item-article-1">
             </div>
@@ -56,7 +56,7 @@
       <h1 style="margin-top: 20px; margin-left: 20px;">Komisaris</h1>
       <div class="row d-flex justify-content-center gap-5">
         <div class="col-md-3" v-for="item in dataCommissioner" :key="item.id">
-          <div class="card-article2 d-flex flex-column pb-3" @click="selectedProfile(item)">
+          <div class="card-article2 d-flex flex-column pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="selectedProfile(item)">
             <div class="card-article-image">
               <img :src="item.urlImage" class="w-100" alt="item-article-1">
             </div>
@@ -254,19 +254,19 @@ export default {
     handleTab(nameTab) {
       this.tabSelected = nameTab;
     },
-    openModal() {
-      const modalElement = this.$refs.myModal;
-      const modalInstance = new bootstrap.Modal(modalElement);
-      modalInstance.show();
-    },
-    closeModal() {
-      const modalElement = this.$refs.myModal;
-      const modalInstance = new bootstrap.Modal(modalElement);
-      modalInstance.hide();
-    },
+    // openModal() {
+    //   const modalElement = this.$refs.myModal;
+    //   const modalInstance = new bootstrap.Modal(modalElement);
+    //   modalInstance.show();
+    // },
+    // closeModal() {
+    //   const modalElement = this.$refs.myModal;
+    //   const modalInstance = new bootstrap.Modal(modalElement);
+    //   modalInstance.hide();
+    // },
     selectedProfile(item) {
       this.dataSelected = item;
-      this.openModal();
+      // this.openModal();
     },
   },
 
