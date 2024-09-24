@@ -1,6 +1,6 @@
 <template>
     <div class="content-section2">
-        <div class="row d-flex justify-content-center gap-4">
+        <div class="row d-flex justify-content-center gap-4 pt-5 ">
             <div class="col-5">
                 <img src="../../assets/image/sertifikat_1.png" />
             </div>
