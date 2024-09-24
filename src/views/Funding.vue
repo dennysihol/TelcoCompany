@@ -69,4 +69,19 @@ export default {
   left: 0;
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  .carousel-item {
+    top: 7rem;
+    max-height: 80vh;
+
+    img {
+      height: 20rem;
+    }
+    
+    .banner-title {
+      padding: 10px;
+      font-size: 2rem;
+    }
+  }
+}
 </style>

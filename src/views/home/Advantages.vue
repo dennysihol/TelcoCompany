@@ -1,6 +1,6 @@
 <template>
     <section id="advantages" class="position-relative">
-        <div class="position-absolute top-0 start-0 w-100">
+        <div class="position-absolute top-0 start-0 w-100 h-100">
             <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-advantages.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" class="d-block w-100 bg-advantages" alt="bg-advantages">
         </div>
         <div class="container position-relative vh-100">
@@ -8,7 +8,7 @@
                 <div class="col-lg-10 advantages-gap">
                     <div class="fs-3 fw-bold text-center mb-3">Mengapa Memilih Aplikasi PinjamDuit?</div>
                     <div class="row d-flex flex-row justify-content-between advantages-row advantages-row-1">
-                        <div class="col-lg-3 card-advantages">
+                        <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
                                 <div class="col-4 advantages-logo">
                                     <img src="@/assets/image/item-advantages-1.png" alt="item-advantages-1">
@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 card-advantages">
+                        <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
                                 <div class="col-4 advantages-logo">
                                     <img src="@/assets/image/item-advantages-2.png" alt="item-advantages-1">
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div class="row d-flex flex-row justify-content-between advantages-row advantages-row-2">
-                        <div class="col-lg-3 card-advantages">
+                        <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
                                 <div class="col-4 advantages-logo">
                                     <img src="@/assets/image/item-advantages-3.png" alt="item-advantages-3">
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 card-advantages">
+                        <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
                                 <div class="col-4 advantages-logo">
                                     <img src="@/assets/image/item-advantages-4.png" alt="item-advantages-4">
@@ -113,6 +113,11 @@ export default {
         }
         .advantages-row-1 {
             padding: 0 5rem 0 5rem !important;
+        }
+    }
+    @media (max-width: 768px) {
+        .advantages-logo {
+            width: 6rem;
         }
     }
 </style>
