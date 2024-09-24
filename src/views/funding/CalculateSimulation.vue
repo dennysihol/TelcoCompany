@@ -222,18 +222,4 @@ export default {
       }
     }
   }
-
-  @media (max-width: 1025px) {
-    .card-calculate { 
-      width: 23rem !important;
-      top: 0 !important;
-      left: 0 !important;
-      padding: 10px !important;
-    }
-  }
-  @media (max-width: 376px) {
-    .card-calculate { 
-      width: 20rem !important;
-    }
-  }
 </style>

@@ -1,44 +1,39 @@
 <template>
-  <section id="business-partners" class="container mt-5 d-flex justify-content-center partner-section ps-0 pe-0">
-    <div class="col-10">
-      <div class="row d-flex justify-content-between">
-        <div class="col-md-3 col-sm-3 pb-3">
-          <div class="title fs-20">Mitra Bisnis Kami</div>
-        </div>
-        <div class="col-xl-9 col-md-8 col-sm-6">
-          <div class="row w-sm-24">
-            <swiper
-              :slidesPerView="4"
-              :centeredSlides="false"
-              :slidesPerGroupSkip="0"
-              :grabCursor="true"
-              :spaceBetween="15"
-              :keyboard="{
-                enabled: true,
-              }"
-              :scrollbar="false"
-              :navigation="false"
-              :breakpoints= "{
-                320: {
-                  slidesPerView: 2,
-                  spaceBetween: 20
-                },
-                1025: {
-                  slidesPerView: 4,
-                  spaceBetween: 20
-                },
-              }"
-              :autoplay="{
-                delay: 3000, // Delay between slides in milliseconds
-                disableOnInteraction: false, // Continue autoplay after interaction
-              }"
-              :modules="modules"
-            >
-              <swiper-slide v-for="item in dataPartner" :key="item.id">
-                <img :src="item.urlImage" />
-              </swiper-slide>
-            </swiper>
-          </div>
+  <section id="business-partners" class="container mt-5 d-flex justify-content-center partner-section">
+    <div class="col-10 row">
+      <div class="col-3">
+        <div class="title fs-20">Mitra Bisnis Kami</div>
+      </div>
+      <div class="col-9">
+        <div class="row">
+          <swiper
+            :slidesPerView="4"
+            :centeredSlides="false"
+            :slidesPerGroupSkip="0"
+            :grabCursor="true"
+            :spaceBetween="15"
+            :keyboard="{
+              enabled: true,
+            }"
+            :breakpoints="{
+              '769': {
+                slidesPerView: 4,
+                slidesPerGroup: 4,
+              },
+            }"
+            :scrollbar="false"
+            :navigation="false"
+
+            :autoplay="{
+              delay: 3000, // Delay between slides in milliseconds
+              disableOnInteraction: false, // Continue autoplay after interaction
+            }"
+            :modules="modules"
+          >
+            <swiper-slide v-for="item in dataPartner" :key="item.id">
+              <img :src="item.urlImage" />
+            </swiper-slide>
+          </swiper>
         </div>
       </div>
     </div>
@@ -153,11 +148,5 @@ export default {
   max-width: 814px;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-  .w-sm-24 {
-    width: 24rem;
-  }
 }
 </style>
