@@ -107,7 +107,7 @@
 
   <!-- modal -->
   <div class="modal fade modal-info-profile" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref="myModal">
-    <div class="modal-dialog modal-xl">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content border-radius-8">
             <div class="modal-body p-0">
                 <div class="row fs-14">
