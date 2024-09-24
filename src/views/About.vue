@@ -21,11 +21,6 @@ export default {
   components: {
     Navbar,
   },
-  data() {
-    return {
-      intervalBanner: 8000
-    }
-  },
 };
 </script>
 

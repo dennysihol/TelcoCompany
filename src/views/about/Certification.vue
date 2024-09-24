@@ -1,6 +1,6 @@
 <template>
     <div class="content-section2">
-        <div class="row d-flex justify-content-center gap-4 pt-5">
+        <div class="row d-flex justify-content-center gap-4">
             <div class="col-5">
                 <img src="../../assets/image/sertifikat_1.png" />
             </div>
@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="content-section2 mt-5">
-        <div class="row d-flex justify-content-center gap-4 pt-5">
+        <div class="row d-flex justify-content-center gap-4">
             <div class="col-5">
                 <img src="../../assets/image/sertifikat_iso.png" />
             </div>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="content-section2 mt-5">
-        <div class="row d-flex justify-content-center gap-4 pt-5">
+        <div class="row d-flex justify-content-center gap-4">
             <div class="col-5">
                 <img src="../../assets/image/sertifikat_fdc.png" />
             </div>
@@ -80,14 +80,70 @@ export default {
 }
 </script>
 <style scoped>
+/* Content Section Styling */
 .content-section2 {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 0 0 30px 0;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 90px 25px;
+    width: 100%;
+}
+
+.bg-article {
+    background: rgba(246, 251, 255, 1);
+}
+
+.container-article {
+    padding: 5rem 0 5rem 0;
+}
+
+.article-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-article {
+    border: 1px solid rgba(217, 217, 217, 1);
+    background: rgba(255, 255, 255, 1);
+    border-radius: 14px;
+    padding: 0 0 10px 20px;
+
+    .card-article-image {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            height: 100%;
+            border-radius: 0 10px 0 10px;
+        }
+    }
+
+    .card-article-date {
+        font-size: 16px;
+        font-weight: 400;
+        color: #737373;
+    }
+
+    .card-article-title {
+        margin-top: 10px;
+        font-weight: 700;
+        font-size: 16px;
+        width: 14rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+    }
+
+    .card-article-read-more {
+        color: rgba(43, 43, 43, 1);
+        font-weight: 400;
+        font-size: 16px;
+        text-decoration: none;
+        cursor: pointer;
+    }
 }
 </style>

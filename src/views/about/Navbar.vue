@@ -75,7 +75,6 @@
     </div>
 
 
-
   </div>
 </template>
 
@@ -188,7 +187,10 @@ export default {
 
   padding: 0;
   width: 100%;
-  margin: 20rem auto;
+  margin: 0 auto;
+  position: relative;
+  top: 320px;
+  z-index: 1;
 }
 
 
