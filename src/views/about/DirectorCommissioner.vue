@@ -1,5 +1,5 @@
 <template>
-  <div class="content-section2">
+  <div class="content-section2 ">
     <div class="col-lg-10 article-gap w-100">
       <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
       <div class="row d-flex justify-content-center gap-5">
