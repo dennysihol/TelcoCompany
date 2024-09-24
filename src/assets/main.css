@@ -852,11 +852,12 @@ p {
 }
 
 .service-card {
-  height: 150px;
-  padding: 10px 10px;
-  font-family: "DM Sans";
+  height: 120px;
+  padding: 17px 20px;
+  font-family: "Poppins";
+  font-size: 14px;
   margin-top: 40%;
-  width: 78%;
+  width: 85%;
   border-radius: 15px;
   justify-content: center;
   align-items: center;
@@ -877,6 +878,7 @@ p {
 
 .service-card p {
   font-size: 14px;
+  font-weight: 500;
 }
 
 .ud-about-wrapper {
@@ -887,7 +889,7 @@ p {
   -ms-flex-pack: justify;
   justify-content: space-evenly;
   margin: 5% 8%;
-  background-image: url('../assets/image/bg-submission.png');
+  background-image: url("../assets/image/bg-submission.png");
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 10px;
