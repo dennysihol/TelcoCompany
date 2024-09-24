@@ -17,6 +17,7 @@
                     Direksi & Komisaris
                   </a>
                 </li>
+                <a class="divider"></a>
                 <li>
                   <a
                       href="#"
@@ -27,6 +28,7 @@
                     Sertifikasi
                   </a>
                 </li>
+                <a class="divider"></a>
                 <li>
                   <a
                       href="#"
@@ -37,6 +39,7 @@
                     Statistik
                   </a>
                 </li>
+                <a class="divider"></a>
                 <li>
                   <a
                       href="#"
@@ -73,16 +76,15 @@
     </div>
 
 
-
   </div>
 </template>
 
 <script>
 
-import {Statistic} from "@/views/statistic/index.js";
 import {Information} from "@/views/home/index.js";
 import DirectorCommissioner from "./DirectorCommissioner.vue";
 import Certification from "./Certification.vue";
+import Statistic from "./StatisticDashboard.vue";
 
 export default {
   name: "Navbar",
@@ -117,7 +119,7 @@ export default {
   },
   beforeDestroy() {
     window.removeEventListener('scroll',
-      this.handleScroll);
+        this.handleScroll);
   },
 };
 </script>
@@ -140,7 +142,7 @@ export default {
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: -300px 0;
+  margin: -240px 0 -300px 0;
   width: 100%;
   z-index: 2;
   transition: top 0.3s;
@@ -191,7 +193,6 @@ export default {
 }
 
 
-
 .content-widget h2 {
   margin-top: 0;
   font-size: 24px;
@@ -201,5 +202,12 @@ export default {
 .content-widget p {
   color: #666;
 }
+
+.divider {
+  width: 1px;
+  background-color: #dddddd;
+  margin: 0 20px;
+}
+
 
 </style>

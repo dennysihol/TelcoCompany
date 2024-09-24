@@ -1,19 +1,19 @@
 <template>
   <div class="statistic-dashboard">
     <!-- Top Section: Financial Summary Cards -->
-    <div class="cards-section">
+    <div class="row justify-content-between">
       <div class="col-4" v-for="(value, key) in cardData" :key="key">
         <div class="cards-section">
           <div class="card">
             <div class="card-icon">
-              <img src="@/assets/image/item-advantages-1.png" alt="Icon">
+              <img src="../../assets/image/item-advantages-1.png" alt="Icon">
             </div>
-            <div class="card-content">
-              <p>Total Penerima Dana Sejak Berdiri</p>
+            <div class="card-content" >
+              <p>{{value.desc1}}</p>
               <p class="value">{{ value.total }}</p>
-              <p>Total Pada Tahun Berjalan</p>
+              <p>{{value.desc2}}</p>
               <p class="value">{{ value.thisYear }}</p>
-              <p>Total Aktif Berupa Posisi Akhir</p>
+              <p>{{value.desc3}}</p>
               <p class="value">{{ value.active }}</p>
             </div>
           </div>
@@ -62,19 +62,28 @@ export default {
     cardData() {
       return {
         borrowerPerson: {
-          title: "Total Penerima Dana Sejak Berdiri",
+          type: "borrowerPerson",
+          desc1: "Total Penerima Dana Sejak Berdiri",
+          desc2: "Total Penerima Dana Pada Tahun Berjalan",
+          desc3: "Total Penerima Dana Aktif Berupa Posisi Akhir",
           total: parseInt(this.dataStatistic.borrowerPerson).toLocaleString(),
           thisYear: parseInt(this.dataStatistic.activeBorrowerPersonThisYear).toLocaleString(),
           active: parseInt(this.dataStatistic.activeBorrowerPerson).toLocaleString(),
         },
         activeBorrowerCompany: {
-          title: "Total Pemberi Dana Sejak Berdiri",
+          type: "activeBorrowerCompany",
+          desc1: "Total Pemberi Dana Sejak Berdiri",
+          desc2: "Total Pemberi Dana Pada Tahun Berjalan",
+          desc3: "Total Pemberi Dana Aktif Berupa Posisi Akhir",
           total: "9",
           thisYear: "6",
           active: "6",
         },
         toRepayAmount: {
-          title: "Total Pendanaan Sejak Berdiri",
+          type:"toRepayAmount",
+          desc1: "Total Pendanaan Sejak Berdiri",
+          desc2: "Total Pendanaan Pada Tahun Berjalan",
+          desc3: "Total Pendanaan Aktif Berupa Posisi Akhir",
           total: `Rp. ${parseInt(this.dataStatistic.loanAmountTotal).toLocaleString()}`,
           thisYear: `Rp. ${parseInt(this.dataStatistic.loanAmountThisYear).toLocaleString()}`,
           active: `Rp. ${parseInt(this.dataStatistic.toRepayAmount).toLocaleString()}`,
@@ -144,7 +153,8 @@ export default {
 }
 
 .col-4 {
-  padding: 5px;
+
+
 }
 
 .card-icon img {
@@ -176,7 +186,7 @@ export default {
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
