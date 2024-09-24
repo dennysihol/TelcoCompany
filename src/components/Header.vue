@@ -4,24 +4,9 @@
       <div class="row">
         <div class="col-lg-10 navbar-float">
           <nav class="navbar navbar-expand-lg">
-            <div class="navbar-tkb">
-              <div class="navbar-brand" >
-                <p>TKB0: 96.39%</p>
-              </div>
-            </div>
-            <div class="navbar-tkb">
+            <div class="navbar-tkb" v-for="(item, index) in tkbData.dataPercentage" :key="index">
               <div class="navbar-brand">
-                <p>TKB30: 96.39%</p>
-              </div>
-            </div>
-            <div class="navbar-tkb">
-              <div class="navbar-brand">
-                <p>TKB60: 96.39%</p>
-              </div>
-            </div>
-            <div class="navbar-tkb">
-              <div class="navbar-brand">
-                <p>TKB90: 96.39%</p>
+                <p>{{ item.tkbName }}: <span>{{ item.tkb }}%<b/></span></p>
               </div>
             </div>
           </nav>
@@ -102,9 +87,62 @@ u {
 <script>
 
 import '@/assets/main.css'
+import axios from 'axios';
 
 export default {
   name: 'Header',
+  methods: {
+    fetchData() {
+      axios.post('https://api.pinjamduit.co.id/gw/loan/credit-app/tkb90?deviceId=WEB&clientType=web&appMarket=web&appVersion=99.99.99')  // Replace with your API URL
+          .then(response => {
+            this.dataStatistic = response.data.data;
+          })
+          .catch(error => {
+            console.error("Error fetching data: ", error);
+          });
+    },
+  },
+  data() {
+    return {
+      dataStatistic: {
+        tkb60: "0",
+        tkb0: "0",
+        tkb30: "0",
+      },
+    };
+  },
+  computed: {
+    // Prepare TKB data for the bottom section
+    tkbData() {
+      return {
+        dataPercentage: [
+          {
+            tkbName: "TKB 0",
+            tkb: this.dataStatistic.tkb0,
+            tkbDesc: "TKB0 adalah ukuran tingkat keberhasilan Penyelenggara dalam memfasilitasi penyelesaian kewajiban Pendanaan dalam jangka waktu sampai dengan 0 (nol) hari kalender terhitung sejak jatuh tempo.",
+          },
+          {
+            tkbName: "TKB 30",
+            tkb: this.dataStatistic.tkb30,
+            tkbDesc: "TKB30 adalah ukuran tingkat keberhasilan Penyelenggara dalam memfasilitasi penyelesaian kewajiban Pendanaan dalam jangka waktu sampai dengan 30 (tiga puluh) hari kalender terhitung sejak jatuh tempo.",
+          },
+          {
+            tkbName: "TKB 60",
+            tkb: this.dataStatistic.tkb60,
+            tkbDesc: "TKB60 adalah ukuran tingkat keberhasilan Penyelenggara dalam memfasilitasi penyelesaian kewajiban Pendanaan dalam jangka waktu sampai dengan 60 (enam puluh) hari kalender terhitung sejak jatuh tempo.",
+          },
+          {
+            tkbName: "TKB 90",
+            tkb: this.dataStatistic.tkb90,
+            tkbDesc: "TKB90 adalah ukuran tingkat keberhasilan Penyelenggara dalam memfasilitasi penyelesaian kewajiban Pendanaan dalam jangka waktu sampai dengan 90 (sembilan puluh) hari kalender terhitung sejak jatuh tempo.",
+          },
+        ]
+      };
+    },
+  },
+  mounted() {
+    this.fetchData();
+  },
 }
 
 
