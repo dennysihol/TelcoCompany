@@ -1,25 +1,46 @@
 <template>
-  <div class="statistic-dashboard">
-    <!-- Top Section: Financial Summary Cards -->
-    <div class="row justify-content-between">
-      <div class="col-4" v-for="(value, key) in cardData" :key="key">
-        <div class="cards-section">
-          <div class="card">
-            <div class="card-icon">
-              <img src="../../assets/image/item-advantages-1.png" alt="Icon">
-            </div>
-            <div class="card-content" >
-              <p>{{value.desc1}}</p>
-              <p class="value">{{ value.total }}</p>
-              <p>{{value.desc2}}</p>
-              <p class="value">{{ value.thisYear }}</p>
-              <p>{{value.desc3}}</p>
-              <p class="value">{{ value.active }}</p>
+  <div class="content-section2">
+    <div class="col-lg-10 article-gap w-100">
+      <div class="row">
+        <div class="col-4" v-for="(value, key) in cardData" :key="key">
+          <div class="cards-section">
+            <div class="card">
+              <div class="card-icon">
+                <img src="@/assets/image/item-advantages-1.png" alt="Icon">
+              </div>
+              <div class="card-content">
+                <p>Total Penerima Dana Sejak Berdiri</p>
+                <p class="value">{{ value.total }}</p>
+                <p>Total Pada Tahun Berjalan</p>
+                <p class="value">{{ value.thisYear }}</p>
+                <p>Total Aktif Berupa Posisi Akhir</p>
+                <p class="value">{{ value.active }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- Top Section: Financial Summary Cards -->
+    <!-- <div class="cards-section">
+      <div class="col-4" v-for="(value, key) in cardData" :key="key">
+        <div class="cards-section">
+          <div class="card">
+            <div class="card-icon">
+              <img src="@/assets/image/item-advantages-1.png" alt="Icon">
+            </div>
+            <div class="card-content">
+              <p>Total Penerima Dana Sejak Berdiri</p>
+              <p class="value">{{ value.total }}</p>
+              <p>Total Pada Tahun Berjalan</p>
+              <p class="value">{{ value.thisYear }}</p>
+              <p>Total Aktif Berupa Posisi Akhir</p>
+              <p class="value">{{ value.active }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
     <!-- Bottom Section: TKB Stats -->
     <div class="tkb-box">
@@ -136,6 +157,16 @@ export default {
 </script>
 
 <style scoped>
+/* Content Section Styling */
+.content-section2 {
+  border-radius: 10px;
+  padding: 0 0 30px 0;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
 .cards-section {
   display: flex;
   justify-content: space-evenly;
@@ -150,11 +181,6 @@ export default {
   height: 500px;
   width: 100%;
   text-align: center;
-}
-
-.col-4 {
-
-
 }
 
 .card-icon img {
@@ -184,10 +210,10 @@ export default {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
+  padding: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 1300px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0 0;
 }
 
 .tkb-item {

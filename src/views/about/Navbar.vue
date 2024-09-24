@@ -67,13 +67,13 @@
               </p>
             </div>
             <div v-if="selected === 'laporan'" class="content-widget">
-              <h2>Laporan Keuangan</h2>
-              <p>Content for Laporan Keuangan goes here...</p>
+              <FinancialReport/>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
 
   </div>
@@ -85,6 +85,7 @@ import {Information} from "@/views/home/index.js";
 import DirectorCommissioner from "./DirectorCommissioner.vue";
 import Certification from "./Certification.vue";
 import Statistic from "./StatisticDashboard.vue";
+import FinancialReport from "./FinancialReport.vue";
 
 export default {
   name: "Navbar",
@@ -93,6 +94,7 @@ export default {
     Statistic,
     DirectorCommissioner,
     Certification,
+    FinancialReport,
   },
   data() {
     return {
@@ -186,10 +188,7 @@ export default {
 
   padding: 0;
   width: 100%;
-  margin: 0 auto;
-  position: relative;
-  top: 320px;
-  z-index: 1;
+  margin: 20rem auto;
 }
 
 
