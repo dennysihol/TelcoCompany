@@ -2,14 +2,14 @@
     <section id="article" class="position-relative bg-article">
         <div class="container container-article position-relative vh-100">
             <div class="row">
-                <div class="col-lg-10 article-gap">
+                <div class="col-lg-10 article-gap pb-5">
                     <div class="d-flex gap-3 justify-content-center mb-3">
                         <button :class="tabSelected == 'article'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('article')">Artikel</button>
                         <button :class="tabSelected == 'event'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('event')">Event</button>
                     </div>
                     <div class="fs-3 fw-bold text-center mb-3">Informasi Terkini, Berita dan Event</div>
                         <div class="row">
-                            <div class="col-md-3" v-for="item in (tabSelected == 'article' ? dataArticle : dataEvent)" :key="item.id">
+                            <div class="col-md-6 col-xl-3 mb-3" v-for="item in (tabSelected == 'article' ? dataArticle : dataEvent)" :key="item.id">
                                 <div class="card-article d-flex flex-column gap-3 pb-3">
                                     <div class="card-article-image">
                                         <img :src="item.urlImage" class="w-100" alt="item-article-1">
@@ -167,6 +167,11 @@ export default {
             font-size: 16px;
             text-decoration: none;
             cursor: pointer;
+        }
+    }
+    @media (max-width: 768px) {
+        .card-article {
+            margin: 10px;
         }
     }
 </style>
