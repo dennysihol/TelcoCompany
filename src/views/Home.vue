@@ -76,46 +76,40 @@ export default {
 </script>
 
 <style scoped>
-  .carousel-item {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Set this to the desired height for full screen */
-  }
 
-  .carousel-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-  }
 
-  .icon img {
-    width: 60px; /* Adjust based on your icon size */
-    height: auto;
-  }
+.carousel-item {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Set this to the desired height for full screen */
+}
 
-  h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
 
-  p {
-    font-size: 14px;
-    color: #666;
-    display: block;
-  }
+.icon img {
+  width: 60px; /* Adjust based on your icon size */
+  height: auto;
+}
 
-  @media (max-width: 768px) {
-    .carousel-item {
-      top: 7rem;
-      max-height: 80vh;
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
 
-      img {
-        height: 20rem;
-      }
-    }
-  }
+p {
+  font-size: 14px;
+  color: #666;
+  display: block;
+}
+
+
+
 
 </style>

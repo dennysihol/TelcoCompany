@@ -2,8 +2,8 @@
     <section id="funding-information" class="container">
       <div class="row">
         <div class="col-10 position-relative ps-0">
-          <div class="floating-widget d-flex flex-row row">
-            <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12" v-for="(item, index) in dataInformation" :key="item.id">
+          <div class="floating-widget d-flex flex-row">
+            <div class="col-3" v-for="(item, index) in dataInformation" :key="item.id">
               <div :class="index === dataInformation.length-1 ? 'card-information last-item' : 'card-information'">
                 <img :src="item.urlImage" :alt="'image-information-'+item.id" class="image-information">
                 <div class="title">{{ item.title }}</div>
@@ -87,50 +87,6 @@
       width: 6rem;
       height: 6rem;
       object-fit: contain;
-    }
-  }
-  
-  @media (max-width: 1025px) {
-    #funding-information {
-      height: 63rem;
-    }
-    .card-information {
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
-      border-right: none !important;
-      border-bottom: 1px solid rgba(217, 217, 217, 1);
-    }
-  }
-  @media (max-width: 769px) {
-    #funding-information {
-      height: 47rem;
-    }
-    .floating-widget {
-      top: -7rem;
-    }
-    .card-information {
-      margin-bottom: 0 !important;
-      padding-bottom: 0 !important;
-      border-right: none !important;
-      border-bottom: 1px solid rgba(217, 217, 217, 1);
-      
-      .description {
-        height: auto !important;
-      }
-      
-      .image-information {
-        width: 5rem;
-      }
-    }
-  }
-  @media (max-width: 426px) {
-    #funding-information {
-      height: 58rem;
-    }
-  }
-  @media (max-width: 376px) {
-    #funding-information {
-      height: 63rem;
     }
   }
   </style>

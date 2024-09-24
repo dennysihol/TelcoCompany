@@ -6,7 +6,7 @@
       <p>Verifikasi cepat dan tidak perlu menunggu lama untuk proses pinjaman</p>
     </div>
     <div class="divider"></div>
-    <div class="feature">
+    <div class="feature2">
       <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_sistem_online.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" alt="Sistem Online">
       <h5>Sistem Online</h5>
       <p>Sistem online 24 jam, pinjaman dapat diajukan kapanpun dan dimanapun</p>
@@ -68,24 +68,5 @@ export default {
   width: 1px;
   background-color: #ddd;
   margin: 0 20px;
-}
-
-@media (max-width: 768px) {
-  .floating-widget {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 10px;
-    max-width: 100%;
-
-    .feature {
-      max-width: 100%;
-    }
-    .divider {
-      width: 100%;
-      height: 1px;
-      background-color: #ddd;
-      margin: 10px 0;
-    }
-  }
 }
 </style>
