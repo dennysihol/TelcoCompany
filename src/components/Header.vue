@@ -76,6 +76,12 @@
 u {
   text-decoration-color: #e91e63;
 }
+@media (max-width: 768px) {
+  .navbar-brand p {
+    font-size: 10px;
+    padding: 0 5px;
+  }
+}
 </style>
 
 <script>
