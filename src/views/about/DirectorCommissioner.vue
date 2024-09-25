@@ -113,28 +113,28 @@
                 <div class="row fs-14">
                     <div class="col-lg-3 p-5 border-radius-8" style="background-color: rgba(246, 251, 255, 1)">
                         <img class="image-profile" :src="dataSelected.urlImage" alt="img-1">
-                        <div class="fw-bold">Nama :</div>
-                        {{ dataSelected.name }} 
-                        <div class="fw-bold">Kewarganegaraan :</div>
-                        {{ dataSelected.citizenship }} 
+                        Nama :
+                        <div class="fw-bold">{{ dataSelected.name }}</div>
+                        Kewarganegaraan :
+                        <div class="fw-bold">{{ dataSelected.citizenship }}</div>
                     </div>
                     <div class="col-lg-9 p-5 border-radius-8 position-relative">
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         <ul class="ps-0">
                             <li class="list-style-none fw-bold">Penunjukan</li>
-                            <ul :class="dataSelected.appointment.length == 1 ? 'ps-0' : ''">
+                            <ul :class="dataSelected.appointment.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
                                 <li :class="dataSelected.appointment.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.appointment">{{ item }}</li>
                             </ul>
                             <li class="list-style-none fw-bold">Pendidikan</li>
-                            <ul :class="dataSelected.education.length == 1 ? 'ps-0' : ''">
+                            <ul :class="dataSelected.education.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
                                 <li :class="dataSelected.education.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.education">{{ item }}</li>
                             </ul>
                             <li class="list-style-none fw-bold">Pengalaman kerja</li>
-                            <ul :class="dataSelected.experience.length == 1 ? 'ps-0' : ''">
+                            <ul :class="dataSelected.experience.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
                                 <li :class="dataSelected.experience.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.experience">{{ item }}</li>
                             </ul>
                             <li class="list-style-none fw-bold">Hubungan afiliasi</li>
-                            <ul :class="dataSelected.affiliateRelationships.length == 1 ? 'ps-0' : ''">
+                            <ul :class="dataSelected.affiliateRelationships.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
                                 <li :class="dataSelected.affiliateRelationships.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.affiliateRelationships">{{ item }}</li>
                             </ul>
                         </ul>
