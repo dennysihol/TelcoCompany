@@ -8,18 +8,14 @@
     </div>
   </div>
   <section class="ud-hero" id="blog">
-    <Article/>
+    <router-view></router-view>
   </section>
 </template>
 
 <script>
-import {
-  Article,
-} from './blog/index.js';
 export default {
   name: 'Blog',
   components: {
-    Article,
   },
   data() {
     return {

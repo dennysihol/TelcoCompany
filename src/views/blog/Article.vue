@@ -9,7 +9,7 @@
                     </div>
                     <div class="row justify-content-start">
                         <div class="col-md-6 col-xl-3 mb-4" v-for="item in (tabSelected == 'article' ? dataArticle : dataEvent)" :key="item.id">
-                            <div class="card-article d-flex flex-column gap-3 pb-3">
+                            <div class="card-article d-flex flex-column gap-3 pb-3" @click="handleRedirectTo(`/blog/${item.id}/${item.titleArticle.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
                                 <div class="card-article-image">
                                     <img :src="item.urlImage" class="w-100" alt="item-article-1">
                                 </div>
@@ -156,6 +156,9 @@ export default {
         handleTab(nameTab) {
             this.tabSelected = nameTab;
         },
+        handleRedirectTo(redirectTo) {
+            this.$router.push({ path: redirectTo });
+        }
     }
 }
 </script>
