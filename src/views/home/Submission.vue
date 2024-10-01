@@ -6,7 +6,7 @@
           <h2 class="title">
             Proses Pengajuan Cepat dan Mudah
           </h2>
-          <div class="ud-about-wrapper">
+          <div class="ud-about-wrapper" style="margin: 50px 0 100px 0;">
             <div class="ud-about-content-wrapper">
               <div class="ud-about-image">
                 <!-- Custom Pagination -->
@@ -110,6 +110,7 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-weight: 600;
 }
 
 .swiper-container {
