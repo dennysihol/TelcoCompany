@@ -1,6 +1,6 @@
 <template>
     <section id="blog" class="position-relative bg-blog">
-        <div class="container container-article position-relative vh-100">
+        <div class="container container-article position-relative">
             <div class="row">
                 <div class="col-lg-10 article-gap pb-5">
                     <div class="d-flex gap-3 justify-content-center mb-3">
@@ -155,7 +155,7 @@ export default {
     methods: {
         handleTab(nameTab) {
             this.tabSelected = nameTab;
-        }
+        },
     }
 }
 </script>
@@ -178,6 +178,7 @@ export default {
         background: rgba(255, 255, 255, 1);
         border-radius: 10px;
         padding: 0 0 10px 2rem;
+        cursor: pointer;
 
         .card-article-image {
             width: 100%;
@@ -216,7 +217,6 @@ export default {
             font-weight: 400;
             font-size: 16px;
             text-decoration: none;
-            cursor: pointer;
         }
     }
     @media (max-width: 768px) {

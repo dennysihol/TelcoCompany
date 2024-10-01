@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     <div class="d-flex justify-content-center">
-                        <button class="btn-custom btn-custom-1" type="button">Lihat Semua</button>
+                        <button class="btn-custom btn-custom-1" type="button" @click="handleRedirectTo('/blog')">Lihat Semua</button>
                     </div>
                 </div>
             </div>
@@ -107,6 +107,9 @@ export default {
     methods: {
         handleTab(nameTab) {
             this.tabSelected = nameTab;
+        },
+        handleRedirectTo(redirectTo) {
+            this.$router.push({ path: redirectTo });
         }
     }
 }
@@ -128,6 +131,7 @@ export default {
         background: rgba(255, 255, 255, 1);
         border-radius: 10px;
         padding: 0 0 10px 2rem;
+        cursor: pointer;
 
         .card-article-image {
             width: 100%;
@@ -166,7 +170,6 @@ export default {
             font-weight: 400;
             font-size: 16px;
             text-decoration: none;
-            cursor: pointer;
         }
     }
     @media (max-width: 768px) {
