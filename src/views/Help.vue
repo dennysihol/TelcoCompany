@@ -2,7 +2,8 @@
   <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
        :data-bs-interval="intervalBanner" data-bs-pause="false">
     <div class="carousel-inner">
-      <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(item, index) in dataBanner" :key="item.id">
+      <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(item, index) in dataBanner"
+           :key="item.id">
         <img :src="item.urlImage" class="d-block w-100" :alt="'home-banner-'+item.id">
         <!-- Text overlay -->
         <div class="banner-text">
@@ -12,18 +13,22 @@
     </div>
   </div>
   <section class="ud-hero" id="help">
+    <Faq/>
     <CustomerService/>
   </section>
 </template>
 
 <script>
 import {
-  CustomerService,
+  Faq,
+  CustomerService
 } from './help/index.js';
+
 export default {
   name: 'Help',
   components: {
-    CustomerService,
+    Faq,
+    CustomerService
   },
   data() {
     return {
