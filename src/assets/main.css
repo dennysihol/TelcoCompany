@@ -1655,7 +1655,7 @@ p {
 /* ===== Footer CSS ===== */
 .ud-footer {
   background: #0087ff;
-  padding-top: 100px;
+  padding-top: 50px;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -1682,7 +1682,7 @@ p {
 }
 
 .ud-widget {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .ud-widget-logo {
@@ -1743,7 +1743,6 @@ p {
 
 .ud-widget .ud-widget-links a {
   display: inline-block;
-  margin-bottom: 12px;
   font-size: 15px;
   line-height: 30px;
   color: #f3f4fe;
@@ -1789,8 +1788,7 @@ p {
 
 .ud-footer-bottom {
   background-color: #0087ff;
-  padding: 35px 0;
-  border-top: 1px solid rgba(136, 144, 164, 0.43);
+  padding-bottom: 30px;
 }
 
 .ud-footer-bottom .ud-footer-bottom-left {
