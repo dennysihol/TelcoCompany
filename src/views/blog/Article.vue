@@ -2,7 +2,7 @@
     <section id="blog" class="position-relative bg-blog">
         <div class="container container-article position-relative">
             <div class="row">
-                <div class="col-lg-10 article-gap pb-5">
+                <div class="col-lg-10 article-gap">
                     <div class="d-flex gap-3 justify-content-center mb-3">
                         <button :class="tabSelected == 'article'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('article')">Artikel</button>
                         <button :class="tabSelected == 'event'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('event')">Event</button>
@@ -162,11 +162,10 @@ export default {
 <style scoped>
     .bg-blog {
         background: none;
-        top: -18rem;
         z-index: 1;
     }
     .container-article {
-        padding: 5rem 0 5rem 0;
+        padding: 5rem 0 0 0;
     }
     .article-gap {
         display: flex;

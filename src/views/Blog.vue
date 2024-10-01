@@ -38,6 +38,10 @@ export default {
 </script>
 
 <style scoped>
+  .carousel-inner {
+    height: calc(100vh - 18rem);
+    overflow: visible;
+  }
   .carousel-item {
     position: relative;
     top: 0;
