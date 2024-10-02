@@ -4,15 +4,22 @@
     <div class="container">
       <div class="row">
         <div class="col-10 ps-0 pe-0">
-          <nav class="navbar">
-            <div class="navbar-collapse">
-              <ul class="navbar-links">
+          <nav class="navbar navbar-expand-lg" style="justify-content: center">
+            <!-- Burger icon for mobile view -->
+            <button class="navbar-toggler" type="button" @click="toggleNavbar" aria-controls="navbarNav" aria-expanded="isNavbarOpen" aria-label="Toggle navigation">
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+              <span class="toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse" :class="{ show: isNavbarOpen }">
+              <ul class="navbar-links mx-auto">
                 <li>
                   <a
                       href="#"
                       class="navbar-link"
                       :class="{ active: selected === 'direksi' }"
-                      @click.prevent="selected = 'direksi'"
+                      @click.prevent="selectTab('direksi')"
                   >
                     Direksi & Komisaris
                   </a>
@@ -23,7 +30,7 @@
                       href="#"
                       class="navbar-link"
                       :class="{ active: selected === 'sertifikasi' }"
-                      @click.prevent="selected = 'sertifikasi'"
+                      @click.prevent="selectTab('sertifikasi')"
                   >
                     Sertifikasi
                   </a>
@@ -34,7 +41,7 @@
                       href="#"
                       class="navbar-link"
                       :class="{ active: selected === 'statistik' }"
-                      @click.prevent="selected = 'statistik'"
+                      @click.prevent="selectTab('statistik')"
                   >
                     Statistik
                   </a>
@@ -45,7 +52,7 @@
                       href="#"
                       class="navbar-link"
                       :class="{ active: selected === 'laporan' }"
-                      @click.prevent="selected = 'laporan'"
+                      @click.prevent="selectTab('laporan')"
                   >
                     Laporan Keuangan
                   </a>
@@ -53,6 +60,7 @@
               </ul>
             </div>
           </nav>
+
           <!-- Content Section -->
           <div class="content-section">
             <div v-if="selected === 'direksi'">
@@ -62,9 +70,7 @@
               <Certification/>
             </div>
             <div v-if="selected === 'statistik'" class="content-widget">
-              <p>
-                <Statistic/>
-              </p>
+              <Statistic/>
             </div>
             <div v-if="selected === 'laporan'" class="content-widget">
               <FinancialReport/>
@@ -73,14 +79,9 @@
         </div>
       </div>
     </div>
-
-
-
   </div>
 </template>
-
 <script>
-
 import {Information} from "@/views/home/index.js";
 import DirectorCommissioner from "./DirectorCommissioner.vue";
 import Certification from "./Certification.vue";
@@ -100,9 +101,17 @@ export default {
     return {
       selected: "direksi", // Default selected content
       isSticky: false, // To manage sticky state
+      isNavbarOpen: false, // To manage the burger menu open/close state
     };
   },
   methods: {
+    toggleNavbar() {
+      this.isNavbarOpen = !this.isNavbarOpen;
+    },
+    selectTab(tab) {
+      this.selected = tab;
+      this.isNavbarOpen = false; // Close the menu after selecting
+    },
     handleScroll() {
       const contentAboveNavbar = document.querySelector(".ud-header");
 
@@ -120,32 +129,75 @@ export default {
     window.addEventListener('scroll', this.handleScroll);
   },
   beforeDestroy() {
-    window.removeEventListener('scroll',
-        this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll);
   },
 };
 </script>
 
 <style scoped>
-/* First Navbar Styling */
-.top-navbar {
+/* Burger icon styling */
+.navbar-toggler {
   background-color: #007bff;
-  height: 60px;
-  /* Add your other styling for the first navbar here */
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 1px;
+  display: none; /* Hide by default, show on mobile */
 }
 
-/* Second Navbar Styling */
+/* Show the burger icon on smaller screens */
+@media (max-width: 768px) {
+  .navbar-toggler {
+    display: block;
+    background-color: white;
+    color: black;
+    font-size: 40px;
+height: auto;
+  }
+
+  .navbar-collapse {
+    display: none;
+  }
+
+  .navbar-collapse.show {
+    display: block;
+    background-color: white;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-link {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .divider {
+    display: none; /* Hide dividers on mobile */
+  }
+}
+
+/* Desktop Styles */
 .navbar {
   position: sticky;
-  top: 100px; /* Adjust the value based on the height of your first navbar */
+  top: 100px; /* Adjust based on the height of your first navbar */
   background-color: white;
   display: flex;
   justify-content: space-evenly;
   padding: 10px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: -240px 0 -300px 0;
-  width: 100%;
+  width: 100%; /* Change this to your preferred width */
+  margin: -240px auto -300px auto; /* Center the navbar */
   z-index: 2;
   transition: top 0.3s;
 
@@ -209,4 +261,6 @@ export default {
 }
 
 
+
 </style>
+
