@@ -2,7 +2,7 @@
   <div class="content-section2">
     <div class="col-lg-10 article-gap w-100">
       <div class="row">
-        <div class="col-4" v-for="(value, key) in cardData" :key="key">
+        <div class="col-12 col-md-6 col-lg-4" v-for="(value, key) in cardData" :key="key">
           <div class="cards-section">
             <div class="card">
               <div class="card-icon">
@@ -21,33 +21,12 @@
         </div>
       </div>
     </div>
-    <!-- Top Section: Financial Summary Cards -->
-    <!-- <div class="cards-section">
-      <div class="col-4" v-for="(value, key) in cardData" :key="key">
-        <div class="cards-section">
-          <div class="card">
-            <div class="card-icon">
-              <img src="@/assets/image/item-advantages-1.png" alt="Icon">
-            </div>
-            <div class="card-content">
-              <p>Total Penerima Dana Sejak Berdiri</p>
-              <p class="value">{{ value.total }}</p>
-              <p>Total Pada Tahun Berjalan</p>
-              <p class="value">{{ value.thisYear }}</p>
-              <p>Total Aktif Berupa Posisi Akhir</p>
-              <p class="value">{{ value.active }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
 
-    <!-- Bottom Section: TKB Stats -->
     <div class="tkb-box">
       <!-- Dynamically display TKB data -->
       <div class="tkb-item" v-for="(item, index) in tkbData.dataPercentage" :key="index">
         <h3>{{ item.tkbName }}: <span style="font-weight: bold">{{ item.tkb }}%<b/></span></h3>
-        <p>{{item.tkbDesc }}</p>
+        <p>{{ item.tkbDesc }}</p>
       </div>
     </div>
   </div>
@@ -79,7 +58,6 @@ export default {
     };
   },
   computed: {
-    // Prepare card data for the top section
     cardData() {
       return {
         borrowerPerson: {
@@ -111,7 +89,6 @@ export default {
         },
       };
     },
-    // Prepare TKB data for the bottom section
     tkbData() {
       return {
         dataPercentage: [
@@ -141,7 +118,7 @@ export default {
   },
   methods: {
     fetchData() {
-      axios.post('https://api.pinjamduit.co.id/gw/loan/credit-app/tkb90?deviceId=WEB&clientType=web&appMarket=web&appVersion=99.99.99')  // Replace with your API URL
+      axios.post('https://api.pinjamduit.co.id/gw/loan/credit-app/tkb90?deviceId=WEB&clientType=web&appMarket=web&appVersion=99.99.99')
           .then(response => {
             this.dataStatistic = response.data.data;
           })
@@ -157,7 +134,7 @@ export default {
 </script>
 
 <style scoped>
-/* Content Section Styling */
+/* General Content Section Styling */
 .content-section2 {
   border-radius: 10px;
   padding: 0 0 30px 0;
@@ -167,6 +144,7 @@ export default {
   z-index: 1;
 }
 
+/* Cards Section */
 .cards-section {
   display: flex;
   justify-content: space-evenly;
@@ -188,10 +166,8 @@ export default {
   margin-bottom: 20px;
 }
 
-.card-content h3 {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 10px;
+.card-content p {
+  font-size: 14px;
 }
 
 .value {
@@ -201,7 +177,7 @@ export default {
   margin: 36px 0;
 }
 
-/* Styling for Each TKB Box */
+/* TKB Box Section */
 .tkb-box {
   display: flex;
   flex-wrap: wrap;
@@ -238,5 +214,32 @@ export default {
   color: #666;
   margin: 0;
   text-align: start;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .col-12 {
+    padding: 0;
+  }
+  .cards-section {
+    flex-direction: column;
+  }
+
+  .card {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .tkb-item {
+    flex-basis: 100%;
+  }
+
+  .tkb-box h3 {
+    font-size: 16px;
+  }
+
+  .tkb-box p {
+    font-size: 12px;
+  }
 }
 </style>

@@ -89,12 +89,14 @@ export default {
 <style scoped>
 .customer-service {
   margin: auto;
-  padding: 200px 200px;
+  padding: 100px 20px;
   background: #F6FBFF;
 }
 
 .customer-service h2 {
- text-align: center;
+  text-align: center;
+  font-size: 1.8em;
+  margin-bottom: 30px;
 }
 
 .row {
@@ -111,11 +113,6 @@ export default {
   padding-right: 40px;
 }
 
-h2 {
-  margin-bottom: 20px;
-  font-size: 1.8em;
-}
-
 .left p {
   text-align: left;
   margin-bottom: 20px;
@@ -127,66 +124,26 @@ h2 {
   display: block;
   max-width: 100%;
   height: auto;
-  margin-top: 20px; /* Adds space between the text and the image */
+  margin-top: 20px;
 }
 
 /* Form Section */
 .right {
-  padding:0;
+  padding: 0;
 }
 
 .form-group {
   margin-bottom: 15px;
 }
 
-input{
-  width: 100%;
-  padding: 10px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-bottom: 5px;
-}
-
-select {
-  width: 100%;
-  /* Adds space for the chevron */
-  padding: 10px 40px 10px 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  background: url("../../assets/image/ic_chevron.png") no-repeat right 10px center,white;
-  background-size: 12px 8px;
-  -webkit-appearance: none; /* Hides default chevron in Chrome/Safari */
-  -moz-appearance: none; /* Hides default chevron in Firefox */
-  appearance: none; /* Hides default chevron in other browsers */
-}
-select.selected {
-  background-color: white; /* Background color when an option is chosen */
-}
-
-select:focus {
-  outline: none;
-  border-color: white;
-}
-.select-wrapper {
-  position: relative;
-}
-
-select:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
+input,
+select,
 textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  margin-bottom: 10px;
-  height: 150px;
-}
-
-select {
-  color: #555;
+  margin-bottom: 5px;
 }
 
 textarea {
@@ -210,5 +167,47 @@ button:hover {
 p {
   text-align: right;
   color: #555;
+}
+
+/* Mobile-Friendly Layout */
+@media (max-width: 768px) {
+  .customer-service {
+    padding: 50px 10px;
+  }
+
+  .row {
+    flex-direction: column; /* Stack columns vertically on mobile */
+    gap: 30px;
+  }
+
+  .left {
+    order: 1; /* Ensure the left column (text + image) appears first */
+  }
+
+  .right {
+    order: 2; /* Ensure the right column (form) appears below the left column */
+  }
+
+  .left, .right {
+    padding: 0;
+  }
+
+  .customer-service h2 {
+    font-size: 1.5em;
+  }
+
+  .left p {
+    font-size: 1em;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+  }
 }
 </style>

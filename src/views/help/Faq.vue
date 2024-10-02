@@ -120,39 +120,28 @@ export default {
 </script>
 
 <style scoped>
-ol {
-  list-style-type: decimal; /* Ensure it uses decimal numbers */
-}
-
-li {
-  margin-bottom: 5px; /* Space between list items */
-}
-ol, ul {
-  padding-left: 1rem;
-}
 .help-page {
   margin-top: -200px;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 20px;
-  font-family: 'Poppins', sans-serif; /* Set global font to Poppins */
+  font-family: 'Poppins', sans-serif;
 }
-
 
 .banner-image {
   width: 100%;
   height: auto;
 }
 
-
 .row-container {
   display: flex;
   justify-content: space-between;
-  width: 1250px;
+  width: 100%;
   gap: 20px;
   z-index: 1;
+  max-width: 1250px;
 }
 
 .section-title {
@@ -166,64 +155,54 @@ ol, ul {
 }
 
 .faq-section {
-  width: 50%; /* Adjust width for the FAQ section */
-  background: transparent; /* Background transparent */
-}
-
-.accordion {
-  border: 1px solid #ccc; /* Optional: border for the parent */
-  border-radius: 10px; /* Rounded corners for the parent accordion */
-  overflow: hidden; /* Prevents child elements from overflowing */
+  width: 50%;
+  background: transparent;
 }
 
 .accordion-custom {
-  margin: 20px; /* No margin to maintain rounded effect */
-  transition: border-radius 0.3s ease; /* Smooth transition for border radius */
-  border-radius: 15px 15px 150px 15px; /* Round top corners */
-border: 0;
+  margin: 20px;
+  transition: border-radius 0.3s ease;
+  border-radius: 15px 15px 150px 15px;
+  border: 0;
 }
 
 .accordion-title {
-  padding: 20px; /* Space inside the title */
-  cursor: pointer; /* Pointer cursor for interactivity */
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Space between title and arrow */
-  align-items: center; /* Center align content vertically */
-  background-color: white; /* Background color for the title */
-  border-radius: 10px 10px 10px 10px; /* Round top corners */
-  border: 1px solid #ccc; /* Optional: border around title */
-
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #ccc;
 }
 
 .accordion-content {
-  border: 1px solid #ccc; /* Optional: border around title */
-
-  padding: 20px; /* Padding for content */
-  background-color: white; /* Light background for content */
-  border-radius: 10px 10px 10px 10px; /* Round bottom corners */
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
 }
 
-/* Optional hover effect for the title */
 .accordion-title:hover {
-  background-color: #f0f0f0; /* Lighten background on hover */
+  background-color: #f0f0f0;
 }
-
 
 .accordion-icon {
-  font-size: 1.2rem; /* Make the icon larger */
+  font-size: 1.2rem;
   margin-left: 10px;
 }
 
 .title-icon {
-  width: 30px; /* Adjust the width of the image */
+  width: 30px;
   height: auto;
-  margin-right: 10px; /* Space between image and text */
-  vertical-align: middle; /* Align the image vertically with the text */
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 .contact-section {
-  width: 35%; /* Adjust width for the contact section */
-  background: transparent; /* Background transparent */
+  width: 35%;
+  background: transparent;
 }
 
 .contact-card {
@@ -233,7 +212,7 @@ border: 0;
   background: #E7F4FE;
 }
 
-.contact-card h3 {
+.contact-card h6 {
   margin: 0 0 10px 0;
 }
 
@@ -245,5 +224,55 @@ border: 0;
 
 .contact-card a:hover {
   text-decoration: underline;
+}
+
+/* Mobile-Friendly Adjustments */
+@media (max-width: 768px) {
+  .row-container {
+    flex-direction: column; /* Stack the FAQ and Contact sections */
+    width: 100%; /* Full width for mobile */
+  }
+
+  .faq-section,
+  .contact-section {
+    width: 100%; /* Full width for each section on mobile */
+  }
+
+  .faq-section,
+  .contact-section {
+    margin-bottom: 20px; /* Space between sections */
+  }
+
+  .section-title {
+    font-size: 1.2rem; /* Slightly smaller font size */
+  }
+
+  .section-sub-title {
+    font-size: 1rem; /* Smaller font for subtitles */
+  }
+
+  .accordion-title {
+    padding: 15px; /* Reduce padding for better fit */
+  }
+
+  .accordion-content {
+    padding: 15px; /* Reduce padding for better fit */
+  }
+
+  .title-icon {
+    width: 25px; /* Smaller icon on mobile */
+  }
+
+  .contact-card {
+    padding: 10px; /* Smaller padding on mobile */
+  }
+
+  .contact-card h6 {
+    font-size: 1rem; /* Adjust heading size */
+  }
+
+  .contact-card a {
+    font-size: 1rem; /* Adjust link size */
+  }
 }
 </style>

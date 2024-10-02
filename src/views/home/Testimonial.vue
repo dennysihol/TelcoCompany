@@ -10,6 +10,7 @@
           <div class="row w-sm-24">
             <swiper
                 :slidesPerView="2"
+                :slidesPerGroup="2"
                 :centeredSlides="false"
                 :slidesPerGroupSkip="0"
                 :grabCursor="true"

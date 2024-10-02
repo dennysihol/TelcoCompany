@@ -3,7 +3,6 @@
        :data-bs-interval="intervalBanner" data-bs-pause="false">
     <div class="carousel-inner">
       <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(item, index) in dataBanner" :key="item.id">
-        <!-- <div class="banner-title">{{ item.title }}</div> -->
         <img :src="item.urlImage" class="d-block w-100" :alt="'home-banner-'+item.id">
       </div>
     </div>
@@ -31,7 +30,7 @@ export default {
       dataBanner: [
         {
           "id": 1,
-          // "title": "Penuhi Kebutuhan Keuanganmu #PinjamDuitDisini",
+          "title": "Penuhi Kebutuhan Keuanganmu #PinjamDuitDisini",
           "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fpendanaan-banner-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         }
       ],
@@ -72,7 +71,7 @@ export default {
 @media (max-width: 768px) {
   .carousel-item {
     top: 7rem;
-    max-height: 80vh;
+    max-height: 50vh;
 
     img {
       height: 20rem;

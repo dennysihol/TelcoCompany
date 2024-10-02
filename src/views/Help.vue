@@ -4,11 +4,7 @@
     <div class="carousel-inner">
       <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(item, index) in dataBanner"
            :key="item.id">
-        <img :src="item.urlImage" class="d-block w-100" :alt="'home-banner-'+item.id">
-        <!-- Text overlay -->
-        <div class="banner-text">
-          <h1>Kami siap membantu jika mengalami kendala seputar aplikasi PinjamDuit</h1>
-        </div>
+        <img :src="item.urlImage" class="d-block w-100" :alt="'home-banner-' + item.id">
       </div>
     </div>
   </div>
@@ -19,10 +15,7 @@
 </template>
 
 <script>
-import {
-  Faq,
-  CustomerService
-} from './help/index.js';
+import {Faq, CustomerService} from './help/index.js';
 
 export default {
   name: 'Help',
@@ -36,7 +29,8 @@ export default {
       dataBanner: [
         {
           "id": 1,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fhelp_banner.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "title": "Kami siap membantu jika mengalami kendala seputar aplikasi PinjamDuit",
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-help-text.png?alt=media&token=271856b4-8189-4efd-8ee5-ca4dacd70083"
         }
       ],
       loading: true,
@@ -49,50 +43,40 @@ export default {
 <style scoped>
 .carousel-item {
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh; /* Full screen height */
-  display: flex !important; /* Enables flexbox */
-  justify-content: start; /* Align content to the start (left) */
+  height: 100vh; /* Set this to the desired height for full screen */
+  display: flex !important;
+  justify-content: left; /* Aligns items to the left */
   align-items: center; /* Centers vertically */
+  text-align: start; /* Align text to the left */
 }
 
 .carousel-item img {
   position: absolute;
   top: 0;
-  right: 0; /* Move image to the right */
-  width: 60%; /* Take 60% of the width for the image */
-  height: 100%; /* Ensure the image covers the full height */
-  object-fit: cover; /* Make sure the image covers the container */
-}
-
-.banner-text {
-  position: relative; /* Keeps the text relative to the container */
-  color: black; /* Text color */
-  font-size: 2rem; /* Adjust font size */
-  padding: 20px;
-  margin-left: 120px;
-  width: 40%; /* Takes 40% of the width for the text */
-  max-width: 800px; /* Optional: Max width for large screens */
-  z-index: 1; /* Ensures the text is above the image */
+  left: 0;
+  width: 100%; /* Ensures the image covers the entire area */
+  height: 100%; /* Ensures the image covers the entire area */
+  object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
 }
 
 @media (max-width: 768px) {
   .carousel-item {
-    flex-direction: column; /* Stack text and image vertically */
-    align-items: center; /* Center align for smaller screens */
+    top: 10rem;
+    max-height: 50vh;
+    justify-content: center; /* Center the content horizontally */
   }
 
   .carousel-item img {
-    width: 100%; /* Full width image for mobile */
-    height: auto; /* Adjust the height */
+    height: auto; /* Keep aspect ratio */
+    width: 100%; /* Full width */
   }
 
-  .banner-text {
-    width: 100%; /* Full width text for mobile */
-    text-align: center; /* Center text for mobile */
-    font-size: 1.5rem; /* Smaller font size */
+  /* Adjust the title for mobile screens */
+  .banner-title {
+    padding: 10px;
+    font-size: 2rem;
+    z-index: 1;
   }
 }
 </style>

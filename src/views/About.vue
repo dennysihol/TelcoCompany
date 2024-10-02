@@ -5,6 +5,9 @@
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-tentang.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" class="d-block w-100" alt="home-banner-3">
+          <div class="banner-content">
+            <!-- Add other content as needed -->
+          </div>
         </div>
       </div>
     </div>
@@ -12,7 +15,6 @@
     <!-- Rest of your app -->
   </div>
 </template>
-
 <script>
 import {Navbar} from "@/views/about/index.js";
 
@@ -23,37 +25,55 @@ export default {
   },
   data() {
     return {
-      intervalBanner: 8000
-    }
+      intervalBanner: 8000,
+    };
   },
 };
 </script>
-
 <style scoped>
 .carousel-item {
   position: relative;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100vh; /* Set this to the desired height for full screen */
-  display: flex !important;           /* Enables flexbox */
-  justify-content: center; /* Centers horizontally */
-  align-items: center;     /* Centers vertically */
-  text-align: start;      /* Optional: Centers text within the element */
-
-  .banner-title {
-    position: relative;
-    z-index: 1;
-    font-weight: 600;
-    font-size: 3rem;
-    width: 60rem;
-  }
+  height: 100vh; /* Full screen height for larger screens */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Align text centrally */
 }
 
 .carousel-item img {
   position: absolute;
   top: 0;
   left: 0;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the whole area */
+
+}
+
+/* Style for banner content */
+.banner-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}
+
+.banner-title {
+  font-weight: 600;
+  font-size: 3rem;
+  max-width: 60rem;
+}
+
+/* Mobile responsive styling */
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 70vh; /* Reduce height for smaller screens */
+  }
+
+  .banner-title {
+    font-size: 2rem; /* Adjust title size for mobile screens */
+    max-width: 90%; /* Ensure content fits within the screen */
+  }
 }
 </style>
