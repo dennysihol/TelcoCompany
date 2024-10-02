@@ -1,15 +1,15 @@
 <template>
     <section id="blog" class="position-relative bg-blog">
-        <div class="container container-article position-relative vh-100">
+        <div class="container container-article position-relative">
             <div class="row">
-                <div class="col-lg-10 article-gap pb-5">
+                <div class="col-lg-10 article-gap">
                     <div class="d-flex gap-3 justify-content-center mb-3">
                         <button :class="tabSelected == 'article'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('article')">Artikel</button>
                         <button :class="tabSelected == 'event'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('event')">Event</button>
                     </div>
                     <div class="row justify-content-start">
                         <div class="col-md-6 col-xl-3 mb-4" v-for="item in (tabSelected == 'article' ? dataArticle : dataEvent)" :key="item.id">
-                            <div class="card-article d-flex flex-column gap-3 pb-3">
+                            <div class="card-article d-flex flex-column gap-3 pb-3" @click="handleRedirectTo(`/blog/${item.id}/${item.titleArticle.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
                                 <div class="card-article-image">
                                     <img :src="item.urlImage" class="w-100" alt="item-article-1">
                                 </div>
@@ -155,6 +155,9 @@ export default {
     methods: {
         handleTab(nameTab) {
             this.tabSelected = nameTab;
+        },
+        handleRedirectTo(redirectTo) {
+            this.$router.push({ path: redirectTo });
         }
     }
 }
@@ -162,11 +165,10 @@ export default {
 <style scoped>
     .bg-blog {
         background: none;
-        top: -18rem;
         z-index: 1;
     }
     .container-article {
-        padding: 5rem 0 5rem 0;
+        padding: 5rem 0 0 0;
     }
     .article-gap {
         display: flex;
@@ -178,6 +180,7 @@ export default {
         background: rgba(255, 255, 255, 1);
         border-radius: 10px;
         padding: 0 0 10px 2rem;
+        cursor: pointer;
 
         .card-article-image {
             width: 100%;
@@ -216,7 +219,6 @@ export default {
             font-weight: 400;
             font-size: 16px;
             text-decoration: none;
-            cursor: pointer;
         }
     }
     @media (max-width: 768px) {

@@ -4,6 +4,10 @@ import Home from "@/views/Home.vue";
 import Funding from "@/views/Funding.vue";
 import Tentang from "@/views/About.vue";
 import Blog from "@/views/Blog.vue";
+import {
+  Article,
+  BlogDetail
+} from '@/views/blog/index.js';
 import Help from "@/views/Help.vue";
 
 const routes = [
@@ -26,6 +30,18 @@ const routes = [
     path: "/blog",
     name: "Blog",
     component: Blog,
+    children: [
+      {
+        path: "", // Child route without a leading "/"
+        name: "Article",
+        component: Article, // Separate component for individual blog post
+      },
+      {
+        path: ":id/:title", // Child route without a leading "/"
+        name: "BlogDetail",
+        component: BlogDetail, // Separate component for individual blog post
+      },
+    ],
   },
   {
     path: "/bantuan",
