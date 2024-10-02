@@ -59,7 +59,7 @@ export default {
   @media (max-width: 768px) {
     .carousel-item {
       top: 7rem;
-      max-height: 80vh;
+      max-height: 60vh;
 
       img {
         height: 20rem;

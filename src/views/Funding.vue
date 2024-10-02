@@ -3,7 +3,6 @@
        :data-bs-interval="intervalBanner" data-bs-pause="false">
     <div class="carousel-inner">
       <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(item, index) in dataBanner" :key="item.id">
-        <div class="banner-title">{{ item.title }}</div>
         <img :src="item.urlImage" class="d-block w-100" :alt="'home-banner-'+item.id">
       </div>
     </div>
@@ -72,7 +71,7 @@ export default {
 @media (max-width: 768px) {
   .carousel-item {
     top: 7rem;
-    max-height: 80vh;
+    max-height: 50vh;
 
     img {
       height: 20rem;
