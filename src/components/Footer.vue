@@ -19,7 +19,7 @@
                                 target="_blank">
                                 <img src="../assets/image/ic_ig.png" alt="logo" />
                             </a>
-                            <a href="https://www.facebook.com/Pinjamduitapp" class="ud-footer-logo-2" target="_blank">
+                            <a href="https://web.facebook.com/profile.php?id=61556195634074" class="ud-footer-logo-2" target="_blank">
                                 <img src="../assets/image/ic_fb.png" alt="logo" />
                             </a>
                             <a href="http://www.twitter.com/PinjamDuit_Idn" class="ud-footer-logo-2" target="_blank">
