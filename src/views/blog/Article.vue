@@ -227,9 +227,7 @@ export default {
         // Calculate dynamic pages around the current page
         dynamicPages() {
             const start = Math.max(this.currentPage - 1, 2);
-            console.log(start);
             const end = Math.min(this.currentPage + 1, this.countPagination - 1);
-            console.log(end);
             const pages = [];
             for (let i = start; i <= end; i++) {
                 pages.push(i);
