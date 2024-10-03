@@ -76,7 +76,6 @@ export default {
     name: 'Blog',
     data() {
         return {
-            tabSelected: "article",
             dataArticle: {
                 data: [
                     {
@@ -203,27 +202,30 @@ export default {
                 page: 1,
                 size: 12,
             },
-            currentPage: 1,
             loading: false,
             error: null,
         };
     },
     methods: {
         handleTab(nameTab) {
-            this.tabSelected = nameTab;
-            this.currentPage = 1;
-            this.countPagination = tabSelected == 'article' ? dataArticle.countPagination : dataEvent.countPagination;
+            this.$router.push({ path: '/blog', query: { ['blog']: nameTab , page: 1 } });
         },
         handleRedirectTo(redirectTo) {
             this.$router.push({ path: redirectTo });
         },
         handlePageTo(pageTo) {
             if (pageTo >= 1 && pageTo <= this.countPagination ) {
-                this.currentPage = pageTo;
+                this.$router.push({ path: '/blog', query: { ['blog']: this.tabSelected , page: pageTo } });
             }
         }
     },
     computed: {
+        tabSelected() {
+            return this.$route.query.blog || 'article';
+        },
+        currentPage() {
+            return Number(this.$route.query.page) || 1;
+        },
         // Calculate dynamic pages around the current page
         dynamicPages() {
             const start = Math.max(this.currentPage - 1, 2);
@@ -312,6 +314,7 @@ export default {
             display: flex;
             flex-direction: row;
             gap: 0.5rem;
+            padding-left: 0;
             li {
                 padding: 5px 10px;
                 border: 1px solid rgba(223, 227, 232, 1);
