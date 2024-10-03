@@ -152,7 +152,7 @@ export default {
     background-color: white;
     color: black;
     font-size: 40px;
-height: auto;
+    height: auto;
   }
 
   .navbar-collapse {
@@ -189,7 +189,7 @@ height: auto;
 /* Desktop Styles */
 .navbar {
   position: sticky;
-  top: 100px; /* Adjust based on the height of your first navbar */
+  top: 117px; /* Adjust based on the height of your first navbar */
   background-color: white;
   display: flex;
   justify-content: space-evenly;
