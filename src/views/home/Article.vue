@@ -9,8 +9,8 @@
                     </div>
                     <div class="fs-3 fw-bold text-center mb-3">Informasi Terkini, Berita dan Event</div>
                         <div class="row">
-                            <div class="col-md-6 col-xl-3 mb-3" v-for="item in (tabSelected == 'article' ? dataArticle : dataEvent)" :key="item.id">
-                                <div class="card-article d-flex flex-column gap-3 pb-3">
+                            <div class="col-md-6 col-xl-3 mb-3" v-for="item in (tabSelected == 'article' ? dataArticle.data : dataEvent.data)" :key="item.id">
+                                <div class="card-article d-flex flex-column gap-3 pb-3" @click="handleRedirectTo(`/blog/${item.id}/${item.titleArticle.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
                                     <div class="card-article-image">
                                         <img :src="item.urlImage" class="w-100" alt="item-article-1">
                                     </div>
@@ -27,7 +27,7 @@
                             </div>
                         </div>
                     <div class="d-flex justify-content-center">
-                        <button class="btn-custom btn-custom-1" type="button" @click="handleRedirectTo('/blog')">Lihat Semua</button>
+                        <button class="btn-custom btn-custom-1" type="button" @click="handleRedirectToBlog()">Lihat Semua</button>
                     </div>
                 </div>
             </div>
@@ -40,66 +40,76 @@ export default {
     data() {
         return {
             tabSelected: "article",
-            dataArticle: [
-                {
-                    "id": 1,
-                    "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
-                    "location": "Jakarta",
-                    "dateArticle": "26 Mar 2023",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                },
-                {
-                    "id": 2,
-                    "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-                    "location": "Bandar Lampung",
-                    "dateArticle": "13 Maret 2022",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                },
-                {
-                    "id": 3,
-                    "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-                    "location": "Palembang",
-                    "dateArticle": "2-3 Mei 2019",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                },
-                {
-                    "id": 4,
-                    "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
-                    "location": "Bandung",
-                    "dateArticle": "30 April 2019",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                }
-            ],
-            dataEvent: [
-                {
-                    "id": 4,
-                    "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
-                    "location": "Bandung",
-                    "dateArticle": "30 April 2019",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                },
-                {
-                    "id": 3,
-                    "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-                    "location": "Palembang",
-                    "dateArticle": "2-3 Mei 2019",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                },
-                {
-                    "id": 2,
-                    "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-                    "location": "Bandar Lampung",
-                    "dateArticle": "13 Maret 2022",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                },
-                {
-                    "id": 1,
-                    "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
-                    "location": "Jakarta",
-                    "dateArticle": "26 Mar 2023",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-                }
-            ],
+            dataArticle: {
+                data: [
+                    {
+                        "id": 1,
+                        "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
+                        "location": "Jakarta",
+                        "dateArticle": "26 Mar 2023",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    },
+                    {
+                        "id": 2,
+                        "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
+                        "location": "Bandar Lampung",
+                        "dateArticle": "13 Maret 2022",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    },
+                    {
+                        "id": 3,
+                        "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
+                        "location": "Palembang",
+                        "dateArticle": "2-3 Mei 2019",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    },
+                    {
+                        "id": 4,
+                        "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
+                        "location": "Bandung",
+                        "dateArticle": "30 April 2019",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    }
+                ],
+                countPagination: 7,
+                page: 1,
+                size: 4,
+            },
+            dataEvent: {
+                data: [
+                    {
+                        "id": 4,
+                        "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
+                        "location": "Bandung",
+                        "dateArticle": "30 April 2019",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    },
+                    {
+                        "id": 3,
+                        "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
+                        "location": "Palembang",
+                        "dateArticle": "2-3 Mei 2019",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    },
+                    {
+                        "id": 2,
+                        "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
+                        "location": "Bandar Lampung",
+                        "dateArticle": "13 Maret 2022",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    },
+                    {
+                        "id": 1,
+                        "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
+                        "location": "Jakarta",
+                        "dateArticle": "26 Mar 2023",
+                        "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    }
+                ],
+                countPagination: 1,
+                page: 1,
+                size: 4,
+            },
             loading: false,
             error: null,
         };
@@ -108,8 +118,11 @@ export default {
         handleTab(nameTab) {
             this.tabSelected = nameTab;
         },
-        handleRedirectTo(redirectTo) {
-            this.$router.push({ path: redirectTo });
+        handleRedirectTo(path) {
+            this.$router.push({ path: path });
+        },
+        handleRedirectToBlog() {
+            this.$router.push({ path: '/blog', query: { ['blog']: this.tabSelected , page: 1 } });
         }
     }
 }
