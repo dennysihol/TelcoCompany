@@ -19,14 +19,14 @@
               <span class="toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" :class="{ show: isNavbarOpen }" id="navbarNav">
-              <div class="d-flex justify-content-center w-100">
+              <div class="d-flex justify-content-between w-100">
                 <div class="container-image">
                   <a class="ud-menu-scroll" href="/">
                     <img src="../assets/image/logo_pjd.png" alt="Logo" style="height: 34px; margin-right: 8px;" />
                     <img src="../assets/image/logo_afpi.png" alt="Logo" style="height: 24px;" />
                   </a>
                 </div>
-                <ul id="nav" class="navbar-nav mx-auto">
+                <ul id="nav" class="navbar-nav mx-auto" @click="toggleNavbar" >
                   <li class="nav-item">
                     <router-link to="/" exact-active-class="active-link">Home</router-link>
                   </li>
@@ -94,6 +94,17 @@ u {
   }
   .container-image {
     display: none;
+  }
+  .navbar-collapse {
+    width: 100%;
+    max-width: 100%;
+  }
+  .navbar-nav {
+    padding: 0;
+    width: 100%;
+  }
+  .nav-item {
+    justify-content: center;
   }
 }
 </style>
