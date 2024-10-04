@@ -54,6 +54,13 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
+
+    // Apply smooth scroll only on specific routes
+    if (['Home','Pendanaan','Tentang','Bantuan'].includes(to.name)) {
+      document.documentElement.style.scrollBehavior = "smooth";
+    } else {
+      document.documentElement.style.scrollBehavior = "unset";
+    }
     if (savedPosition) {
       // If there is a saved position (e.g., using the browser's back button), scroll to that position
       return savedPosition;
