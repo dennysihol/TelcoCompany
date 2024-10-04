@@ -1,13 +1,13 @@
 <template>
   <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel"
        :data-bs-interval="intervalBanner" data-bs-pause="false">
-    <div class="carousel-inner">
+    <div class="carousel-inner-2">
       <div :class="index === 0 ? 'carousel-item active' : 'carousel-item'" v-for="(item, index) in dataBanner" :key="item.id">
         <img :src="item.urlImage" class="d-block w-100" :alt="'home-banner-'+item.id">
       </div>
     </div>
   </div>
-  <section class="ud-hero" id="blog">
+  <section class="ud-hero-2" id="blog">
     <router-view></router-view>
   </section>
 </template>
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped>
-  .carousel-inner {
+  .carousel-inner-2 {
     height: calc(100vh - 18rem);
     overflow: visible;
   }
@@ -57,14 +57,18 @@ export default {
     object-fit: cover;
   }
   @media (max-width: 768px) {
+    .ud-hero-2 {
+        padding-top: 0;
+    }
+    .carousel-inner-2 {
+      height: calc(100vh - 30rem);
+    }
     .carousel-item {
       top: 7rem;
       max-height: 60vh;
-
       img {
         height: 20rem;
       }
-      
       .banner-title {
         padding: 10px;
         font-size: 2rem;

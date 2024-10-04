@@ -231,9 +231,13 @@ export default {
       padding: 10px !important;
     }
   }
-  @media (max-width: 376px) {
-    .card-calculate { 
-      width: 20rem !important;
+  @media (max-width: 391px) {
+    .container-calculate {
+      margin-top: 20rem; 
+      
+      .card-calculate { 
+        width: 100% !important;
+      }
     }
   }
 </style>
