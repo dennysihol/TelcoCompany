@@ -31,16 +31,16 @@
                     <router-link to="/" exact-active-class="active-link">Home</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/pendanaan" exact-active-class="active-link">Pendanaan</router-link>
+                    <router-link to="/funding" exact-active-class="active-link">Pendanaan</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/tentang" exact-active-class="active-link">Tentang Kami</router-link>
+                    <router-link to="/about" exact-active-class="active-link">Tentang Kami</router-link>
                   </li>
                   <li class="nav-item">
                     <router-link to="/blog" exact-active-class="active-link">Blog</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/bantuan" exact-active-class="active-link">Bantuan</router-link>
+                    <router-link to="/help" exact-active-class="active-link">Bantuan</router-link>
                   </li>
                 </ul>
               </div>

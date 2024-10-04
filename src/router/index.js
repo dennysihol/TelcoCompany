@@ -2,7 +2,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/views/Home.vue";
 import Funding from "@/views/Funding.vue";
-import Tentang from "@/views/About.vue";
+import About from "@/views/About.vue";
 import Blog from "@/views/Blog.vue";
 import {
   Article,
@@ -17,14 +17,14 @@ const routes = [
     component: Home,
   },
   {
-    path: "/pendanaan",
-    name: "Pendanaan",
+    path: "/funding",
+    name: "Funding",
     component: Funding,
   },
   {
-    path: "/tentang",
-    name: "Tentang",
-    component: Tentang,
+    path: "/about",
+    name: "About",
+    component: About,
   },
   {
     path: "/blog",
@@ -44,8 +44,8 @@ const routes = [
     ],
   },
   {
-    path: "/bantuan",
-    name: "Bantuan",
+    path: "/help",
+    name: "Help",
     component: Help,
   },
 ];
@@ -56,10 +56,10 @@ const router = createRouter({
   scrollBehavior(to, from, savedPosition) {
 
     // Apply smooth scroll only on specific routes
-    if (['Home','Pendanaan','Tentang','Bantuan'].includes(to.name)) {
-      document.documentElement.style.scrollBehavior = "smooth";
-    } else {
+    if (['Article'].includes(to.name)) {
       document.documentElement.style.scrollBehavior = "unset";
+    } else {
+      document.documentElement.style.scrollBehavior = "smooth";
     }
     if (savedPosition) {
       // If there is a saved position (e.g., using the browser's back button), scroll to that position

@@ -370,6 +370,9 @@ html.smooth-scroll {
 }
 
 @media (max-width: 768px) {
+        .container-article {
+            padding: 0 0 0 0;
+        }
   .card-article {
     margin: 10px;
   }
