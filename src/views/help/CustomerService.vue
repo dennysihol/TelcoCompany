@@ -1,49 +1,57 @@
 <template>
-  <div class="customer-service">
-    <h2>Layanan Pelanggan</h2>
-    <div class="container">
-      <div class="row">
-        <!-- Left Column: Text Content and Image -->
-        <div class="column left">
-          <p>
-            Kami berkomitmen untuk membantu mereka yang tidak dapat mengakses layanan
-            keuangan tradisional melalui teknologi keuangan dan data yang inovatif. Kami
-            terus mencoba untuk membantu mewujudkan impian hidup anda!
-          </p>
-          <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg_customer_services.png?alt=media&token=4741bc2c-61cc-4f2f-962b-3f7d73857ae6" alt="Customer Service" width="600" />
-
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 text-center">
+        <div class="row pb-3">
+          <h2>Layanan Pelanggan</h2>
         </div>
+        <div class="row pb-5">
+          <div class="col-lg-6">
+            <!-- Left Column: Text Content and Image -->
+            <div class="p-3">
+              <p>
+                Kami berkomitmen untuk membantu mereka yang tidak dapat mengakses layanan
+                keuangan tradisional melalui teknologi keuangan dan data yang inovatif. Kami
+                terus mencoba untuk membantu mewujudkan impian hidup anda!
+              </p>
+              <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg_customer_services.png?alt=media&token=4741bc2c-61cc-4f2f-962b-3f7d73857ae6" alt="Customer Service" width="600" />
 
-        <!-- Right Column: Form -->
-        <div class="column right">
-          <form @submit.prevent="sendForm">
-            <div class="form-group select-wrapper">
-              <select
-                  v-model="form.jenis_pengaduan"
-                  :class="{'selected': form.jenis_pengaduan !== ''}"
-                  required
-              >
-                <option value="" disabled selected>Jenis Pengaduan</option>
-                <option value="Kritik / Saran">Kritik / Saran</option>
-                <option value="Pengaduan Pengguna">Pengaduan Pengguna</option>
-              </select>
             </div>
+          </div>
 
-            <div class="form-group">
-              <input type="text" v-model="form.nama" placeholder="Nama Lengkap" required />
+          <div class="col-lg-6">
+            <!-- Right Column: Form -->
+            <div class="p-3">
+              <form @submit.prevent="sendForm">
+                <div class="form-group select-wrapper">
+                  <select
+                      v-model="form.jenis_pengaduan"
+                      :class="{'selected': form.jenis_pengaduan !== ''}"
+                      required
+                  >
+                    <option value="" disabled selected>Jenis Pengaduan</option>
+                    <option value="Kritik / Saran">Kritik / Saran</option>
+                    <option value="Pengaduan Pengguna">Pengaduan Pengguna</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" v-model="form.nama" placeholder="Nama Lengkap" required />
+                </div>
+                <div class="form-group">
+                  <input type="text" v-model="form.telepon" placeholder="No. Telepon" required />
+                </div>
+                <div class="form-group">
+                  <input type="email" v-model="form.email" placeholder="Alamat e-mail" required />
+                </div>
+                <div class="form-group">
+                  <textarea v-model="form.pesan" placeholder="Ketik pesan ..." maxlength="500" required></textarea>
+                  <p>{{ form.pesan.length }}/500</p>
+                </div>
+                <button type="submit">Kirim Pesan</button>
+              </form>
             </div>
-            <div class="form-group">
-              <input type="text" v-model="form.telepon" placeholder="No. Telepon" required />
-            </div>
-            <div class="form-group">
-              <input type="email" v-model="form.email" placeholder="Alamat e-mail" required />
-            </div>
-            <div class="form-group">
-              <textarea v-model="form.pesan" placeholder="Ketik pesan ..." maxlength="500" required></textarea>
-              <p>{{ form.pesan.length }}/500</p>
-            </div>
-            <button type="submit">Kirim Pesan</button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -99,38 +107,38 @@ export default {
   margin-bottom: 30px;
 }
 
-.row {
+/* .row {
   display: flex;
   justify-content: space-between;
   gap: 20px;
-}
+} */
 
-.column {
+/* .column {
   flex: 1;
-}
+} */
 
-.left {
+/* .left {
   padding-right: 40px;
-}
-
+} */
+/* 
 .left p {
   text-align: left;
   margin-bottom: 20px;
   line-height: 1.5;
   color: #555;
-}
-
+} */
+/* 
 .left img {
   display: block;
   max-width: 100%;
   height: auto;
   margin-top: 20px;
-}
+} */
 
 /* Form Section */
-.right {
+/* .right {
   padding: 0;
-}
+} */
 
 .form-group {
   margin-bottom: 15px;
@@ -165,7 +173,7 @@ button:hover {
 }
 
 p {
-  text-align: right;
+  text-align: left;
   color: #555;
 }
 
@@ -175,29 +183,8 @@ p {
     padding: 50px 10px;
   }
 
-  .row {
-    flex-direction: column; /* Stack columns vertically on mobile */
-    gap: 30px;
-  }
-
-  .left {
-    order: 1; /* Ensure the left column (text + image) appears first */
-  }
-
-  .right {
-    order: 2; /* Ensure the right column (form) appears below the left column */
-  }
-
-  .left, .right {
-    padding: 0;
-  }
-
   .customer-service h2 {
     font-size: 1.5em;
-  }
-
-  .left p {
-    font-size: 1em;
   }
 
   .form-group input,
