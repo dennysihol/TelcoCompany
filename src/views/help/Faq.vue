@@ -1,5 +1,5 @@
 <template>
-  <div class="help-page">
+  <div class="help-page pb-5">
     <!-- Container for FAQ and Contact Sections -->
     <div class="row-container">
 
@@ -34,7 +34,7 @@
       <!-- Contact Section -->
       <div class="contact-section">
         <h2 class="section-title">
-          <img src="../../assets/image/ic_telpon_purple.png" alt="icon" class="title-icon" />
+          <img src="@/assets/image/ic_telpon_purple.png" alt="icon" class="title-icon" />
           Hubungi Kami
         </h2>
         <h6 class="section-sub-title">Tidak menemukan yang kamu cari?</h6>
@@ -49,6 +49,14 @@
         <div class="contact-card phone-card">
           <h6>Telepon ke:</h6>
           <p><a href="tel:021-2789-9995">021-2789-9995</a></p>
+        </div>
+        <h2 class="section-title">
+          <img src="@/assets/image/icon-pengaduan.png" alt="icon" class="title-icon" />
+          Hubungi Kami
+        </h2>
+        <div class="contact-card email-card">
+          <h6>Kirim email ke:</h6>
+          <p><a href="mailto:penagihan@stafonfortek.com">penagihan@stanfordtek.com</a></p>
         </div>
       </div>
     </div>

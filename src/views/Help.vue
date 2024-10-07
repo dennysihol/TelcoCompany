@@ -10,18 +10,20 @@
   </div>
   <section class="ud-hero" id="help">
     <Faq/>
+    <UserComplaint/>
     <CustomerService/>
   </section>
 </template>
 
 <script>
-import {Faq, CustomerService} from './help/index.js';
+import {Faq, UserComplaint, CustomerService} from './help/index.js';
 
 export default {
   name: 'Help',
   components: {
     Faq,
-    CustomerService
+    UserComplaint,
+    CustomerService,
   },
   data() {
     return {
