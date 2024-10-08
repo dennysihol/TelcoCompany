@@ -1,8 +1,8 @@
 <template>
-  <div class="container">
+  <div class="container-fluid bg-service-customer">
     <div class="row">
-      <div class="col-lg-10 text-center">
-        <div class="row pb-3">
+      <div class="col-lg-9 text-center">
+        <div class="row pt-3 pb-3">
           <h2>Layanan Pelanggan</h2>
         </div>
         <div class="row pb-5">
@@ -95,6 +95,10 @@ export default {
 </script>
 
 <style scoped>
+.bg-service-customer {
+  background-color: rgba(246, 251, 255, 1);
+}
+
 .customer-service {
   margin: auto;
   padding: 100px 20px;

@@ -7,7 +7,7 @@
       <div class="faq-section">
         <h2 class="section-title">
           <img src="../../assets/image/ic_chat_check.png" alt="icon" class="title-icon" />
-          Hubungi Kami
+          Yang Sering Ditanyakan
         </h2>
 
         <!-- Accordion items -->
@@ -18,9 +18,8 @@
             </div>
             <div class="accordion-content" v-if="faq.open">
               <template v-if="faq.isList">
-                <ol>
-                  <li v-for="(step, stepIndex) in faq.answerList" :key="stepIndex">
-                    {{ step }}
+                <ol class="ps-0">
+                  <li v-for="(step, stepIndex) in faq.answerList" :key="stepIndex" v-html="step">
                   </li>
                 </ol>
               </template>
@@ -78,14 +77,16 @@ export default {
         {
           question: "Bagaimana Cara Mendaftar di PinjamDuit?",
           answerList: [
-            "Unduh Aplikasi: Download aplikasi PinjamDuit dari App Store atau Play Store.",
-            "Masuk ke Aplikasi: Buka aplikasi PinjamDuit.",
-            "Masukkan Nomor Telepon: Masukkan nomor telepon Anda untuk menerima kode OTP.",
-            "Masukkan Kode OTP: Setelah menerima kode OTP, masukkan kode tersebut.",
-            "Isi Informasi Pribadi: Isi informasi pribadi Anda dan klik simpan.",
-            "Masukkan Nomor Kontak Darurat: Masukkan nomor kontak darurat dan klik simpan.",
-            "Informasi E-KTP dan Verifikasi Wajah: Masukkan informasi E-KTP Anda, lakukan verifikasi wajah, dan klik simpan.",
-            "Pilih Rekening Bank: Pilih rekening bank yang akan Anda gunakan dan masukkan nomor rekening Anda, lalu klik simpan.",
+            `<ul style="list-style-type: decimal;">
+              <li>Unduh Aplikasi: Download aplikasi PinjamDuit dari App Store atau Play Store.</li>
+              <li>Masuk ke Aplikasi: Buka aplikasi PinjamDuit.</li>
+              <li>Masukkan Nomor Telepon: Masukkan nomor telepon Anda untuk menerima kode OTP.</li>
+              <li>Masukkan Kode OTP: Setelah menerima kode OTP, masukkan kode tersebut.</li>
+              <li>Isi Informasi Pribadi: Isi informasi pribadi Anda dan klik simpan.</li>
+              <li>Masukkan Nomor Kontak Darurat: Masukkan nomor kontak darurat dan klik simpan.</li>
+              <li>Informasi E-KTP dan Verifikasi Wajah: Masukkan informasi E-KTP Anda, lakukan verifikasi wajah, dan klik simpan.</li>
+              <li>Pilih Rekening Bank: Pilih rekening bank yang akan Anda gunakan dan masukkan nomor rekening Anda, lalu klik simpan.</li>
+            </ul>`,
             "Verifikasi Data: Sistem akan memverifikasi data Anda dan memberikan informasi mengenai limit pinjaman Anda."
           ],
           open: false,
@@ -93,16 +94,18 @@ export default {
         },
         {
           question: "Berapa Limit Pinjaman di PinjamDuit?",
-          answer: "Limit pinjaman berbeda untuk setiap peminjam, mulai dari Rp100.000 hingga Rp20.000.000.",
+          answer: `Limit pinjaman berbeda untuk setiap peminjam, mulai dari Rp100.000 hingga Rp20.000.000.`,
           open: false,
           isList: false
         },
         {
           question: "Bagaimana Cara Membayar Pinjaman ke PinjamDuit?",
           answerList: [
-            "Masuk ke aplikasi PinjamDuit.",
-            "Di halaman utama, klik tombol \"Bayar Sekarang\".",
-            "Anda dapat memilih untuk membayar pinjaman secara bertahap atau sekaligus.",
+            `<ul style="list-style-type: decimal;">
+              <li>Masuk ke aplikasi PinjamDuit.</li>
+              <li>Di halaman utama, klik tombol \"Bayar Sekarang\".</li>
+              <li>Anda dapat memilih untuk membayar pinjaman secara bertahap atau sekaligus.</li>
+            </ul>`
             ],
           open: false,
           isList: true // Indicate this is a list answer
