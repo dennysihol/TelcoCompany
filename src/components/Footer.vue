@@ -351,7 +351,9 @@
 
 import '@/assets/main.css'
 import { ref, onMounted } from 'vue';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap's JS
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap's CSS
+
 
 export default {
     name: 'Footer',
