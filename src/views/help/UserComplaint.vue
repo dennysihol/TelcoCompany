@@ -2,7 +2,7 @@
   <section id="user-complaint" class="user-complaint pb-5">
     <div class="container">
       <div class="row">
-        <div class="col-10 ps-0 pe-0 d-flex flex-column gap-4">
+        <div class="col-10 d-flex flex-column gap-4 content-complaint">
           <div class="row">
             <h3>Pengaduan Pengguna</h3>
           </div>
@@ -59,6 +59,11 @@ export default {
 
 <style scoped>
 .user-complaint {
+
+  .content-complaint {
+    padding: 1.5rem;
+    border: 1px solid rgba(239, 239, 239, 1);
+  }
 
   .description-complaint {
     text-align: justify;

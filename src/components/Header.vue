@@ -11,7 +11,7 @@
             </div>
           </nav>
         </div>
-        <div class="col-lg-10" style="background-color: white; border-bottom-left-radius: 14px; border-bottom-right-radius: 14px;">
+        <div class="col-lg-10" style="background-color: white; border-bottom-left-radius: 14px; border-bottom-right-radius: 14px; box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);">
           <nav class="navbar navbar-expand-lg" style="justify-content: center">
             <button class="navbar-toggler" type="button" @click="toggleNavbar" aria-controls="navbarNav" aria-expanded="isNavbarOpen" aria-label="Toggle navigation">
               <span class="toggler-icon"></span>
