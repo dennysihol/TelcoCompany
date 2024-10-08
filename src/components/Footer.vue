@@ -279,8 +279,10 @@
                     </p><br><br>
                     <div class="otp-container">
                         <input type="text" v-for="(input, index) in otpLength" :key="index" class="otp-input"
-                            :maxlength="1" @input="handleOtpInput($event, index)" :ref="`otpInput${index}`">
+                            :maxlength="1" @input="handleOtpInput($event, index)" :ref="`otpInput${index}`"
+                            :class="{ 'otp-error': otpError }">
                     </div>
+                    <p v-if="otpError" class="error-text">*Kode OTP salah</p>
                     <br>
                     <p>Tidak menerima kode OTP? <a href="#" style="text-decoration: none;">Kirim ulang kode OTP</a> </p>
                     <br>
@@ -356,7 +358,8 @@ export default {
         return {
             phoneNumber: '', // Bound to the input field
             otpLength: 6, // Adjust the OTP length as needed
-            otpValues: [],
+            otpValues: new Array(6).fill(''), // Initialize OTP values as empty
+            otpError: false, // To display an error message when OTP is invalid
         };
     },
     computed: {
@@ -368,7 +371,8 @@ export default {
             return this.maskPhoneNumber(this.phoneNumber);
         },
         isOtpValuesValid() {
-            return this.otpValues.length !== 0 || this.otpValues === undefined;
+            // Ensure all OTP values are filled in (not empty)
+            return this.otpValues.every(value => value !== '');
         },
     },
     methods: {
@@ -393,13 +397,21 @@ export default {
             }
         },
         validateOtp() {
-            // Validate the OTP values here (e.g., compare with a stored OTP)
-            if (this.otpValues.length === this.otpLength && this.otpValues.join('') === '123456') { // Replace '123456' with the actual OTP
-                console.log('OTP is valid');
-                this.openFifthModal();
+            const correctOtp = '123456'; // Replace with your actual OTP for validation
+            if (this.otpValues.join('') === correctOtp) {
+                this.otpError = false;
+                console.log(this.otpError);
+                
+                // Randomly decide whether to open the fifth or sixth modal
+                const randomChoice = Math.random(); // Generate a number between 0 and 1
+                if (randomChoice < 0.5) {
+                    this.openFifthModal(); // Implement this function to open the fifth modal
+                } else {
+                    this.openSixthModal(); // Implement this function to open the sixth modal
+                } // Implement this function to open the next modal
             } else {
-                console.log('OTP is invalid');
-                this.openSixthModal();
+                this.otpError = true; // Implement this function for incorrect OTP case
+                console.log(this.otpError);
             }
         },
     },
@@ -678,5 +690,24 @@ export default {
     font-size: 18px;
     margin: 0 5px;
     background-color: #EAEAEA;
+}
+
+.otp-container input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid #ccc;
+    margin-right: 5px;
+}
+
+.otp-error {
+    border-color: red;
+    color: red;
+}
+
+.error-text {
+    color: red;
+    font-size: 14px;
 }
 </style>

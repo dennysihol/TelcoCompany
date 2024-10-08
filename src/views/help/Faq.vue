@@ -35,7 +35,7 @@
       <div class="contact-section">
         <h2 class="section-title">
           <img src="@/assets/image/ic_telpon_purple.png" alt="icon" class="title-icon" />
-          Hubungi Kami
+          Yang Sering Ditanyakan
         </h2>
         <h6 class="section-sub-title">Tidak menemukan yang kamu cari?</h6>
         <div class="contact-card email-card">
@@ -52,7 +52,7 @@
         </div>
         <h2 class="section-title">
           <img src="@/assets/image/icon-pengaduan.png" alt="icon" class="title-icon" />
-          Hubungi Kami
+          Pengaduan Tagihan
         </h2>
         <div class="contact-card email-card">
           <h6>Kirim email ke:</h6>
