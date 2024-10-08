@@ -63,6 +63,7 @@ export default {
   .content-complaint {
     padding: 1.5rem;
     border: 1px solid rgba(239, 239, 239, 1);
+    border-radius: 8px;
   }
 
   .description-complaint {
