@@ -276,7 +276,7 @@
                     <p class="modal-text">
                         Kode Verifikasi telah dikirimkan via Whatsapp / SMS
                         melalui nomor: <span id="maskedPhone" style="font-weight: bold;">{{ maskedPhoneNumber }}</span>
-                    </p><br><br>
+                    </p><br>
                     <div class="otp-container">
                         <input type="text" v-for="(input, index) in otpLength" :key="index" class="otp-input"
                             :maxlength="1" @input="handleOtpInput($event, index)" :ref="`otpInput${index}`"
@@ -403,8 +403,6 @@ export default {
             const correctOtp = '123456'; // Replace with your actual OTP for validation
             if (this.otpValues.join('') === correctOtp) {
                 this.otpError = false;
-                console.log(this.otpError);
-                
                 // Randomly decide whether to open the fifth or sixth modal
                 const randomChoice = Math.random(); // Generate a number between 0 and 1
                 if (randomChoice < 0.5) {
@@ -414,7 +412,6 @@ export default {
                 } // Implement this function to open the next modal
             } else {
                 this.otpError = true; // Implement this function for incorrect OTP case
-                console.log(this.otpError);
             }
         },
     },
@@ -710,6 +707,8 @@ export default {
 }
 
 .error-text {
+    display: flex;
+    justify-content: flex-end;
     color: red;
     font-size: 14px;
 }
