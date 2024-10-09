@@ -201,6 +201,7 @@ p {
   top: 0px;
 }
 
+
 .navbar {
   padding: 0px 0;
   border-radius: 5px;
@@ -208,6 +209,7 @@ p {
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
+
 
 .navbar-float {
   background-color: #0087ff;
@@ -327,10 +329,19 @@ p {
   }
 }
 
-.navbar-tkb {
-  background-color: #0777da;
-  border-radius: 8px;
-  margin-left: 15px;
+@media only screen and (min-width: 1080px) {
+  .navbar-tkb {
+    background-color: #0777da;
+    border-radius: 8px;
+    margin-left: 15px;
+  }
+}
+
+@media only screen and (max-width: 915px) {
+  .navbar-tkb {
+    background-color: #0777da;
+    border-radius: 8px;
+  }
 }
 
 .navbar-nav .nav-item > a {
@@ -484,7 +495,7 @@ p {
 }
 
 .sticky .navbar-toggler .toggler-icon {
-  background-color: var(--heading-color);
+  background-color: black;
 }
 
 .sticky .navbar-nav .nav-item:hover > a {
@@ -885,7 +896,7 @@ p {
   -ms-flex-pack: justify;
   justify-content: space-evenly;
   margin: 0;
-  background-image: url('../assets/image/bg-submission.png');
+  background-image: url("../assets/image/bg-submission.png");
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 10px;
