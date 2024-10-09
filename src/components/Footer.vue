@@ -136,7 +136,7 @@
                         <div class="ud-widget">
                             <h5 class="ud-widget-title">Download Aplikasi</h5>
                             <div
-                                style="display: flex; flex-wrap: nowrap; justify-content: space-around; position: absolute;">
+                                style="display: flex; flex-wrap: nowrap; justify-content: space-around;">
                                 <a href="https://play.google.com/store/apps/details?id=com.stanfordtek.pinjamduit&hl=id"
                                     target="_blank" class="ud-footer-logo">
                                     <img src="../assets/image/ic_play_store.png" alt="logo" />
