@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row" style="display: flex; justify-content: center;">
                     <div class="col-xl-2 ud-footer-box">
-                        <div class="ud-widget-logo">
+                        <div class="ud-widget-logo" style="display: flex; flex-direction: column;">
                             <a href="/" class="ud-footer-logo">
                                 <img src="../assets/image/ic_pjd_footer.png" alt="logo"
                                     style="height: 50px; margin-bottom: 10px;" />
@@ -15,7 +15,7 @@
                                 Agunan
                             </p>
                         </div>
-                        <div style="height: 20px;">
+                        <div style="height: 20px; margin-bottom: 25px;">
                             <a href="https://www.instagram.com/pinjamduit.idn/" class="ud-footer-logo-2"
                                 target="_blank">
                                 <img src="../assets/image/ic_ig.png" alt="logo" />
