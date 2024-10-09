@@ -139,12 +139,12 @@
                                 style="display: flex; flex-wrap: nowrap; justify-content: space-around; position: absolute;">
                                 <a href="https://play.google.com/store/apps/details?id=com.stanfordtek.pinjamduit&hl=id"
                                     target="_blank" class="ud-footer-logo">
-                                    <img src="../assets/image/ic_play_store.png" alt="logo" style="height: 50px;" />
+                                    <img src="../assets/image/ic_play_store.png" alt="logo" />
                                 </a>
                                 <a href="https://apps.apple.com/id/app/pinjamduit-kta-dana-cepat/id6476541604"
                                     target="_blank" class="ud-footer-logo">
                                     <img src="../assets/image/ic_app_store.png" alt="logo"
-                                        style="height: 50px; margin-left: 10px;" />
+                                        style="margin-left: 10px;" />
                                 </a>
                             </div>
 
