@@ -135,16 +135,14 @@
                     <div class="col-xl-2 ud-footer-box">
                         <div class="ud-widget">
                             <h5 class="ud-widget-title">Download Aplikasi</h5>
-                            <div
-                                style="display: flex; flex-wrap: nowrap; justify-content: space-around;">
+                            <div style="display: flex; flex-wrap: nowrap; justify-content: space-around;">
                                 <a href="https://play.google.com/store/apps/details?id=com.stanfordtek.pinjamduit&hl=id"
                                     target="_blank" class="ud-footer-logo">
                                     <img src="../assets/image/ic_play_store.png" alt="logo" />
                                 </a>
                                 <a href="https://apps.apple.com/id/app/pinjamduit-kta-dana-cepat/id6476541604"
                                     target="_blank" class="ud-footer-logo">
-                                    <img src="../assets/image/ic_app_store.png" alt="logo"
-                                        style="margin-left: 10px;" />
+                                    <img src="../assets/image/ic_app_store.png" alt="logo" style="margin-left: 10px;" />
                                 </a>
                             </div>
 
@@ -639,6 +637,13 @@ export default {
 .modal-lg {
     max-width: calc(30% - 80px);
     max-height: calc(100% - 80px);
+}
+
+@media (max-width: 1080px) {
+    .modal-lg {
+        max-width: calc(100%);
+        max-height: calc(100% - 80px);
+    }
 }
 
 .modal-text {
