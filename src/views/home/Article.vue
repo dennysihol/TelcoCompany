@@ -1,6 +1,6 @@
 <template>
     <section id="article" class="position-relative bg-article">
-        <div class="container container-article position-relative vh-100">
+        <div class="container container-article position-relative overflow-hidden">
             <div class="row">
                 <div class="col-lg-10 article-gap pb-5">
                     <div class="d-flex gap-3 justify-content-center mb-3">

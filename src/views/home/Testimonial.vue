@@ -6,7 +6,7 @@
           <div class="mb-2 fs-20">Testimonial</div>
           <div class="title fs-20">Apa yang mereka katakan tentang kami</div>
         </div>
-        <div class="col-xl-9 col-md-8 col-sm-6">
+        <div class="col-xl-9 col-md-8 col-sm-6 overflow-hidden">
           <div class="row w-sm-24">
             <swiper
                 :slidesPerView="2"
