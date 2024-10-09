@@ -1,11 +1,11 @@
 <template>
-  <section id="business-partners" class="container mt-5 d-flex justify-content-center partner-section ps-0 pe-0">
+  <section id="business-partners" class="container mt-5 d-flex justify-content-center partner-section ps-0 pe-0 mb-3">
     <div class="col-10">
       <div class="row d-flex justify-content-between">
         <div class="col-md-3 col-sm-3 pb-3">
           <div class="title fs-20">Mitra Bisnis Kami</div>
         </div>
-        <div class="col-xl-9 col-md-8 col-sm-6">
+        <div class="col-xl-9 col-md-8 col-sm-6 overflow-hidden">
           <div class="row w-sm-24">
             <swiper
                 :slidesPerView="4"

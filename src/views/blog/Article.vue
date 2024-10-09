@@ -1,6 +1,6 @@
 <template>
   <section id="blog" class="position-relative bg-blog">
-    <div class="container container-article position-relative">
+    <div class="container container-article position-relative overflow-hidden">
       <div class="row">
         <div class="col-lg-10 article-gap">
           <div class="d-flex gap-3 justify-content-center mb-3">
@@ -257,18 +257,6 @@ export default {
 }
 </script>
 <style scoped>
-/* Global CSS file (e.g., App.vue, main.css, or main.scss) */
-
-/* Default scroll behavior */
-html {
-  scroll-behavior: auto; /* Instant scrolling for all pages */
-}
-
-/* Smooth scroll behavior for specific routes */
-html.smooth-scroll {
-  scroll-behavior: unset; /* Apply smooth scrolling only when this class is present */
-}
-
 .bg-blog {
   background: none;
   z-index: 1;

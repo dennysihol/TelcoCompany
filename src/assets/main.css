@@ -188,21 +188,17 @@ p {
 /* ===== Header CSS ===== */
 .ud-header {
   position: absolute;
-  top: 0;
+  top: 20px;
   left: 0;
   width: 100%;
   z-index: 99;
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-  padding-top: 20px;
 }
 
 .sticky {
   position: fixed;
-  z-index: 99;
-  -webkit-transition: all 0.3s ease-out 0s;
-  transition: all 0.3s ease-out 0s;
-  padding-top: 0px;
+  top: 0px;
 }
 
 .navbar {
