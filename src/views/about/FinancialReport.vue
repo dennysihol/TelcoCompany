@@ -152,4 +152,10 @@ export default {
         cursor: pointer;
     }
 }
+
+.card-text {
+    font-family: 'Poppins';
+    color: #0d6efd;
+    text-decoration: underline;
+}
 </style>
