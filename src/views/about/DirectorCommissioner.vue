@@ -4,7 +4,8 @@
       <h1 style="margin-top: 20px; margin-left: 20px;">Direksi</h1>
       <div class="row d-flex justify-content-center gap-5">
         <div class="col-md-3" v-for="item in dataDirector" :key="item.id">
-          <div class="card-article2 d-flex flex-column pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="selectedProfile(item)">
+          <div class="card-article2 d-flex flex-column pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            @click="selectedProfile(item)">
             <div class="card-article-image">
               <img :src="item.urlImage" class="w-100" alt="item-article-1">
             </div>
@@ -56,7 +57,8 @@
       <h1 style="margin-top: 20px; margin-left: 20px;">Komisaris</h1>
       <div class="row d-flex justify-content-center gap-5">
         <div class="col-md-3" v-for="item in dataCommissioner" :key="item.id">
-          <div class="card-article2 d-flex flex-column pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="selectedProfile(item)">
+          <div class="card-article2 d-flex flex-column pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            @click="selectedProfile(item)">
             <div class="card-article-image">
               <img :src="item.urlImage" class="w-100" alt="item-article-1">
             </div>
@@ -106,42 +108,47 @@
   </div>
 
   <!-- modal -->
-  <div class="modal fade modal-info-profile" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" ref="myModal">
+  <div class="modal fade modal-info-profile" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" ref="myModal">
     <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content border-radius-8">
-            <div class="modal-body p-0">
-                <div class="row fs-14">
-                    <div class="col-lg-3 p-5 border-radius-8" style="background-color: rgba(246, 251, 255, 1)">
-                        <img class="image-profile" :src="dataSelected.urlImage" alt="img-1">
-                        Nama :
-                        <div class="fw-bold">{{ dataSelected.name }}</div>
-                        Kewarganegaraan :
-                        <div class="fw-bold">{{ dataSelected.citizenship }}</div>
-                    </div>
-                    <div class="col-lg-9 p-5 border-radius-8 position-relative">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        <ul class="ps-0">
-                            <li class="list-style-none fw-bold">Penunjukan</li>
-                            <ul :class="dataSelected.appointment.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
-                                <li :class="dataSelected.appointment.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.appointment">{{ item }}</li>
-                            </ul>
-                            <li class="list-style-none fw-bold">Pendidikan</li>
-                            <ul :class="dataSelected.education.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
-                                <li :class="dataSelected.education.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.education">{{ item }}</li>
-                            </ul>
-                            <li class="list-style-none fw-bold">Pengalaman kerja</li>
-                            <ul :class="dataSelected.experience.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
-                                <li :class="dataSelected.experience.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.experience">{{ item }}</li>
-                            </ul>
-                            <li class="list-style-none fw-bold">Hubungan afiliasi</li>
-                            <ul :class="dataSelected.affiliateRelationships.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
-                                <li :class="dataSelected.affiliateRelationships.length == 1 ? 'list-style-none' : ''" v-for="item in dataSelected.affiliateRelationships">{{ item }}</li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
+      <div class="modal-content border-radius-8">
+        <div class="modal-body p-0">
+          <div class="row fs-14">
+            <div class="col-lg-3 p-5 border-radius-8" style="background-color: rgba(246, 251, 255, 1)">
+              <img class="image-profile" :src="dataSelected.urlImage" alt="img-1">
+              Nama :
+              <div class="fw-bold">{{ dataSelected.name }}</div>
+              Kewarganegaraan :
+              <div class="fw-bold">{{ dataSelected.citizenship }}</div>
             </div>
+            <div class="col-lg-9 p-5 border-radius-8 position-relative">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <ul class="ps-0">
+                <li class="list-style-none fw-bold">Penunjukan</li>
+                <ul :class="dataSelected.appointment.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.appointment.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.appointment">{{ item }}</li>
+                </ul>
+                <li class="list-style-none fw-bold">Pendidikan</li>
+                <ul :class="dataSelected.education.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.education.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.education">{{ item }}</li>
+                </ul>
+                <li class="list-style-none fw-bold">Pengalaman kerja</li>
+                <ul :class="dataSelected.experience.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.experience.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.experience">{{ item }}</li>
+                </ul>
+                <li class="list-style-none fw-bold">Hubungan afiliasi</li>
+                <ul :class="dataSelected.affiliateRelationships.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.affiliateRelationships.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.affiliateRelationships">{{ item }}</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
   </div>
 </template>
@@ -161,12 +168,14 @@ export default {
           "role": "Direktur Utama",
           "citizenship": "Indonesia",
           "appointment": [
-            "Akta Pernyataan Keputusan Para Pemegang Saham No.2 Tanggal 25 April 2022",
+            "Akta Pernyataan Keputusan Para Pemegang Saham Nomor 1 Tanggal 25 Juni 2024",
           ],
           "education": [
-            "PhD (S3) in Strategic Management, Universal Institute of Professional Management (2022)",
-            "Master (S2) of Business Administration, Calwest University (2021)",
-            "Magister (S2) Manajemen jurusan Manajemen Strategik, STIE IPWIJA Jakarta (2015)",
+            "Doctor in Business Administration, Philippine Women's University (2024)",
+            "Magister Hukum, STIH IBLAM, Jakarta (2022)",
+            "Master of Business Administration, Calwest University (2021)",
+            "Magister Manajemen, STIE IPWIJA, Jakarta (2015)"
+
           ],
           "experience": [
             "Direktur Utama di PT Stanford Teknologi Indonesia (2020-2022)",
@@ -187,7 +196,7 @@ export default {
           "role": "Direktur",
           "citizenship": "Turki",
           "appointment": [
-            "Akta Pernyataan Keputusan Para Pemegang Saham No.2 Tanggal 25 April 2022",
+            "Akta Pernyataan Keputusan Para Pemegang Saham Nomor 1 Tanggal 25 Juni 2024",
           ],
           "education": [
             "Sarjana Ekonomi jurusan Ekonomi Dunia, Universitas Fudan, Shanghai (2005)",
@@ -217,7 +226,7 @@ export default {
           "role": "Komisaris",
           "citizenship": "Indonesia",
           "appointment": [
-            "Akta Pernyataan Keputusan Para Pemegang Saham No.2 Tanggal 25 April 2022",
+            "Akta Pernyataan Keputusan Para Pemegang Saham Nomor 1 Tanggal 25 Juni 2024",
           ],
           "education": [
             "Doctor (S3) Jurusan Psikologi Forensik, Illinois State University (2024)",
@@ -328,7 +337,6 @@ export default {
     margin-top: 10px;
     font-weight: 700;
     font-size: 16px;
-    width: 14rem;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -345,29 +353,36 @@ export default {
 }
 
 .border-radius-8 {
-    border-radius: 8px;
+  border-radius: 8px;
 }
+
 .modal-info-profile {
-    ul {
-      list-style-type: disc;
+  ul {
+    list-style-type: disc;
 
-      .list-style-none{
-          list-style-type: none;
-      }
+    .list-style-none {
+      list-style-type: none;
     }
+  }
 
 
-    .image-profile {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-    }
-    
-    .btn-close {
-        position: absolute;
-        top: 1rem;
-        right: 1.8rem;
-    }
+  .image-profile {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .p-5 {
+    padding: 1rem !important;
+  }
 }
 </style>

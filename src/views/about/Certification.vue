@@ -9,8 +9,8 @@
             </div>
         </div>
         <div style="padding: 45px 38px 0 38px; text-align: center;">
-            <h3>PinjamDuit telah bergabung dan terdaftar sebagai anggota Asosiasi Fintech <br> Indonesia (AFTECH) dan
-                Asosiasi Fintech Pendanaan Bersama Indonesia (AFPI)</h3>
+            <h3>PinjamDuit merupakan anggota terdaftar Asosiasi Fintech Indonesia (AFTECH) dan Asosiasi Fintech
+                Pendanaan Bersama Indonesia (AFPI)</h3>
         </div>
     </div>
     <div class="content-section2 mt-5">
@@ -20,7 +20,8 @@
             </div>
         </div>
         <div style="padding: 45px 38px 0 38px; text-align: center;">
-            <h3>PinjamDuit telah mendapatkan Sertifikasi ISO 27001:2022 untuk Sistem <br> Manajemen Keamanan Informasi</h3>
+            <h3>PinjamDuit telah mendapatkan Sertifikasi ISO 27001:2022 untuk Sistem <br> Manajemen Keamanan Informasi
+            </h3>
         </div>
     </div>
     <div class="content-section2 mt-5">
@@ -33,7 +34,7 @@
             <h3>PinjamDuit telah terintegrasi dengan Sistem Fintech Data Center AFPI</h3>
         </div>
     </div>
-    
+
 </template>
 
 <script>
@@ -81,13 +82,13 @@ export default {
 </script>
 <style scoped>
 .content-section2 {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 0 0 30px 0;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 0 0 30px 0;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 </style>

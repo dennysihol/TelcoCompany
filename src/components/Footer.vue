@@ -47,16 +47,16 @@
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
-                                    <a href="/pendanaan">Pendanaan</a>
+                                    <a href="/funding">Pendanaan</a>
                                 </li>
                                 <li>
-                                    <a href="/tentang">Tentang Kami</a>
+                                    <a href="/about">Tentang Kami</a>
                                 </li>
                                 <li>
                                     <a href="/blog">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="/bantuan">Bantuan</a>
+                                    <a href="/help">Bantuan</a>
                                 </li>
                             </ul>
                         </div>
@@ -95,15 +95,13 @@
                             &nbsp;
                             <span style="color: white;">Konsultasi karir:
                             </span>
-                            <a href="mailto:hr@stanfordtek.com"
-                                style="color: white;margin-left: 33px; text-decoration: none;">hr@stanfordtek.com </a>
+                            <a href="mailto:hr@stanfordtek.com" class="mail-footer">hr@stanfordtek.com </a>
                             <br>
                             <img src="../assets/image/ic_mail.png" height="15" />
                             &nbsp;
                             <span style="color: white;">Konsultasi bisnis:
                             </span>
-                            <a href="mailto:commercial@stanfordtek.com"
-                                style="color: white;margin-left: 33px; text-decoration: none;">commercial@stanfordtek.com
+                            <a href="mailto:commercial@stanfordtek.com" class="mail-footer">commercial@stanfordtek.com
                             </a>
 
                         </div>
@@ -125,6 +123,9 @@
                                 </li>
                                 <li>
                                     <a href="#">Publikasi Penanganan Pengaduan</a>
+                                </li>
+                                <li>
+                                    <a href="/whistleblowing">Whistleblowing</a>
                                 </li>
                                 <li>
                                     <a href="#" @click.prevent="openFirstModal">Pengajuan Penghapusan Akun</a>
@@ -716,5 +717,27 @@ export default {
     justify-content: flex-end;
     color: red;
     font-size: 14px;
+}
+
+.mail-footer {
+    color: white;
+    margin-left: 33px;
+    text-decoration: none;
+}
+
+@media (max-width: 1399px) {
+    .mail-footer {
+        color: white;
+        margin-left: 0px;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 1199px) {
+    .mail-footer {
+        color: white;
+        margin-left: 5px;
+        text-decoration: none;
+    }
 }
 </style>

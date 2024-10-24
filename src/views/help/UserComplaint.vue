@@ -28,7 +28,7 @@
 
               <ul>
                 <li>Jika keluhan, kritik, saran, permintaan tidak membutuhkan tindak lanjut, maka team Customer Service dapat segera memberikan Informasi, saran atau solusi langsung kepada knsumen.</li>
-                <li>Apabila keluhan, kritik, saran dan permintaan membutuhkan tindak lanjut. Maka team Customer Service akan melakukan investigasi dan meninklanjuti keluhan, kritik, saran dan permintaan konsumen terlebih dahulu. Hal ini membutuhkan waktu lebih.</li>
+                <li>Apabila keluhan, kritik, saran dan permintaan membutuhkan tindak lanjut, maka team Customer Service akan melakukan investigasi dan menindaklanjuti keluhan, kritik, saran dan permintaan konsumen terlebih dahulu. Hal ini membutuhkan waktu lebih.</li>
                 <li>Terkait point. 2, jika team Customer Service sudah mendapatkan hasil dari investigasi, maka team Customer Service langsung memberikan informasi kepada konsumen. Berikut alur layanan pengaduan konsumen sampai penyelesaian pengaduan PinjamDuit.</li>
               </ul>
 

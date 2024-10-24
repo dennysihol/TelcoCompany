@@ -39,7 +39,7 @@
         <h6 class="section-sub-title">Tidak menemukan yang kamu cari?</h6>
         <div class="contact-card email-card">
           <h6>Kirim email ke:</h6>
-          <p><a href="mailto:cs@stafonfortek.com">cs@stafonfortek.com</a></p>
+          <p><a href="mailto:cs@stanfordtek.com">cs@stanfordtek.com</a></p>
         </div>
         <div class="contact-card whatsapp-card">
           <h6>Whatsapp ke:</h6>
@@ -51,11 +51,11 @@
         </div>
         <h2 class="section-title">
           <img src="@/assets/image/icon-pengaduan.png" alt="icon" class="title-icon" />
-          Pengaduan Tagihan
+          Layanan Pengguna
         </h2>
         <div class="contact-card email-card">
           <h6>Kirim email ke:</h6>
-          <p><a href="mailto:penagihan@stafonfortek.com">penagihan@stanfordtek.com</a></p>
+          <p><a href="mailto:cs@stanfordtek.com">cs@stanfordtek.com</a></p>
         </div>
       </div>
     </div>

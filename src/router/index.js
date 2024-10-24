@@ -4,6 +4,7 @@ import Home from "@/views/Home.vue";
 import Funding from "@/views/Funding.vue";
 import About from "@/views/About.vue";
 import Blog from "@/views/Blog.vue";
+import Whistleblowing from "@/views/Whistleblowing.vue";
 import {
   Article,
   BlogDetail
@@ -47,6 +48,11 @@ const routes = [
     path: "/help",
     name: "Help",
     component: Help,
+  },
+  {
+    path: "/whistleblowing",
+    name: "Whistleblowing",
+    component: Whistleblowing,
   },
 ];
 
