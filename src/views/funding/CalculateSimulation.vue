@@ -32,9 +32,20 @@
               <div class="pt-3 pb-3">
                 <div class="hr"></div>
               </div>
-              <div class="d-flex flex-row justify-content-between fw-semibold">
-                <div class="fw-medium fs-14">Lama Pinjaman</div>
-                <div class="fw-bold fs-18">150 Hari</div>
+              <div class="row d-flex flex-row justify-content-between fw-semibold ps-0 pe-0">
+                <div class="col-lg-6 fw-medium fs-14">Lama Pinjaman</div>
+                <div class="col-lg-6 fw-bold fs-18 d-flex flex-row justify-content-between">
+                  <label class="radio-container" @click="handleLoanPeriod(5)">
+                    <input type="radio" name="loan-period" checked/>
+                    <span class="custom-radio"></span>
+                    <span class="fw-bold fs-18">150 Hari</span>
+                  </label>
+                  <label class="radio-container" @click="handleLoanPeriod(6)">
+                    <input type="radio" name="loan-period" />
+                    <span class="custom-radio"></span>
+                    <span class="fw-bold fs-18">180 Hari</span>
+                  </label>
+                </div>
               </div>
               <div class="d-flex flex-row justify-content-between fw-semibold">
                 <div class="fw-medium fs-14">Bunga</div>
@@ -44,7 +55,7 @@
                 <div class="hr"></div>
               </div>
               <div class="d-flex flex-row justify-content-between fw-semibold">
-                <div class="fw-medium fs-14 w-18-rm">Jumlah yang harus dibayarkan (Termasuk bunga)</div>
+                <div class="fw-medium fs-14 w-18-rm">Estimasi Jumlah yang harus dibayarkan (Termasuk bunga)</div>
                 <div class="fw-bold fs-18 w-18-rm text-end">Rp. {{ formatNumber(totalPay) }} / Bulan</div>
               </div>
               <div class="pt-3 pb-3">
@@ -90,7 +101,7 @@ export default {
         this.sliderBackground = `linear-gradient(to right, rgba(0, 135, 255, 1) ${percentage}%, rgba(230, 243, 255, 1) ${percentage}%)`;
         this.percentageSumRepaymentBorrower = this.percentagePlatformFee + this.percentagePPN + this.percentageBorrower;
         this.percentageSumwithoutPPN = this.percentagePlatformFee + this.percentageBorrower;
-        this.totalPay = (this.percentageSumwithoutPPN * this.rangeValue) / this.periodOfMonth;
+        this.totalPay = Math.round((this.percentageSumwithoutPPN * this.rangeValue) / this.periodOfMonth);
         this.updateThumbColor();
       },
       onHoldRangeValue() {
@@ -104,6 +115,10 @@ export default {
       updateThumbColor() {
         const boxShadow = this.isHeldSlider ? '0px 0px 10px 0px rgba(0, 0, 0, 0.25)' : 'none';
         this.$refs.range.style.setProperty('--thumb-box-shadow', boxShadow);
+      },
+      handleLoanPeriod(period) {
+        this.periodOfMonth = period;
+        this.updateSliderBackground();
       },
       formatNumber(value) {
         // Use a regular expression to add thousand separators
@@ -191,7 +206,7 @@ export default {
         border-radius: 8px;
 
         .inputRange {
-          /* -webkit-appearance: none; */
+          -webkit-appearance: none;
           width: 100%;
           height: 10px;
           background: rgba(230, 243, 255, 1);
@@ -219,6 +234,72 @@ export default {
           background-color: blue;
           cursor: pointer;
         }
+      }
+      
+      /* Hide the default radio input */
+      input[type="radio"] {
+        display: none;
+      }
+
+      /* Container for custom radio button */
+      .radio-container {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      /* Custom radio button circle */
+      .custom-radio {
+        width: 20px;
+        height: 20px;
+        border: none;
+        border-radius: 50%;
+        position: relative;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+        background-color: rgba(230, 243, 255, 1);
+      }
+      
+      .custom-radio::before {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: rgba(176, 218, 255, 1);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.2s ease;
+      }
+
+      /* Inner dot when radio is selected */
+      .custom-radio::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: rgba(0, 135, 255, 1);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.2s ease;
+      }
+      
+      /* the radio input*/
+      input[type="radio"] + .custom-radio::before {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      /* When the radio input is checked */
+      input[type="radio"]:checked + .custom-radio::after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      
+      /* Label styling */
+      .radio-label {
+        font-size: 16px;
       }
     }
   }
