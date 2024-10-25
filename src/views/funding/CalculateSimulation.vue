@@ -206,7 +206,6 @@ export default {
         border-radius: 8px;
 
         .inputRange {
-          -webkit-appearance: none;
           width: 100%;
           height: 10px;
           background: rgba(230, 243, 255, 1);

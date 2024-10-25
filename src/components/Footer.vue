@@ -111,7 +111,7 @@
                             <h5 class="ud-widget-title">Lainnya</h5>
                             <ul class="ud-widget-links">
                                 <li>
-                                    <a href="https://api.pinjamduit.co.id/h5/logonClause.html" target="_blank">Syarat &
+                                    <a href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FSyarat%20dan%20Ketentuan%20PT%20Stanford%20Teknologi%20Indonesia.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" target="_blank">Syarat &
                                         Ketentuan</a>
                                 </li>
                                 <li>
