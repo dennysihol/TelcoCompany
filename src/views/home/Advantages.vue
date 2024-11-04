@@ -1,7 +1,8 @@
 <template>
     <section id="advantages" class="position-relative">
         <div class="position-absolute top-0 start-0 w-100 h-100">
-            <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-advantages.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" class="d-block w-100 bg-advantages" alt="bg-advantages">
+            <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-advantages.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                class="d-block w-100 bg-advantages" alt="bg-advantages">
         </div>
         <div class="container position-relative vh-100">
             <div class="row" style="padding-top: 5rem;">
@@ -53,12 +54,14 @@
                         <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
                                 <div class="col-4 advantages-logo">
-                                    <img src="@/assets/image/item-advantages-4.png" alt="item-advantages-4">
+                                    <img src="@/assets/image/item-advantages-4.png" alt="item-advantages-4" style="width: 90%;"
                                 </div>
                                 <div class="col-8 advantages-body">
-                                    <div class="fw-bold">Bunga</div>
+                                    <div class="fw-bold">Total Biaya <br>
+                                        <span style="font-size: 14px; font-weight: bold;">(Bunga + biaya layanan)</span>
+                                    </div>
                                     <ul class="list-desc">
-                                        <li>Suku bunga harian sebesar 0,3%</li>
+                                        <li>Total biaya max 0.3% per hari</li>
                                     </ul>
                                 </div>
                             </div>
@@ -75,49 +78,55 @@ export default {
 }
 </script>
 <style scoped>
-    .bg-advantages {
-        object-fit: cover;
-        height: 100%;
-    }
-    .advantages-row {
-        padding: 0 1rem 0rem 1rem;
-    }
-    .card-advantages {
-        background: rgba(255, 255, 255, 1);
-        border-radius: 10px;
-        border: 1px solid rgba(231, 244, 254, 1);
-        height: auto;
-        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
-        margin-bottom: 1rem;
+.bg-advantages {
+    object-fit: cover;
+    height: 100%;
+}
 
-        .advantages-logo {
-            align-content: center;
-            padding-right: 0px;
-            padding-left: 20px;
-        }
-        .advantages-body {
-            padding: 10px;
-            align-content: center;
-            
-            .list-desc {
-                font-size: 14px;
-                padding: 0 10px 0 0;
-            }
+.advantages-row {
+    padding: 0 1rem 0rem 1rem;
+}
+
+.card-advantages {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    border: 1px solid rgba(231, 244, 254, 1);
+    height: auto;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+
+    .advantages-logo {
+        align-content: center;
+        padding-right: 0px;
+        padding-left: 20px;
+    }
+
+    .advantages-body {
+        padding: 10px;
+        align-content: center;
+
+        .list-desc {
+            font-size: 14px;
+            padding: 0 10px 0 0;
         }
     }
-    @media (min-width: 992px) {
-        .advantages-gap {
-            display: flex;
-            flex-direction: column;
-            gap: 5rem;
-        }
-        .advantages-row-1 {
-            padding: 0 5rem 0 5rem !important;
-        }
+}
+
+@media (min-width: 992px) {
+    .advantages-gap {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
     }
-    @media (max-width: 768px) {
-        .advantages-logo {
-            width: 6rem;
-        }
+
+    .advantages-row-1 {
+        padding: 0 5rem 0 5rem !important;
     }
+}
+
+@media (max-width: 768px) {
+    .advantages-logo {
+        width: 6rem;
+    }
+}
 </style>

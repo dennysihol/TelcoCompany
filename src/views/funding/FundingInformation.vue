@@ -30,19 +30,19 @@ export default {
         {
           "id": 2,
           "title": "Keunggulan",
-          "description": "PinjamDuit menghadirkan proses pinjaman yang cepat, mudah, aman, dan terpercaya, memberikan pengalaman terbaik bagi setiap pengguna!",
+          "description": "Pengajuan pinjaman kapan saja dan dimana saja, dengan proses mudah dan cepat, dan pencairan dana langsung dalam waktu 1 jam!",
           "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-advantages-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
         },
         {
           "id": 3,
           "title": "Layanan",
-          "description": "Kami menyediakan layanan berkualitas dengan pinjaman yang cepat dan aman, serta dukungan pelanggan yang responsif, menjadikan pengguna PinjamDuit  sebagai prioritas kami.",
+          "description": "Layanan yang aman dan terpercaya, memastikan semua informasi dan proses dapat diakses dengan mudah dan cepat dengan perlindungan ISO 27001/20022",
           "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-advantages-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
         },
         {
           "id": 4,
           "title": "Bunga",
-          "description": "Bunga yang kompetitif dan terjangkau sebesar 0,3% per hari, dengan jangka waktu pengembalian selama 150 hari.",
+          "description": "Bunga yang kompetitif dan terjangkau, maksimal 0,3% per hari, dengan jangka waktu pengembalian selama 150 - 180 hari.",
           "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-advantages-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
         },
       ]

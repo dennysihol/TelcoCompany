@@ -150,7 +150,6 @@ export default {
 }
 
 .swiper-slide img {
-  max-width: 177px; /* Adjust the size of the logos */
   max-height: 56px;
   object-fit: contain;
 }

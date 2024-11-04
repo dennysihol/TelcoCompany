@@ -344,6 +344,13 @@ p {
   }
 }
 
+@media only screen and (max-width: 1079px) {
+  .navbar-tkb {
+    background-color: #0777da;
+    border-radius: 8px;
+  }
+}
+
 .navbar-nav .nav-item > a {
   font-size: 16px;
   font-weight: 500;
