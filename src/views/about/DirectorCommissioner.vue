@@ -178,7 +178,7 @@ export default {
 
           ],
           "experience": [
-            "Direktur Utama di PT Stanford Teknologi Indonesia (2020-2022)",
+            "Direktur Utama di PT Stanford Teknologi Indonesia (2020-Sekarang)",
             "Komisaris di PT Stanford Teknologi Indonesia (2019-2020)",
             "Komisaris Utama di PT Stanford Teknologi Indonesia (2018-2019)",
             "Komisaris di PT Stanford Teknologi Indonesia (2017-2018)",
@@ -202,7 +202,7 @@ export default {
             "Sarjana Ekonomi jurusan Ekonomi Dunia, Universitas Fudan, Shanghai (2005)",
           ],
           "experience": [
-            "Direktur di PT Stanford Teknologi Indonesia (2020-2022)",
+            "Direktur di PT Stanford Teknologi Indonesia (2020-Sekarang)",
             "Direktur Utama di PT Stanford Teknologi Indonesia (2018-2020)",
             "Direktur di PT Recome Teknologi Indonesia (2019- sekarang)",
             "Direktur di PT Stanford Teknologi Indonesia (2017-2018)",
@@ -235,6 +235,7 @@ export default {
             "Sarjana (S1) Jurusan Psikologi, Universitas Padjadjaran Bandung (2007)",
           ],
           "experience": [
+            "Komisaris di PT Stanford Teknologi Indonesia (2022-Sekarang)",
             "Founder PT Hijau Sentosa Bersama (2021 - Sekarang)",
             "Head of HRD di PT Stanford Teknologi Indonesia (2019- 2021)",
             "Founder PT Hijau Sentosa Abadi (2017 - Sekarang)",
