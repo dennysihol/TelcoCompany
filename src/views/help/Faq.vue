@@ -38,7 +38,7 @@
         </h2>
         <h6 class="section-sub-title">Tidak menemukan yang kamu cari?</h6>
         <div class="contact-card email-card">
-          <h6>Kirim email ke:</h6>
+          <h6>Layanan Pengguna:</h6>
           <p><a href="mailto:cs@stanfordtek.com">cs@stanfordtek.com</a></p>
         </div>
         <div class="contact-card whatsapp-card">
