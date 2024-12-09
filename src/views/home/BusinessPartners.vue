@@ -127,6 +127,10 @@ export default {
           "id": 12,
           "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_12.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         },
+        {
+          "id": 13,
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_13.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        },
       ],
       loading: false,
       error: null,

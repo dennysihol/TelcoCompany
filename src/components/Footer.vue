@@ -111,7 +111,7 @@
                             <h5 class="ud-widget-title">Lainnya</h5>
                             <ul class="ud-widget-links">
                                 <li>
-                                    <a href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FSyarat%20dan%20Ketentuan%20PT%20Stanford%20Teknologi%20Indonesia.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" target="_blank">Syarat &
+                                    <a href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fupdated%20syarat%20dan%20ketentuan%202024.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" target="_blank">Syarat &
                                         Ketentuan</a>
                                 </li>
                                 <li>
@@ -176,7 +176,7 @@
                 <div class="modal-body">
                     <p style="font-size: 12px; line-height: 17px;">
                         Setelah hapus akun, seluruh data (data pribadi dan data transaksi) Anda akan terhapus. Proses
-                        Penghapusan atau Pemusnahan Akun Anda tunduk pada peraturan hukum yang berlaku di
+                        Penghapusan Akun Anda tunduk pada peraturan hukum yang berlaku di
                         Indonesia.<br><br>
 
                         1. Perhatian, setelah berhasil hapus akun, Anda tidak dapat melakukan registrasi ulang selama 15
