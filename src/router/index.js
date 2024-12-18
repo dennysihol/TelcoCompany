@@ -7,6 +7,7 @@ import Blog from "@/views/Blog.vue";
 import Whistleblowing from "@/views/Whistleblowing.vue";
 import {
   Article,
+  BlogForm,
   BlogDetail
 } from '@/views/blog/index.js';
 import Help from "@/views/Help.vue";
@@ -36,6 +37,11 @@ const routes = [
         path: "", // Child route without a leading "/"
         name: "Article",
         component: Article, // Separate component for individual blog post
+      },
+      {
+        path: "form", // Child route without a leading "/"
+        name: "BlogForm",
+        component: BlogForm, // Separate component for individual blog post
       },
       {
         path: ":id/:title", // Child route without a leading "/"

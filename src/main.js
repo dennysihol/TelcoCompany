@@ -18,10 +18,14 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 /* add icons to the library */
 library.add(faChevronLeft,faChevronRight)
 
+import { QuillEditor } from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
 
 
 const app = createApp(App);
 
 app.component('font-awesome-icon', FontAwesomeIcon)
+app.component('QuillEditor', QuillEditor)
 app.use(router);
 app.mount('#app');
