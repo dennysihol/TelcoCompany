@@ -327,6 +327,11 @@
             Selanjutnya
           </button>
         </div>
+        <loading
+          v-model:active="isLoading"
+          :can-cancel="false"
+          :is-full-page="fullPage"
+        />
       </div>
     </div>
   </div>
@@ -527,10 +532,13 @@
 
 <script>
 import "@/assets/main.css";
-import axios from 'axios';
+import axios from "axios";
 import { ref, onMounted } from "vue";
+import { v4 as uuidv4 } from "uuid";
 import * as bootstrap from "bootstrap";
 window.bootstrap = bootstrap;
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
 
 export default {
   name: "Footer",
@@ -540,10 +548,19 @@ export default {
       otpValues: new Array(6).fill(""), // Initialize OTP values as empty
       otpError: false, // To display an error message when OTP is invalid
       phone: "",
-      uuid: "4de2aaca-6e76-4861-8140-647c4e38f553",
+      uuid: "",
       deviceId: "wh",
       errorMessage: "",
+      isLoading: false,
+      fullPage: false,
     };
+  },
+  components: {
+    Loading,
+  },
+  mounted() {
+    this.uuid = uuidv4();
+    console.log("Generated UUID:", this.uuid);
   },
   computed: {
     // Validate the input to ensure it's not empty (you can add more validation if necessary)
@@ -570,19 +587,37 @@ export default {
           }),
           {
             headers: {
-              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+              "Content-Type":
+                "application/x-www-form-urlencoded; charset=UTF-8",
               "Accept-Encoding": "gzip, deflate, br, zstd",
             },
           }
         )
         .then((response) => {
-          if (response.data.code === "-1") {
-            this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!"
-            console.log(response.data.code);
-          } else if (response.data.data.isExist === 0){
-            this.errorMessage = "*Nomor telepon tidak terdaftar!"
-            console.log(response.data);
+          if (response.data.data.isExist === 0) {
+            this.isLoading = true;
+            // simulate AJAX
+            setTimeout(() => {
+              this.isLoading = false;
+              this.errorMessage = "*Nomor telepon tidak terdaftar!";
+            }, 5000);
+          } else if (
+            response.data.data.isExist === 1 ||
+            response.data.data.isExist === 2
+          ) {
+            this.isLoading = true;
+            // simulate AJAX
+            setTimeout(() => {
+              this.isLoading = false;
+              this.openThirdModal();
+            }, 5000);
           } else {
+            this.isLoading = true;
+            // simulate AJAX
+            setTimeout(() => {
+              this.isLoading = false;
+              this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
+            }, 5000);
             console.log(response.data)
           }
         })
@@ -633,6 +668,8 @@ export default {
     const fourthModal = ref(null);
     const fifthModal = ref(null);
     const sixthModal = ref(null);
+    const phone = ref('');
+    const errorMessage = ref('');
     let bootstrapFirstModal = null;
     let bootstrapSecondModal = null;
     let bootstrapThirdModal = null;
@@ -662,9 +699,10 @@ export default {
     };
 
     const closeSecondModal = () => {
-      this.errorMessage = "";
       if (bootstrapSecondModal) {
         bootstrapSecondModal.hide();
+        phone.value = '';
+        errorMessage.value = '';
       }
     };
 
@@ -785,6 +823,8 @@ export default {
       fourthModal,
       fifthModal,
       sixthModal,
+      phone,
+      errorMessage,
     };
   },
 };
