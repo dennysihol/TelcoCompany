@@ -175,7 +175,6 @@ export default {
             "Magister Hukum, STIH IBLAM, Jakarta (2022)",
             "Master of Business Administration, Calwest University (2021)",
             "Magister Manajemen, STIE IPWIJA, Jakarta (2015)"
-
           ],
           "experience": [
             "Direktur Utama di PT Stanford Teknologi Indonesia (2020-Sekarang)",
@@ -228,12 +227,7 @@ export default {
           "appointment": [
             "Akta Pernyataan Keputusan Para Pemegang Saham Nomor 1 Tanggal 25 Juni 2024",
           ],
-          "education": [
-            "Doctor (S3) Jurusan Psikologi Forensik, Illinois State University (2024)",
-            "Sarjana (S1) Jurusan Hukum, Sekolah Tinggi Ilmu Hukum Dharma Andigha (2024)",
-            "Magister (S2) Jurusan Sosiologi & Antropologi, Universitas Padjadjaran Bandung (2012)",
-            "Sarjana (S1) Jurusan Psikologi, Universitas Padjadjaran Bandung (2007)",
-          ],
+          "education": [],
           "experience": [
             "Komisaris di PT Stanford Teknologi Indonesia (2022-Sekarang)",
             "Founder PT Hijau Sentosa Bersama (2021 - Sekarang)",
