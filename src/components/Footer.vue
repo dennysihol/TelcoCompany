@@ -228,6 +228,8 @@
     aria-labelledby="firstModalLabel"
     aria-hidden="true"
     ref="firstModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -285,6 +287,8 @@
     aria-labelledby="secondModalLabel"
     aria-hidden="true"
     ref="secondModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -344,6 +348,8 @@
     aria-labelledby="thirdModalLabel"
     aria-hidden="true"
     ref="thirdModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -374,19 +380,19 @@
             type="button"
             class="btn btn-primary"
             style="width: 90%; height: 70px"
-            @click="openFourthModal"
-          >
-            <img src="../assets/image/ic_wa.png" height="20" /> &nbsp; Via
-            Whatsapp
-          </button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            style="width: 90%; height: 70px"
-            @click="openFourthModal"
+            @click="openFourthModal(1)"
           >
             <img src="../assets/image/ic_sms.png" height="20" /> &nbsp;Via SMS
           </button>
+          <!-- <button
+            type="button"
+            class="btn btn-primary"
+            style="width: 90%; height: 70px"
+            @click="openFourthModal(2)"
+          >
+            <img src="../assets/image/ic_wa.png" height="20" /> &nbsp; 
+            Via Whatsapp
+          </button> -->
         </div>
       </div>
     </div>
@@ -400,6 +406,8 @@
     aria-labelledby="fourthModalLabel"
     aria-hidden="true"
     ref="fourthModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -460,6 +468,8 @@
     aria-labelledby="fifthModalLabel"
     aria-hidden="true"
     ref="fifthModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -497,6 +507,8 @@
     aria-labelledby="sixthModalLabel"
     aria-hidden="true"
     ref="sixthModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
   >
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
@@ -533,7 +545,7 @@
 <script>
 import "@/assets/main.css";
 import axios from "axios";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, getCurrentInstance } from "vue";
 import { v4 as uuidv4 } from "uuid";
 import * as bootstrap from "bootstrap";
 window.bootstrap = bootstrap;
@@ -550,6 +562,7 @@ export default {
       phone: "",
       uuid: "",
       deviceId: "wh",
+      wybs: "",
       errorMessage: "",
       isLoading: false,
       fullPage: false,
@@ -577,53 +590,138 @@ export default {
   },
   methods: {
     checkPhone() {
-      axios
-        .post(
-          "https://h5.pinjamduit.co.id/to/credit-user/checkPhoneWeb",
-          new URLSearchParams({
-            phone: this.phone,
-            uuid: this.uuid,
-            deviceId: this.deviceId,
-          }),
-          {
-            headers: {
-              "Content-Type":
-                "application/x-www-form-urlencoded; charset=UTF-8",
-              "Accept-Encoding": "gzip, deflate, br, zstd",
-            },
+      this.isLoading = true;
+      // axios
+      //   .post(
+      //     "https://h5.pinjamduit.co.id/to/credit-user/checkPhoneWeb",
+      //     new URLSearchParams({
+      //       phone: this.phone,
+      //       uuid: this.uuid,
+      //       deviceId: this.deviceId,
+      //     }),
+      //     {
+      //       headers: {
+      //         "Content-Type":
+      //           "application/x-www-form-urlencoded; charset=UTF-8",
+      //         "Accept-Encoding": "gzip, deflate, br, zstd",
+      //       },
+      //     }
+      //   )
+      //   .then((response) => {
+      //     // if (response.data.data.isExist === 0) {
+      //     //   this.isLoading = true;
+      //     //   // simulate AJAX
+      //     //   setTimeout(() => {
+      //     //     this.isLoading = false;
+      //     //     this.errorMessage = "*Nomor telepon tidak terdaftar!";
+      //     //   }, 2000);
+      //     // } else if (
+      //     //   response.data.data.isExist === 1 ||
+      //     //   response.data.data.isExist === 2
+      //     // ) {
+      //     //   this.isLoading = true;
+      //     //   this.wybs = response.data.data.wybs;
+      //     //   // simulate AJAX
+      //     //   setTimeout(() => {
+      //     //     this.isLoading = false;
+      //     //     this.openThirdModal();
+      //     //   }, 2000);
+      //     // } else {
+      //     //   this.isLoading = true;
+      //     //   // simulate AJAX
+      //     //   setTimeout(() => {
+      //     //     this.isLoading = false;
+      //     //     this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
+      //     //   }, 2000);
+      //     //   console.log(response.data)
+      //     // }
+          
+      //     this.isLoading = false;
+      //     if (response.data.code == "0") {
+      //       if (
+      //         response.data.data.isExist === 1 ||
+      //         response.data.data.isExist === 2
+      //       ) {
+      //         this.wybs = response.data.data.wybs;
+      //         this.errorMessage = "";
+      //         this.openThirdModal();
+      //       } else if (response.data.data.isExist === 0) {
+      //         this.errorMessage = "*Nomor telepon tidak terdaftar!";
+      //       } else {
+      //         this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
+      //       }
+      //     } else {
+      //       this.errorMessage = response.data.message;
+      //     }
+      //   })
+      //   .catch((error) => {
+      //     this.isLoading = false;
+      //     console.error("Error:", error);
+      //   });
+      var response = { 
+        "data" : {
+          "code": "0",
+          "message": "Berhasil",
+          "data": {
+              "isExist": 1,
+              "wybs": "PgRBlvcwyqVs2Zsux4eB"
           }
-        )
-        .then((response) => {
-          if (response.data.data.isExist === 0) {
-            this.isLoading = true;
-            // simulate AJAX
-            setTimeout(() => {
-              this.isLoading = false;
-              this.errorMessage = "*Nomor telepon tidak terdaftar!";
-            }, 5000);
-          } else if (
-            response.data.data.isExist === 1 ||
-            response.data.data.isExist === 2
-          ) {
-            this.isLoading = true;
-            // simulate AJAX
-            setTimeout(() => {
-              this.isLoading = false;
-              this.openThirdModal();
-            }, 5000);
-          } else {
-            this.isLoading = true;
-            // simulate AJAX
-            setTimeout(() => {
-              this.isLoading = false;
-              this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
-            }, 5000);
-            console.log(response.data)
-          }
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
+        }
+      };
+
+      this.isLoading = false;
+      if (response.data.code == "0") {
+        if (
+          response.data.data.isExist === 1 ||
+          response.data.data.isExist === 2
+        ) {
+          this.wybs = response.data.data.wybs;
+          this.errorMessage = "";
+          this.openThirdModal();
+        } else if (response.data.data.isExist === 0) {
+          this.errorMessage = "*Nomor telepon tidak terdaftar!";
+        } else {
+          this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
+        }
+      } else {
+        this.errorMessage = response.data.message;
+      }
+    },
+    checkPhoneNext(sms_service) {
+      // axios
+      //   .post(
+      //     "https://h5.pinjamduit.co.id/to/credit-user/checkPhoneNext",
+      //     new URLSearchParams({
+      //       // sms_service: sms_service, // default=1, 1. SMS, 2. Whatsapp
+      //       ss: this.wybs,
+      //     }),
+      //     {
+      //       headers: {
+      //         "Content-Type":
+      //           "application/x-www-form-urlencoded; charset=UTF-8",
+      //         "Accept-Encoding": "gzip, deflate, br, zstd",
+      //       },
+      //     }
+      //   )
+      //   .then((response) => {
+      //     this.isLoading = false;
+      //     console.log(response.data);
+      //   })
+      //   .catch((error) => {
+      //     console.error("Error:", error);
+      //   });
+      var response = { 
+        "data" : {
+          "code": "0",
+          "message": "Berhasil"
+        }
+      };
+
+      if (response.data.code == "0") {
+        this.errorMessage = "";
+      } else {
+        this.errorMessage = response.data.message;
+      }
     },
     maskPhoneNumber(phone) {
       const firstPart = phone.slice(0, 8); // "+62 812 "
@@ -643,25 +741,52 @@ export default {
             }
           });
         }
+        
+        if ((index + 1) == 6) {
+          this.validateOtp();
+        }
       }
     },
     validateOtp() {
-      const correctOtp = "123456"; // Replace with your actual OTP for validation
-      if (this.otpValues.join("") === correctOtp) {
-        this.otpError = false;
-        // Randomly decide whether to open the fifth or sixth modal
-        const randomChoice = Math.random(); // Generate a number between 0 and 1
-        if (randomChoice < 0.5) {
-          this.openFifthModal(); // Implement this function to open the fifth modal
-        } else {
-          this.openSixthModal(); // Implement this function to open the sixth modal
-        } // Implement this function to open the next modal
+      // const correctOtp = "123456"; // Replace with your actual OTP for validation
+      // if (this.otpValues.join("") === correctOtp) {
+      //   this.otpError = false;
+      //   // Randomly decide whether to open the fifth or sixth modal
+      //   const randomChoice = Math.random(); // Generate a number between 0 and 1
+      //   if (randomChoice < 0.5) {
+      //     this.openFifthModal(); // Implement this function to open the fifth modal
+      //   } else {
+      //     this.openSixthModal(); // Implement this function to open the sixth modal
+      //   } // Implement this function to open the next modal
+      // } else {
+      //   this.otpError = true; // Implement this function for incorrect OTP case
+      // }
+      console.log("validate OTP");
+      
+      var response = { 
+        "data" : {
+          "code": "0",
+          "message": "Berhasil",
+          "data": {
+              "item": {
+                  "uid": "uid",
+                  "username": "username",
+                  "realname": "realname",
+                  "token": "token",
+              }
+          }
+        }
+      };
+
+      if (response.data.code == "0") {
+        this.errorMessage = "";
       } else {
-        this.otpError = true; // Implement this function for incorrect OTP case
+        this.errorMessage = response.data.message;
       }
     },
   },
   setup() {
+    const { proxy } = getCurrentInstance();
     const firstModal = ref(null);
     const secondModal = ref(null);
     const thirdModal = ref(null);
@@ -721,10 +846,12 @@ export default {
       }
     };
 
-    const openFourthModal = () => {
+    const openFourthModal = (sms_service) => {
       closeThirdModal(); // Close the second modal
       setTimeout(() => {
+        console.log(sms_service);
         if (bootstrapFourthModal) {
+          proxy.checkPhoneNext(sms_service);
           bootstrapFourthModal.show(); // Open the second modal
         }
       }, 500); // Delay to allow the second modal to close before opening the second
