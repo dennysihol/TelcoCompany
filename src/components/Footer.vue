@@ -236,7 +236,7 @@
         <div class="modal-header">
           <h5 class="modal-title" id="hapusAkunModalTitle">Hapus Akun</h5>
         </div>
-        <div class="modal-body">
+        <div class="modal-body content-modal">
           <p style="font-size: 12px; line-height: 17px">
             Setelah hapus akun, seluruh data (data pribadi dan data transaksi)
             Anda akan terhapus. Proses Penghapusan Akun Anda tunduk pada
@@ -294,6 +294,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="cekNomorModalTitle">Hapus Akun</h5>
+          <div class="close-btn" @click="closeSecondModal">
+            <img src="@/assets/icon/close-icon.png" alt="close-icon">
+          </div>
         </div>
         <div class="modal-body">
           <p class="modal-text">
@@ -355,6 +358,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="otpOptionTitle">Verifikasi Kode OTP</h5>
+          <div class="close-btn" @click="closeThirdModal">
+            <img src="@/assets/icon/close-icon.png" alt="close-icon">
+          </div>
         </div>
         <div class="modal-body">
           <p class="modal-text">
@@ -413,6 +419,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="inputOtpTitle">Verifikasi Kode OTP</h5>
+          <div class="close-btn" @click="closeFourthModal">
+            <img src="@/assets/icon/close-icon.png" alt="close-icon">
+          </div>
         </div>
         <div class="modal-body">
           <p class="modal-text">
@@ -450,7 +459,7 @@
           <button
             type="button"
             class="btn btn-primary"
-            :disabled="!isOtpValuesValid"
+            :disabled="!isOtpValuesValid || otpError"
             @click="validateOtp()"
           >
             Selanjutnya
@@ -475,6 +484,9 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="inputOtpTitle">Akun Berhasil Dihapus</h5>
+          <div class="close-btn" @click="closeFifthModal">
+            <img src="@/assets/icon/close-icon.png" alt="close-icon">
+          </div>
         </div>
         <div class="modal-body">
           <div style="display: flex; justify-content: center; margin-top: 20px">
@@ -516,6 +528,9 @@
           <h5 class="modal-title" id="inputOtpTitle">
             Akun Belum Bisa Dihapus
           </h5>
+          <div class="close-btn" @click="closeSixthModal">
+            <img src="@/assets/icon/close-icon.png" alt="close-icon">
+          </div>
         </div>
         <div class="modal-body">
           <div style="display: flex; justify-content: center; margin-top: 20px">
@@ -535,6 +550,58 @@
             @click="closeSixthModal"
           >
             Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seventh Modal -->
+  <div
+    class="modal fade"
+    id="seventhModal"
+    tabindex="-1"
+    aria-labelledby="seventhModalLabel"
+    aria-hidden="true"
+    ref="seventhModal"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+  >
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="inputOtpTitle">
+            Hapus Akun
+          </h5>
+          <div class="close-btn" @click="closeSeventhModal">
+            <img src="@/assets/icon/close-icon.png" alt="close-icon">
+          </div>
+        </div>
+        <div class="modal-body">
+          <div style="display: flex; justify-content: center; margin-top: 20px">
+            <img src="../assets/image/phone-setting-warning.png" height="162" />
+          </div>
+          <div style="margin-top: 30px">
+            <p style="text-align: center">
+              Apakah kamu yakin mau menghapus akun mu ?
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            @click="closeSeventhModal"
+          >
+            Batal
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            @click="submitDeleteAccount"
+          >
+            Yakin
           </button>
         </div>
       </div>
@@ -777,12 +844,47 @@ export default {
           }
         }
       };
+      // var response = { 
+      //   "data" : {
+      //     "code": "-1",
+      //     "message": "Kode OTP tidak valid."
+      //   }
+      // };
 
       if (response.data.code == "0") {
         this.errorMessage = "";
+        this.openSeventhModal();
       } else {
+        this.otpError = true;
         this.errorMessage = response.data.message;
       }
+    },
+    submitDeleteAccount() {
+      console.log("Delete Account");
+      this.closeSeventhModal();
+      
+      var response = { 
+        "data" : {
+          "code": "0",
+          "message": "Berhasil"
+        }
+      };
+
+      if (response.data.code == "0") {
+        this.errorMessage = response.data.message;
+        this.openFifthModal();
+      } else {
+        this.errorMessage = response.data.message;
+        this.openSixthModal();
+      }
+    },
+    clearAllInput() {
+      this.phone = "";
+      for (let i = 0; i < this.otpLength; i++) {
+        this.$refs[`otpInput${i}`][0].value = '';
+      }
+      this.errorMessage = "";
+      this.otpError = false;
     },
   },
   setup() {
@@ -793,6 +895,7 @@ export default {
     const fourthModal = ref(null);
     const fifthModal = ref(null);
     const sixthModal = ref(null);
+    const seventhModal = ref(null);
     const phone = ref('');
     const errorMessage = ref('');
     let bootstrapFirstModal = null;
@@ -801,6 +904,7 @@ export default {
     let bootstrapFourthModal = null;
     let bootstrapFifthModal = null;
     let bootstrapSixthModal = null;
+    let bootstrapSeventhModal = null;
 
     const openFirstModal = () => {
       if (bootstrapFirstModal) {
@@ -826,8 +930,9 @@ export default {
     const closeSecondModal = () => {
       if (bootstrapSecondModal) {
         bootstrapSecondModal.hide();
-        phone.value = '';
-        errorMessage.value = '';
+        // phone.value = '';
+        // errorMessage.value = '';
+        proxy.clearAllInput();
       }
     };
 
@@ -843,6 +948,7 @@ export default {
     const closeThirdModal = () => {
       if (bootstrapThirdModal) {
         bootstrapThirdModal.hide();
+        proxy.clearAllInput();
       }
     };
 
@@ -860,6 +966,7 @@ export default {
     const closeFourthModal = () => {
       if (bootstrapFourthModal) {
         bootstrapFourthModal.hide();
+        proxy.clearAllInput();
       }
     };
 
@@ -875,6 +982,7 @@ export default {
     const closeFifthModal = () => {
       if (bootstrapFifthModal) {
         bootstrapFifthModal.hide();
+        proxy.clearAllInput();
       }
     };
 
@@ -890,6 +998,23 @@ export default {
     const closeSixthModal = () => {
       if (bootstrapSixthModal) {
         bootstrapSixthModal.hide();
+        proxy.clearAllInput();
+      }
+    };
+
+    const openSeventhModal = () => {
+      closeFourthModal(); // Close the second modal
+      setTimeout(() => {
+        if (bootstrapSeventhModal) {
+          bootstrapSeventhModal.show(); // Open the second modal
+        }
+      }, 500); // Delay to allow the second modal to close before opening the second
+    };
+
+    const closeSeventhModal = () => {
+      if (bootstrapSeventhModal) {
+        bootstrapSeventhModal.hide();
+        proxy.clearAllInput();
       }
     };
 
@@ -929,6 +1054,12 @@ export default {
           keyboard: false,
         });
       }
+
+      if (seventhModal.value) {
+        bootstrapSeventhModal = new bootstrap.Modal(seventhModal.value, {
+          keyboard: false,
+        });
+      }
     });
 
     return {
@@ -944,12 +1075,15 @@ export default {
       closeFifthModal,
       openSixthModal,
       closeSixthModal,
+      openSeventhModal,
+      closeSeventhModal,
       firstModal,
       secondModal,
       thirdModal,
       fourthModal,
       fifthModal,
       sixthModal,
+      seventhModal,
       phone,
       errorMessage,
     };
@@ -1011,12 +1145,24 @@ export default {
 .modal-content {
   border-color: white;
   height: 500px;
-  overflow: auto;
 }
 
 .modal-lg {
   max-width: calc(30% - 80px);
   max-height: calc(100% - 80px);
+}
+
+.content-modal {
+  overflow-y: scroll;
+}
+
+.close-btn {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 24px;
+  height: auto;
+  cursor: pointer;
 }
 
 @media (max-width: 1080px) {
