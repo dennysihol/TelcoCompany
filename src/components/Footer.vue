@@ -11,7 +11,7 @@
             >
               <a href="/" class="ud-footer-logo">
                 <img
-                  src="../assets/image/ic_pjd_footer.png"
+                  src="@/assets/image/ic_pjd_footer.png"
                   alt="logo"
                   style="height: 50px; margin-bottom: 10px"
                 />
@@ -27,42 +27,42 @@
                 class="ud-footer-logo-2"
                 target="_blank"
               >
-                <img src="../assets/image/ic_ig.png" alt="logo" />
+                <img src="@/assets/image/ic_ig.png" alt="logo" />
               </a>
               <a
                 href="https://web.facebook.com/profile.php?id=61556195634074"
                 class="ud-footer-logo-2"
                 target="_blank"
               >
-                <img src="../assets/image/ic_fb.png" alt="logo" />
+                <img src="@/assets/image/ic_fb.png" alt="logo" />
               </a>
               <a
                 href="http://www.twitter.com/PinjamDuit_Idn"
                 class="ud-footer-logo-2"
                 target="_blank"
               >
-                <img src="../assets/image/ic_twitter.png" alt="logo" />
+                <img src="@/assets/image/ic_twitter.png" alt="logo" />
               </a>
               <a
                 href="https://www.youtube.com/@PinjamDuitIdn"
                 class="ud-footer-logo-2"
                 target="_blank"
               >
-                <img src="../assets/image/ic_youtube.png" alt="logo" />
+                <img src="@/assets/image/ic_youtube.png" alt="logo" />
               </a>
               <a
                 href="https://www.tiktok.com/@pinjamduit.idn"
                 class="ud-footer-logo-2"
                 target="_blank"
               >
-                <img src="../assets/image/ic_tiktok.png" alt="logo" />
+                <img src="@/assets/image/ic_tiktok.png" alt="logo" />
               </a>
               <a
                 href="https://www.linkedin.com/company/pt-stanford-teknologi-indonesia-pinjamduit/people/?viewAsMember=true"
                 class="ud-footer-logo-2"
                 target="_blank"
               >
-                <img src="../assets/image/ic_linkedin.png" alt="logo" />
+                <img src="@/assets/image/ic_linkedin.png" alt="logo" />
               </a>
             </div>
           </div>
@@ -102,7 +102,7 @@
                 Jl. Jenderal Sudirman No.86,<br />
                 Jakarta Pusat, 10220
               </p>
-              <img src="../assets/image/ic_phone.png" height="15" />
+              <img src="@/assets/image/ic_phone.png" height="15" />
               &nbsp;
               <span style="color: white; margin-top: 15px">021-5086-8888</span>
             </div>
@@ -125,14 +125,14 @@
           <div class="col-xl-2 ud-footer-box">
             <div class="ud-widget">
               <h5 class="ud-widget-title">Layanan Email</h5>
-              <img src="../assets/image/ic_mail.png" height="15" />
+              <img src="@/assets/image/ic_mail.png" height="15" />
               &nbsp;
               <span style="color: white">Konsultasi karir: </span>
               <a href="mailto:hr@stanfordtek.com" class="mail-footer"
                 >hr@stanfordtek.com
               </a>
               <br />
-              <img src="../assets/image/ic_mail.png" height="15" />
+              <img src="@/assets/image/ic_mail.png" height="15" />
               &nbsp;
               <span style="color: white">Konsultasi bisnis: </span>
               <a href="mailto:commercial@stanfordtek.com" class="mail-footer"
@@ -190,7 +190,7 @@
                   target="_blank"
                   class="ud-footer-logo"
                 >
-                  <img src="../assets/image/ic_play_store.png" alt="logo" />
+                  <img src="@/assets/image/ic_play_store.png" alt="logo" />
                 </a>
                 <a
                   href="https://apps.apple.com/id/app/pinjamduit-kta-dana-cepat/id6476541604"
@@ -198,7 +198,7 @@
                   class="ud-footer-logo"
                 >
                   <img
-                    src="../assets/image/ic_app_store.png"
+                    src="@/assets/image/ic_app_store.png"
                     alt="logo"
                     style="margin-left: 10px"
                   />
@@ -294,23 +294,24 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="cekNomorModalTitle">Hapus Akun</h5>
-          <div class="close-btn" @click="closeSecondModal">
+          <div class="close-btn" @click="closeSecondModal(true)">
             <img src="@/assets/icon/close-icon.png" alt="close-icon">
           </div>
         </div>
         <div class="modal-body">
-          <p class="modal-text">
-            Masukan nomor telepon kamu yang didaftarkan di
-            <span style="font-weight: bold">Aplikasi PinjamDuit</span
-            ><br /><br /><br />
-          </p>
-          <form>
+          <form @submit="checkPhone">
+            <p class="modal-text">
+              Masukan nomor telepon kamu yang didaftarkan di
+              <span style="font-weight: bold">Aplikasi PinjamDuit</span
+              ><br /><br /><br />
+            </p>
             <div class="mb-3">
               <input
                 type="tel"
                 class="custom-input"
                 id="recipient-name"
                 v-model="phone"
+                autocomplete="off"
               />
             </div>
             <p v-if="errorMessage" class="text-danger">{{ errorMessage }}</p>
@@ -321,7 +322,7 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
-            @click="closeSecondModal"
+            @click="closeSecondModal(true)"
           >
             Batal
           </button>
@@ -358,7 +359,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="otpOptionTitle">Verifikasi Kode OTP</h5>
-          <div class="close-btn" @click="closeThirdModal">
+          <div class="close-btn" @click="closeThirdModal(true)">
             <img src="@/assets/icon/close-icon.png" alt="close-icon">
           </div>
         </div>
@@ -388,7 +389,7 @@
             style="width: 90%; height: 70px"
             @click="openFourthModal(1)"
           >
-            <img src="../assets/image/ic_sms.png" height="20" /> &nbsp;Via SMS
+            <img src="@/assets/image/ic_sms.png" height="20" /> &nbsp;Via SMS
           </button>
           <!-- <button
             type="button"
@@ -396,7 +397,7 @@
             style="width: 90%; height: 70px"
             @click="openFourthModal(2)"
           >
-            <img src="../assets/image/ic_wa.png" height="20" /> &nbsp; 
+            <img src="@/assets/image/ic_wa.png" height="20" /> &nbsp; 
             Via Whatsapp
           </button> -->
         </div>
@@ -419,7 +420,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="inputOtpTitle">Verifikasi Kode OTP</h5>
-          <div class="close-btn" @click="closeFourthModal">
+          <div class="close-btn" @click="closeFourthModal(true)">
             <img src="@/assets/icon/close-icon.png" alt="close-icon">
           </div>
         </div>
@@ -445,14 +446,14 @@
           </div>
           <p v-if="otpError" class="error-text">*Kode OTP salah</p>
           <br />
-          <p>
+          <p v-if="availableSendOtp">
             Tidak menerima kode OTP?
-            <a href="#" style="text-decoration: none">Kirim ulang kode OTP</a>
+            <span class="text-primary" role="button" @click="checkPhoneNext(1)">Kirim ulang kode OTP</span>
           </p>
           <br />
-          <p>
+          <p v-if="!availableSendOtp">
             Kode OTP akan dikirimkan kembali secara otomatis jika waktu berakhir
-            <span id="countDownOtp" style="color: #0087ff">01:59</span>
+            <span class="text-primary">{{ formattedSendOtpTime }}</span>
           </p>
         </div>
         <div class="modal-footer">
@@ -484,13 +485,13 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="inputOtpTitle">Akun Berhasil Dihapus</h5>
-          <div class="close-btn" @click="closeFifthModal">
+          <div class="close-btn" @click="closeFifthModal(true)">
             <img src="@/assets/icon/close-icon.png" alt="close-icon">
           </div>
         </div>
         <div class="modal-body">
           <div style="display: flex; justify-content: center; margin-top: 20px">
-            <img src="../assets/image/ic_success_delete.png" height="162" />
+            <img src="@/assets/image/ic_success_delete.png" height="162" />
           </div>
           <div style="margin-top: 30px">
             <p style="text-align: center">
@@ -502,7 +503,7 @@
           <button
             type="button"
             class="btn btn-primary"
-            @click="closeFifthModal"
+            @click="closeFifthModal(true)"
           >
             Tutup
           </button>
@@ -528,13 +529,13 @@
           <h5 class="modal-title" id="inputOtpTitle">
             Akun Belum Bisa Dihapus
           </h5>
-          <div class="close-btn" @click="closeSixthModal">
+          <div class="close-btn" @click="closeSixthModal(true)">
             <img src="@/assets/icon/close-icon.png" alt="close-icon">
           </div>
         </div>
         <div class="modal-body">
           <div style="display: flex; justify-content: center; margin-top: 20px">
-            <img src="../assets/image/ic_failed_delete.png" height="162" />
+            <img src="@/assets/image/ic_failed_delete.png" height="162" />
           </div>
           <div style="margin-top: 30px">
             <p style="text-align: center">
@@ -547,7 +548,7 @@
           <button
             type="button"
             class="btn btn-primary"
-            @click="closeSixthModal"
+            @click="closeSixthModal(true)"
           >
             Tutup
           </button>
@@ -573,13 +574,13 @@
           <h5 class="modal-title" id="inputOtpTitle">
             Hapus Akun
           </h5>
-          <div class="close-btn" @click="closeSeventhModal">
+          <div class="close-btn" @click="closeSeventhModal(true)">
             <img src="@/assets/icon/close-icon.png" alt="close-icon">
           </div>
         </div>
         <div class="modal-body">
           <div style="display: flex; justify-content: center; margin-top: 20px">
-            <img src="../assets/image/phone-setting-warning.png" height="162" />
+            <img src="@/assets/image/phone-setting-warning.png" height="162" />
           </div>
           <div style="margin-top: 30px">
             <p style="text-align: center">
@@ -592,7 +593,7 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
-            @click="closeSeventhModal"
+            @click="closeSeventhModal(true)"
           >
             Batal
           </button>
@@ -611,7 +612,7 @@
 
 <script>
 import "@/assets/main.css";
-import axios from "axios";
+import axios, { isCancel } from "axios";
 import { ref, onMounted, getCurrentInstance } from "vue";
 import { v4 as uuidv4 } from "uuid";
 import * as bootstrap from "bootstrap";
@@ -630,9 +631,13 @@ export default {
       uuid: "",
       deviceId: "wh",
       wybs: "",
+      tokenLogin: "",
       errorMessage: "",
       isLoading: false,
       fullPage: false,
+      availableSendOtpTime: 0,
+      intervalId: null,
+      availableSendOtp: false,
     };
   },
   components: {
@@ -654,141 +659,178 @@ export default {
       // Ensure all OTP values are filled in (not empty)
       return this.otpValues.every((value) => value !== "");
     },
+    formattedSendOtpTime() {
+      const minutes = Math.floor(this.availableSendOtpTime / 60);
+      const seconds = this.availableSendOtpTime % 60;
+      return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    },
   },
   methods: {
-    checkPhone() {
-      this.isLoading = true;
-      // axios
-      //   .post(
-      //     "https://h5.pinjamduit.co.id/to/credit-user/checkPhoneWeb",
-      //     new URLSearchParams({
-      //       phone: this.phone,
-      //       uuid: this.uuid,
-      //       deviceId: this.deviceId,
-      //     }),
-      //     {
-      //       headers: {
-      //         "Content-Type":
-      //           "application/x-www-form-urlencoded; charset=UTF-8",
-      //         "Accept-Encoding": "gzip, deflate, br, zstd",
-      //       },
-      //     }
-      //   )
-      //   .then((response) => {
-      //     // if (response.data.data.isExist === 0) {
-      //     //   this.isLoading = true;
-      //     //   // simulate AJAX
-      //     //   setTimeout(() => {
-      //     //     this.isLoading = false;
-      //     //     this.errorMessage = "*Nomor telepon tidak terdaftar!";
-      //     //   }, 2000);
-      //     // } else if (
-      //     //   response.data.data.isExist === 1 ||
-      //     //   response.data.data.isExist === 2
-      //     // ) {
-      //     //   this.isLoading = true;
-      //     //   this.wybs = response.data.data.wybs;
-      //     //   // simulate AJAX
-      //     //   setTimeout(() => {
-      //     //     this.isLoading = false;
-      //     //     this.openThirdModal();
-      //     //   }, 2000);
-      //     // } else {
-      //     //   this.isLoading = true;
-      //     //   // simulate AJAX
-      //     //   setTimeout(() => {
-      //     //     this.isLoading = false;
-      //     //     this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
-      //     //   }, 2000);
-      //     //   console.log(response.data)
-      //     // }
-          
-      //     this.isLoading = false;
-      //     if (response.data.code == "0") {
-      //       if (
-      //         response.data.data.isExist === 1 ||
-      //         response.data.data.isExist === 2
-      //       ) {
-      //         this.wybs = response.data.data.wybs;
-      //         this.errorMessage = "";
-      //         this.openThirdModal();
-      //       } else if (response.data.data.isExist === 0) {
-      //         this.errorMessage = "*Nomor telepon tidak terdaftar!";
-      //       } else {
-      //         this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
-      //       }
-      //     } else {
-      //       this.errorMessage = response.data.message;
-      //     }
-      //   })
-      //   .catch((error) => {
-      //     this.isLoading = false;
-      //     console.error("Error:", error);
-      //   });
-      var response = { 
-        "data" : {
-          "code": "0",
-          "message": "Berhasil",
-          "data": {
-              "isExist": 1,
-              "wybs": "PgRBlvcwyqVs2Zsux4eB"
-          }
-        }
-      };
+    checkPhone(e) {
+      e.preventDefault();
 
-      this.isLoading = false;
-      if (response.data.code == "0") {
-        if (
-          response.data.data.isExist === 1 ||
-          response.data.data.isExist === 2
-        ) {
-          this.wybs = response.data.data.wybs;
-          this.errorMessage = "";
-          this.openThirdModal();
-        } else if (response.data.data.isExist === 0) {
-          this.errorMessage = "*Nomor telepon tidak terdaftar!";
-        } else {
-          this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
-        }
-      } else {
-        this.errorMessage = response.data.message;
-      }
+      this.isLoading = true;
+      axios
+        .post(
+          "https://h5.pinjamduit.co.id/to/credit-user/checkPhoneWeb",
+          new URLSearchParams({
+            phone: this.phone,
+            uuid: this.uuid,
+            deviceId: this.deviceId,
+          }),
+          {
+            headers: {
+              "Content-Type":
+                "application/x-www-form-urlencoded; charset=UTF-8",
+              "Accept-Encoding": "gzip, deflate, br, zstd",
+            },
+          }
+        )
+        .then((response) => {
+          // if (response.data.data.isExist === 0) {
+          //   this.isLoading = true;
+          //   // simulate AJAX
+          //   setTimeout(() => {
+          //     this.isLoading = false;
+          //     this.errorMessage = "*Nomor telepon tidak terdaftar!";
+          //   }, 2000);
+          // } else if (
+          //   response.data.data.isExist === 1 ||
+          //   response.data.data.isExist === 2
+          // ) {
+          //   this.isLoading = true;
+          //   this.wybs = response.data.data.wybs;
+          //   // simulate AJAX
+          //   setTimeout(() => {
+          //     this.isLoading = false;
+          //     this.openThirdModal();
+          //   }, 2000);
+          // } else {
+          //   this.isLoading = true;
+          //   // simulate AJAX
+          //   setTimeout(() => {
+          //     this.isLoading = false;
+          //     this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
+          //   }, 2000);
+          //   console.log(response.data)
+          // }
+          
+          this.isLoading = false;
+          if (response.data.code == "0") {
+            if (
+              response.data.data.isExist === 1 ||
+              response.data.data.isExist === 2
+            ) {
+              this.wybs = response.data.data.wybs;
+              this.errorMessage = "";
+              this.openThirdModal();
+            } else if (response.data.data.isExist === 0) {
+              this.errorMessage = "*Nomor telepon tidak terdaftar!";
+            } else {
+              this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
+            }
+          } else {
+            this.errorMessage = response.data.message;
+          }
+        })
+        .catch((error) => {
+          this.isLoading = false;
+          console.error("Error:", error);
+        });
+
+      // var response = { 
+      //   "data" : {
+      //     "code": "0",
+      //     "message": "Berhasil",
+      //     "data": {
+      //         "isExist": 1,
+      //         "wybs": "PgRBlvcwyqVs2Zsux4eB"
+      //     }
+      //   }
+      // };
+
+      // this.isLoading = false;
+      // if (response.data.code == "0") {
+      //   if (
+      //     response.data.data.isExist === 1 ||
+      //     response.data.data.isExist === 2
+      //   ) {
+      //     this.wybs = response.data.data.wybs;
+      //     this.errorMessage = "";
+      //     this.openThirdModal();
+      //   } else if (response.data.data.isExist === 0) {
+      //     this.errorMessage = "*Nomor telepon tidak terdaftar!";
+      //   } else {
+      //     this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
+      //   }
+      // } else {
+      //   this.errorMessage = response.data.message;
+      // }
     },
     checkPhoneNext(sms_service) {
-      // axios
-      //   .post(
-      //     "https://h5.pinjamduit.co.id/to/credit-user/checkPhoneNext",
-      //     new URLSearchParams({
-      //       // sms_service: sms_service, // default=1, 1. SMS, 2. Whatsapp
-      //       ss: this.wybs,
-      //     }),
-      //     {
-      //       headers: {
-      //         "Content-Type":
-      //           "application/x-www-form-urlencoded; charset=UTF-8",
-      //         "Accept-Encoding": "gzip, deflate, br, zstd",
+      this.isLoading = true;
+      axios
+        .post(
+          "https://h5.pinjamduit.co.id/to/credit-user/checkPhoneNext",
+          new URLSearchParams({
+            phone: this.phone,
+            sms_useage: "10",
+            deviceId: this.deviceId,
+            sms_service: 1, // default=1, 1. SMS, 2. Whatsapp
+          }),
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+              "Accept-Encoding": "gzip, deflate, br, zstd",
+              "SS": this.wybs,
+            },
+          }
+        )
+        .then((response) => {
+          this.isLoading = false;
+          console.log(response.data);
+          if (response.data.code == "0") {
+            this.errorMessage = "";
+            this.availableSendOtpTime = 120;
+            this.startCountdown();
+          } else {
+            this.errorMessage = response.data.message;
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          this.isLoading = false;
+        });
+      // var response = { 
+      //   "data" : {
+      //     "code": "0",
+      //     "message": "",
+      //     "data": {
+      //       "item": {
+      //         "captchaUrl": "deprecated",
       //       },
-      //     }
-      //   )
-      //   .then((response) => {
-      //     this.isLoading = false;
-      //     console.log(response.data);
-      //   })
-      //   .catch((error) => {
-      //     console.error("Error:", error);
-      //   });
-      var response = { 
-        "data" : {
-          "code": "0",
-          "message": "Berhasil"
-        }
-      };
+      //     },
+      //   }
+      // };
 
-      if (response.data.code == "0") {
-        this.errorMessage = "";
-      } else {
-        this.errorMessage = response.data.message;
-      }
+      // if (response.data.code == "0") {
+      //   this.errorMessage = "";
+      //   this.availableSendOtpTime = 120;
+      //   this.startCountdown();
+      // } else {
+      //   this.errorMessage = response.data.message;
+      // }
+    },
+    startCountdown() {
+      this.intervalId = setInterval(() => {
+        if (this.availableSendOtpTime > 0) {
+          this.availableSendOtpTime--;
+          this.availableSendOtp = false;
+        } else {
+          clearInterval(this.intervalId);
+          this.availableSendOtp = true;
+        }
+      }, 1000);
     },
     maskPhoneNumber(phone) {
       const firstPart = phone.slice(0, 8); // "+62 812 "
@@ -828,63 +870,146 @@ export default {
       // } else {
       //   this.otpError = true; // Implement this function for incorrect OTP case
       // }
-      console.log("validate OTP");
       
-      var response = { 
-        "data" : {
-          "code": "0",
-          "message": "Berhasil",
-          "data": {
-              "item": {
-                  "uid": "uid",
-                  "username": "username",
-                  "realname": "realname",
-                  "token": "token",
-              }
+      this.isLoading = true;
+      axios
+        .post(
+          "https://h5.pinjamduit.co.id/to/credit-user/login",
+          new URLSearchParams({
+            username: this.phone,
+            smsCode: this.otpValues.join(""),
+            codeType: 10,
+          }),
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+              "Accept-Encoding": "gzip, deflate, br, zstd",
+            },
           }
-        }
-      };
+        )
+        .then((response) => {
+          this.isLoading = false;
+          if (response.data.code == "0") {
+            this.errorMessage = "";
+            this.openSeventhModal();
+            clearInterval(this.intervalId);
+            this.tokenLogin = response.data?.data?.item?.token ?? "";
+          } else {
+            this.otpError = true;
+            this.errorMessage = response.data.message;
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          this.isLoading = false;
+        });
+
+      // console.log("validate OTP", {
+      //       username: this.phone,
+      //       smsCode: this.otpValues.join(""),
+      //       codeType: 10,
+      //     });
+      
       // var response = { 
       //   "data" : {
-      //     "code": "-1",
-      //     "message": "Kode OTP tidak valid."
+      //     "code": "0",
+      //     "message": "Berhasil",
+      //     "data": {
+      //         "item": {
+      //             "uid": "uid",
+      //             "username": "username",
+      //             "realname": "realname",
+      //             "token": "token",
+      //         }
+      //     }
       //   }
       // };
+      // // var response = { 
+      // //   "data" : {
+      // //     "code": "-1",
+      // //     "message": "Kode OTP tidak valid."
+      // //   }
+      // // };
 
-      if (response.data.code == "0") {
-        this.errorMessage = "";
-        this.openSeventhModal();
-      } else {
-        this.otpError = true;
-        this.errorMessage = response.data.message;
-      }
+      // if (response.data.code == "0") {
+      //   this.errorMessage = "";
+      //   this.openSeventhModal();
+      //   clearInterval(this.intervalId);
+      //   this.tokenLogin = response.data?.data?.item?.token ?? "";
+      // } else {
+      //   this.otpError = true;
+      //   this.errorMessage = response.data.message;
+      // }
     },
     submitDeleteAccount() {
-      console.log("Delete Account");
       this.closeSeventhModal();
+      this.isLoading = true;
+      axios
+        .post(
+          "https://h5.pinjamduit.co.id/to/credit-user/userDelete",
+          new URLSearchParams({
+            method: 1,
+            isDelete: 1,
+            phone: this.phone,
+          }),
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+              "Accept-Encoding": "gzip, deflate, br, zstd",
+              "ss": this.wybs,
+              "token": this.tokenLogin,
+            },
+          }
+        )
+        .then((response) => {
+          this.isLoading = false;
+          if (response.data.code == "0") {
+            this.errorMessage = response.data.message;
+            this.openFifthModal();
+          } else {
+            this.errorMessage = response.data.message;
+            this.openSixthModal();
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          this.isLoading = false;
+        });
+      // console.log("Delete Account");
       
-      var response = { 
-        "data" : {
-          "code": "0",
-          "message": "Berhasil"
-        }
-      };
+      // var response = { 
+      //   "data" : {
+      //     "code": "0",
+      //     "message": "Berhasil"
+      //   }
+      // };
+      
+      // // var response = { 
+      // //   "data" : {
+      // //       "code": "-1",
+      // //       "message": "message"
+      // //   }
+      // // };
 
-      if (response.data.code == "0") {
-        this.errorMessage = response.data.message;
-        this.openFifthModal();
-      } else {
-        this.errorMessage = response.data.message;
-        this.openSixthModal();
-      }
+      // if (response.data.code == "0") {
+      //   this.errorMessage = response.data.message;
+      //   this.openFifthModal();
+      // } else {
+      //   this.errorMessage = response.data.message;
+      //   this.openSixthModal();
+      // }
     },
-    clearAllInput() {
-      this.phone = "";
-      for (let i = 0; i < this.otpLength; i++) {
-        this.$refs[`otpInput${i}`][0].value = '';
+    clearAllInput(isCancel=false) {
+      if (isCancel) {
+        this.phone = "";  // Clear the phone number
+        for (let i = 0; i < this.otpLength; i++) {
+          this.$refs[`otpInput${i}`][0].value = '';
+        }
+        this.errorMessage = ""; // Clear the error message
+        this.otpError = false;
+        clearInterval(this.intervalId); // Clear the interval
+        this.tokenLogin = ""; // Clear the token
       }
-      this.errorMessage = "";
-      this.otpError = false;
     },
   },
   setup() {
@@ -927,12 +1052,12 @@ export default {
       }, 500); // Delay to allow the first modal to close before opening the second
     };
 
-    const closeSecondModal = () => {
+    const closeSecondModal = (isCancel=false) => {
       if (bootstrapSecondModal) {
         bootstrapSecondModal.hide();
         // phone.value = '';
         // errorMessage.value = '';
-        proxy.clearAllInput();
+        proxy.clearAllInput(isCancel);
       }
     };
 
@@ -945,10 +1070,10 @@ export default {
       }, 500); // Delay to allow the second modal to close before opening the second
     };
 
-    const closeThirdModal = () => {
+    const closeThirdModal = (isCancel=false) => {
       if (bootstrapThirdModal) {
         bootstrapThirdModal.hide();
-        proxy.clearAllInput();
+        proxy.clearAllInput(isCancel);
       }
     };
 
@@ -963,10 +1088,10 @@ export default {
       }, 500); // Delay to allow the second modal to close before opening the second
     };
 
-    const closeFourthModal = () => {
+    const closeFourthModal = (isCancel=false) => {
       if (bootstrapFourthModal) {
         bootstrapFourthModal.hide();
-        proxy.clearAllInput();
+        proxy.clearAllInput(isCancel);
       }
     };
 
@@ -979,10 +1104,10 @@ export default {
       }, 500); // Delay to allow the second modal to close before opening the second
     };
 
-    const closeFifthModal = () => {
+    const closeFifthModal = (isCancel=false) => {
       if (bootstrapFifthModal) {
         bootstrapFifthModal.hide();
-        proxy.clearAllInput();
+        proxy.clearAllInput(isCancel);
       }
     };
 
@@ -995,10 +1120,10 @@ export default {
       }, 500); // Delay to allow the second modal to close before opening the second
     };
 
-    const closeSixthModal = () => {
+    const closeSixthModal = (isCancel=false) => {
       if (bootstrapSixthModal) {
         bootstrapSixthModal.hide();
-        proxy.clearAllInput();
+        proxy.clearAllInput(isCancel);
       }
     };
 
@@ -1011,10 +1136,10 @@ export default {
       }, 500); // Delay to allow the second modal to close before opening the second
     };
 
-    const closeSeventhModal = () => {
+    const closeSeventhModal = (isCancel=false) => {
       if (bootstrapSeventhModal) {
         bootstrapSeventhModal.hide();
-        proxy.clearAllInput();
+        proxy.clearAllInput(isCancel);
       }
     };
 
