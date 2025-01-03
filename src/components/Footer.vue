@@ -630,6 +630,9 @@ export default {
       phone: "",
       uuid: "",
       deviceId: "wh",
+      appMarket: "web",
+      appVersion: "99.99.99",
+      clientType: "w",
       wybs: "",
       tokenLogin: "",
       errorMessage: "",
@@ -645,7 +648,7 @@ export default {
   },
   mounted() {
     this.uuid = uuidv4();
-    console.log("Generated UUID:", this.uuid);
+    // console.log("Generated UUID:", this.uuid);
   },
   computed: {
     // Validate the input to ensure it's not empty (you can add more validation if necessary)
@@ -687,33 +690,6 @@ export default {
           }
         )
         .then((response) => {
-          // if (response.data.data.isExist === 0) {
-          //   this.isLoading = true;
-          //   // simulate AJAX
-          //   setTimeout(() => {
-          //     this.isLoading = false;
-          //     this.errorMessage = "*Nomor telepon tidak terdaftar!";
-          //   }, 2000);
-          // } else if (
-          //   response.data.data.isExist === 1 ||
-          //   response.data.data.isExist === 2
-          // ) {
-          //   this.isLoading = true;
-          //   this.wybs = response.data.data.wybs;
-          //   // simulate AJAX
-          //   setTimeout(() => {
-          //     this.isLoading = false;
-          //     this.openThirdModal();
-          //   }, 2000);
-          // } else {
-          //   this.isLoading = true;
-          //   // simulate AJAX
-          //   setTimeout(() => {
-          //     this.isLoading = false;
-          //     this.errorMessage = "*Limit Pengajuan Penghapusan Akun Habis!";
-          //   }, 2000);
-          //   console.log(response.data)
-          // }
           
           this.isLoading = false;
           if (response.data.code == "0") {
@@ -788,7 +764,7 @@ export default {
         )
         .then((response) => {
           this.isLoading = false;
-          console.log(response.data);
+          // console.log(response.data);
           if (response.data.code == "0") {
             this.errorMessage = "";
             this.availableSendOtpTime = 120;
@@ -857,19 +833,6 @@ export default {
       }
     },
     validateOtp() {
-      // const correctOtp = "123456"; // Replace with your actual OTP for validation
-      // if (this.otpValues.join("") === correctOtp) {
-      //   this.otpError = false;
-      //   // Randomly decide whether to open the fifth or sixth modal
-      //   const randomChoice = Math.random(); // Generate a number between 0 and 1
-      //   if (randomChoice < 0.5) {
-      //     this.openFifthModal(); // Implement this function to open the fifth modal
-      //   } else {
-      //     this.openSixthModal(); // Implement this function to open the sixth modal
-      //   } // Implement this function to open the next modal
-      // } else {
-      //   this.otpError = true; // Implement this function for incorrect OTP case
-      // }
       
       this.isLoading = true;
       axios
@@ -879,6 +842,12 @@ export default {
             username: this.phone,
             smsCode: this.otpValues.join(""),
             codeType: 10,
+            deviceId: this.deviceId,
+            appMarket: this.appMarket,
+            appVersion: this.appVersion,
+            mobilePhone: this.phone,
+            clientType: this.clientType,
+            ts: Date.now(),
           }),
           {
             headers: {
@@ -903,12 +872,6 @@ export default {
           console.error("Error:", error);
           this.isLoading = false;
         });
-
-      // console.log("validate OTP", {
-      //       username: this.phone,
-      //       smsCode: this.otpValues.join(""),
-      //       codeType: 10,
-      //     });
       
       // var response = { 
       //   "data" : {
@@ -951,12 +914,18 @@ export default {
             method: 1,
             isDelete: 1,
             phone: this.phone,
+            codeType: 10,
+            deviceId: this.deviceId,
+            appMarket: this.appMarket,
+            appVersion: this.appVersion,
+            mobilePhone: this.phone,
+            clientType: this.clientType,
+            ts: Date.now(),
           }),
           {
             headers: {
               "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
               "Accept-Encoding": "gzip, deflate, br, zstd",
-              "ss": this.wybs,
               "token": this.tokenLogin,
             },
           }
@@ -975,7 +944,6 @@ export default {
           console.error("Error:", error);
           this.isLoading = false;
         });
-      // console.log("Delete Account");
       
       // var response = { 
       //   "data" : {
@@ -1080,7 +1048,7 @@ export default {
     const openFourthModal = (sms_service) => {
       closeThirdModal(); // Close the second modal
       setTimeout(() => {
-        console.log(sms_service);
+        // console.log(sms_service);
         if (bootstrapFourthModal) {
           proxy.checkPhoneNext(sms_service);
           bootstrapFourthModal.show(); // Open the second modal
