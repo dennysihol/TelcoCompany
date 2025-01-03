@@ -13,17 +13,17 @@
           </div>
           <div class="row justify-content-start">
             <div class="col-md-6 col-xl-3 mb-4"
-                 v-for="item in (tabSelected == 'article' ? dataArticle.data : dataEvent.data)" :key="item.id">
+                 v-for="item in dataArticleOrEvent" :key="item.id">
               <div class="card-article d-flex flex-column gap-3 pb-3"
-                   @click="handleRedirectTo(`/blog/${item.id}/${item.titleArticle.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
+                   @click="handleRedirectTo(`/blog/${item.id}/${item.title.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
                 <div class="card-article-image">
-                  <img :src="item.urlImage" class="w-100" alt="item-article-1">
+                  <img :src="item.urlImageCard" class="w-100" alt="item-article-1">
                 </div>
                 <div class="card-article-date d-flex flex-row gap-2">
                   <img class="card-article-date-icon" src="@/assets/icon/calendar-icon.png">
-                  {{ item.location }}, {{ item.dateArticle }}
+                  {{ item.location }}, {{ item.date }}
                 </div>
-                <div class="card-article-title">{{ item.titleArticle }}</div>
+                <div class="card-article-title">{{ item.title }}</div>
                 <div class="card-article-read-more">
                   Lebih lanjut
                   <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs"/>
@@ -78,138 +78,13 @@
   </section>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
   name: 'Blog',
   data() {
     return {
-      dataArticle: {
-        data: [
-          {
-            "id": 1,
-            "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
-            "location": "Jakarta",
-            "dateArticle": "26 Mar 2023",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 2,
-            "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-            "location": "Bandar Lampung",
-            "dateArticle": "13 Maret 2022",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 3,
-            "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-            "location": "Palembang",
-            "dateArticle": "2-3 Mei 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 4,
-            "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
-            "location": "Bandung",
-            "dateArticle": "30 April 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 5,
-            "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
-            "location": "Jakarta",
-            "dateArticle": "26 Mar 2023",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 6,
-            "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-            "location": "Bandar Lampung",
-            "dateArticle": "13 Maret 2022",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 7,
-            "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-            "location": "Palembang",
-            "dateArticle": "2-3 Mei 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 8,
-            "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
-            "location": "Bandung",
-            "dateArticle": "30 April 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 9,
-            "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
-            "location": "Jakarta",
-            "dateArticle": "26 Mar 2023",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 10,
-            "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-            "location": "Bandar Lampung",
-            "dateArticle": "13 Maret 2022",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 11,
-            "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-            "location": "Palembang",
-            "dateArticle": "2-3 Mei 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 12,
-            "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-            "location": "Palembang",
-            "dateArticle": "2-3 Mei 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-        ],
-        countPagination: 7,
-        page: 1,
-        size: 12,
-      },
-      dataEvent: {
-        data: [
-          {
-            "id": 1,
-            "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
-            "location": "Bandung",
-            "dateArticle": "30 April 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 2,
-            "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-            "location": "Palembang",
-            "dateArticle": "2-3 Mei 2019",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 3,
-            "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-            "location": "Bandar Lampung",
-            "dateArticle": "13 Maret 2022",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          },
-          {
-            "id": 4,
-            "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
-            "location": "Jakarta",
-            "dateArticle": "26 Mar 2023",
-            "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fitem-article-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-          }
-        ],
-        countPagination: 1,
-        page: 1,
-        size: 12,
-      },
-      loading: false,
-      error: null,
+      dataArticleOrEvent: {},
     };
   },
   methods: {
@@ -223,10 +98,25 @@ export default {
       if (pageTo >= 1 && pageTo <= this.countPagination) {
         this.$router.push({path: '/blog', query: {['blog']: this.tabSelected, page: pageTo}});
       }
-    }
+    },
+    getData(category='article') {
+      axios.get('/src/service/blog/data.json')
+          .then(response => {
+            // console.log("Success fetching data: ", category.toUpperCase());
+            const responseData = response.data.data;
+            this.dataArticleOrEvent = responseData.filter((item)=>item.category === category.toUpperCase())
+          })
+          .catch(error => {
+            console.error("Error fetching data: ", error);
+          });
+    },
+  },
+  mounted() {
+    this.getData(this.$route.query.blog);
   },
   computed: {
     tabSelected() {
+      this.getData(this.$route.query.blog);
       return this.$route.query.blog || 'article';
     },
     currentPage() {
@@ -251,7 +141,7 @@ export default {
       return this.currentPage < this.countPagination - 2;
     },
     countPagination() {
-      return this.tabSelected == 'article' ? this.dataArticle.countPagination : this.dataEvent.countPagination;
+      return this.dataArticleOrEvent.countPagination;
     },
   }
 }
