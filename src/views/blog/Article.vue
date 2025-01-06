@@ -17,7 +17,7 @@
               <div class="card-article d-flex flex-column gap-3 pb-3"
                    @click="handleRedirectTo(`/blog/${item.id}/${item.title.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
                 <div class="card-article-image">
-                  <img :src="item.urlImageCard" class="w-100" alt="item-article-1">
+                  <img :src="item.urlImageBanner" class="w-100" alt="item-article-1">
                 </div>
                 <div class="card-article-date d-flex flex-row gap-2">
                   <img class="card-article-date-icon" src="@/assets/icon/calendar-icon.png">
@@ -99,16 +99,27 @@ export default {
         this.$router.push({path: '/blog', query: {['blog']: this.tabSelected, page: pageTo}});
       }
     },
-    getData(category='article') {
-      axios.get('/src/service/blog/data.json')
-          .then(response => {
-            // console.log("Success fetching data: ", category.toUpperCase());
-            const responseData = response.data.data;
-            this.dataArticleOrEvent = responseData.filter((item)=>item.category === category.toUpperCase())
-          })
-          .catch(error => {
-            console.error("Error fetching data: ", error);
-          });
+    async getData(category='article') {
+      try {
+        const response = await axios.get('/assets/service/blog/data.json');
+        const responseData = response.data.data;
+        this.dataArticleOrEvent = responseData.sort((a, b) => b.id - a.id).filter((item)=>item.category === category.toUpperCase())
+        // console.log('Data:', data);
+        // Process the data as needed
+        // this.blogData = data;
+        // this.dataArticleOrEvent = data.filter((item) => item.category === category.toUpperCase());
+      } catch (error) {
+        console.error('Error fetching blog data:', error);
+      }
+      // axios.get('/assets/service/blog/data.json')
+      //     .then(response => {
+      //       // console.log("Success fetching data: ", category.toUpperCase());
+      //       const responseData = response.data.data;
+      //       this.dataArticleOrEvent = responseData.filter((item)=>item.category === category.toUpperCase())
+      //     })
+      //     .catch(error => {
+      //       console.error("Error fetching data: ", error);
+      //     });
     },
   },
   mounted() {

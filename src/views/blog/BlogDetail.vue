@@ -4,15 +4,16 @@
             <div class="row">
                 <div class="col-lg-8 mb-5">
                     <div class="card-blog-detail d-flex flex-column gap-4 mb-5">
-                        <div class="card-blog-title">Muda Paham Fintech “Inovasi Keuangan Untuk Generasi Muda”</div>
+                        <div class="card-blog-title">{{ dataArticleDetail.title }}</div>
                         <div class="card-article-date d-flex flex-row gap-2">
                             <img class="card-article-date-icon" src="@/assets/icon/calendar-icon.png">
-                            Semarang, 27 September 2023
+                            {{ dataArticleDetail.location }}, {{ dataArticleDetail.date }}
                         </div>
                         <div class="card-article-image">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fblog-detail-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" class="w-100" alt="item-article-1">
+                            <img :src="dataArticleDetail.urlImageBanner"
+                             class="w-100" alt="item-article-1">
                         </div>
-                        <div v-html="htmlContent" style="text-align: justify;"></div>
+                        <div v-html="dataArticleDetail.contentBody" style="text-align: justify;"></div>
                     </div>
                     <div class="d-flex gap-3 justify-content-center mb-3">
                         <button class="btn-custom btn-custom-1" type="button" @click="goBack">Kembali</button>
@@ -23,6 +24,8 @@
     </section>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
     name: 'Blog Detail',
     data() {
@@ -58,13 +61,31 @@ export default {
             `,
             loading: false,
             error: null,
+            dataArticleDetail: [],
         };
+    },
+    created() {
+        this.blogId = this.$route.params.id;
+        // You can now use this.blogId to fetch data or perform other actions
     },
     methods: {
         goBack() {
             this.$router.go(-1);
-        }
-    }
+        },
+        async getData() {
+            try {
+                const response = await axios.get('/assets/service/blog/data.json');
+                const responseData = response.data.data;
+                this.dataArticleDetail = responseData.filter((item)=>item.id == this.blogId)?.[0] ?? {};
+                // console.log('Data:', this.dataArticleDetail);
+            } catch (error) {
+                console.error('Error fetching blog data:', error);
+            }
+        },
+    },
+    mounted() {
+        this.getData();
+    },
 }
 </script>
 <style scoped>
