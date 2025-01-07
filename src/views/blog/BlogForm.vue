@@ -26,10 +26,10 @@
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <label for="city">Kota</label>
+                                <label for="location">Location / Author</label>
                             </div>
                             <div class="col-8">
-                                <input type="text" class="form-control form-control-sm" id="city" v-model="dataArticleOrEvent.city">
+                                <input type="text" class="form-control form-control-sm" id="location" v-model="dataArticleOrEvent.location">
                             </div>
                         </div>
                         <div class="row">
@@ -37,15 +37,17 @@
                                 <label for="date">Tanggal</label>
                             </div>
                             <div class="col-8">
-                                <input type="date" class="form-control form-control-sm" id="date" v-model="dataArticleOrEvent.date">
+                                <!-- <input type="date" class="form-control form-control-sm" id="date" v-model="dataArticleOrEvent.date"> -->
+                                <input type="text" class="form-control form-control-sm" id="date" v-model="dataArticleOrEvent.date">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-4">
-                                <label for="urlBannerImage">Gambar Banner</label>
+                                <label for="urlImageBanner">Gambar Banner</label>
                             </div>
                             <div class="col-8">
-                                <input type="file" class="form-control form-control-sm" id="urlBannerImage" @change="handleFileChange">
+                                <!-- <input type="file" class="form-control form-control-sm" id="urlImageBanner" @change="handleFileChange"> -->
+                                <input type="text" class="form-control form-control-sm" id="urlImageBanner"  v-model="dataArticleOrEvent.urlImageBanner">
                             </div>
                         </div>
                         <div class="row">
@@ -60,10 +62,19 @@
                                 />
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="contentBody">Json</label>
+                            </div>
+                            <div class="col-8" style="height: max-content;">
+                                {{ JSON.stringify(dataArticleOrEvent) }}
+                            </div>
+                        </div>
                     </div>
                     <div class="d-flex gap-3 justify-content-center mb-3">
-                        <button class="btn-custom btn-custom-1" type="button" @click="handleSubmitData">Simpan</button>
+                        <button class="btn-custom btn-custom-1" type="button" @click="handleSubmitData">Generate JSON</button>
                         <button class="btn-custom btn-custom-1" type="button" @click="goBack">Kembali</button>
+                        <button class="btn-custom btn-custom-1" type="button" @click="handleReset">Reset</button>
                     </div>
                 </div>
             </div>
@@ -72,6 +83,7 @@
 </template>
 <script>
 import { ref } from "vue";
+import axios from 'axios';
 
 export default {
     name: 'Blog Form',
@@ -82,11 +94,13 @@ export default {
             dataArticleOrEvent: {
                 category: 'EVENT',
                 title: '',
-                city: '',
+                location: '',
                 date: '',
-                urlBannerImage: [],
+                urlImageBanner: [],
+                contentBody: '',
                 id:'',
-            }
+            },
+            dataArticleCount: 0,
         };
     },
     methods: {
@@ -94,26 +108,45 @@ export default {
             this.$router.go(-1);
         },
         handleSubmitData() {
-            console.log(this.dataArticleOrEvent);
+            // console.log(this.dataArticleOrEvent);
             const contentBody = this.$refs.contentBody; // Adjust to your Quill editor ref
-            // console.log("text editor", contentBody.getText());
-            const dataPost = {
-                category: this.dataArticleOrEvent.category,
-                title: this.dataArticleOrEvent.title,
-                city: this.dataArticleOrEvent.city,
-                date: this.dataArticleOrEvent.date,
-                urlBannerImage: this.dataArticleOrEvent.urlBannerImage,
-                contentBody: contentBody.getText(),
-                id:'',
-            }
-            console.log(dataPost);
+            this.dataArticleOrEvent.contentBody = contentBody.getText().replace(/\n/g, '<br><br>');
+            this.dataArticleOrEvent.id = this.dataArticleCount + 1;
+            // console.log(dataPost);
         },
         handleFileChange(event) {
             const file = event.target.files; // Get the first selected file
             if (file) {
-                this.dataArticleOrEvent.urlBannerImage = file;
+                this.dataArticleOrEvent.urlImageBanner = file;
             }
         },
+        handleReset() {
+            this.dataArticleOrEvent = {
+                category: 'EVENT',
+                title: '',
+                location: '',
+                date: '',
+                urlImageBanner: [],
+                contentBody: '',
+                id:'',
+            };
+            const contentBody = this.$refs.contentBody; // Access the Quill instance
+            contentBody.setContents([]); // Clear the content
+            this.getData();
+        },
+        async getData() {
+            try {
+                const response = await axios.get('/assets/service/blog/data.json');
+                const responseData = response.data.data;
+                this.dataArticleCount = responseData.length;
+                // console.log('Data:', this.dataArticleDetail);
+            } catch (error) {
+                console.error('Error fetching blog data:', error);
+            }
+        },
+    },
+    mounted() {
+        this.getData();
     },
 }
 </script>

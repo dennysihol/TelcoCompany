@@ -9,19 +9,20 @@
                     </div>
                     <div class="fs-3 fw-bold text-center mb-3">Informasi Terkini, Berita dan Event</div>
                         <div class="row">
-                            <div class="col-md-6 col-xl-3 mb-3" v-for="item in (tabSelected == 'article' ? dataArticle.data : dataEvent.data)" :key="item.id">
-                                <div class="card-article d-flex flex-column gap-3 pb-3" @click="handleRedirectTo(`/blog/${item.id}/${item.titleArticle.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
+                            <div class="col-md-6 col-xl-3 mb-4" v-for="item in dataArticleOrEvent" :key="item.id">
+                                <div class="card-article d-flex flex-column gap-3 pb-3"
+                                    @click="handleRedirectTo(`/blog/${item.id}/${item.title.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
                                     <div class="card-article-image">
-                                        <img :src="item.urlImage" class="w-100" alt="item-article-1">
+                                    <img :src="item.urlImageBanner" class="w-100" alt="item-article-1">
                                     </div>
                                     <div class="card-article-date d-flex flex-row gap-2">
-                                        <img class="card-article-date-icon" src="@/assets/icon/calendar-icon.png">
-                                        {{ item.location }}, {{ item.dateArticle }}
+                                    <img class="card-article-date-icon" src="@/assets/icon/calendar-icon.png">
+                                    {{ item.location }}, {{ item.date }}
                                     </div>
-                                    <div class="card-article-title">{{ item.titleArticle }}</div>
+                                    <div class="card-article-title">{{ item.title }}</div>
                                     <div class="card-article-read-more">
-                                        Lebih lanjut 
-                                        <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs"/>
+                                    Lebih lanjut
+                                    <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs"/>
                                     </div>
                                 </div>
                             </div>
@@ -35,6 +36,8 @@
     </section>
 </template>
 <script>
+import axios from 'axios';
+
 export default {
     name: 'Article',
     data() {
@@ -112,19 +115,36 @@ export default {
             },
             loading: false,
             error: null,
+            dataArticleOrEvent: [],
         };
     },
     methods: {
         handleTab(nameTab) {
             this.tabSelected = nameTab;
+            this.getData(nameTab);
         },
         handleRedirectTo(path) {
             this.$router.push({ path: path });
         },
         handleRedirectToBlog() {
             this.$router.push({ path: '/blog', query: { ['blog']: this.tabSelected , page: 1 } });
-        }
-    }
+        },
+        async getData(category='article') {
+            try {
+                const response = await axios.get('/assets/service/blog/data.json');
+                const responseData = response.data.data;
+                this.dataArticleOrEvent = responseData
+                .sort((a, b) => b.id - a.id)
+                .filter((item)=>item.category === category.toUpperCase())
+                .slice(0, 4);
+            } catch (error) {
+                console.error('Error fetching blog data:', error);
+            }
+        },
+    },
+    mounted() {
+        this.getData(this.tabSelected);
+    },
 }
 </script>
 <style scoped>

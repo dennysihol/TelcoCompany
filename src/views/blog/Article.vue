@@ -17,7 +17,7 @@
               <div class="card-article d-flex flex-column gap-3 pb-3"
                    @click="handleRedirectTo(`/blog/${item.id}/${item.title.toLowerCase().replace(/[^a-z0-9\s]/g, '').replace(/\s+/g, '-')}`)">
                 <div class="card-article-image">
-                  <img :src="item.urlImageCard" class="w-100" alt="item-article-1">
+                  <img :src="item.urlImageBanner" class="w-100" alt="item-article-1">
                 </div>
                 <div class="card-article-date d-flex flex-row gap-2">
                   <img class="card-article-date-icon" src="@/assets/icon/calendar-icon.png">
@@ -85,6 +85,7 @@ export default {
   data() {
     return {
       dataArticleOrEvent: {},
+      countPagination: 1,
     };
   },
   methods: {
@@ -99,16 +100,18 @@ export default {
         this.$router.push({path: '/blog', query: {['blog']: this.tabSelected, page: pageTo}});
       }
     },
-    getData(category='article') {
-      axios.get('/src/service/blog/data.json')
-          .then(response => {
-            // console.log("Success fetching data: ", category.toUpperCase());
-            const responseData = response.data.data;
-            this.dataArticleOrEvent = responseData.filter((item)=>item.category === category.toUpperCase())
-          })
-          .catch(error => {
-            console.error("Error fetching data: ", error);
-          });
+    async getData(category='article') {
+      try {
+        const response = await axios.get('https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdata.json?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879');
+        const responseData = response.data.data;
+        this.countPagination = Math.ceil(responseData.filter((item)=>item.category === category.toUpperCase()).length / 12);
+        this.dataArticleOrEvent = responseData
+                                  .sort((a, b) => b.id - a.id)
+                                  .filter((item)=>item.category === category.toUpperCase())
+                                  .slice(((this.currentPage-1)*12), (12*this.currentPage));
+      } catch (error) {
+        console.error('Error fetching blog data:', error);
+      }
     },
   },
   mounted() {
@@ -140,9 +143,9 @@ export default {
     showRightEllipsis() {
       return this.currentPage < this.countPagination - 2;
     },
-    countPagination() {
-      return this.dataArticleOrEvent.countPagination;
-    },
+    // countPagination() {
+    //   return this.dataArticleOrEvent.countPagination;
+    // },
   }
 }
 </script>
