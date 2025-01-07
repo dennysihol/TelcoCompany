@@ -85,6 +85,7 @@ export default {
   data() {
     return {
       dataArticleOrEvent: {},
+      countPagination: 1,
     };
   },
   methods: {
@@ -101,25 +102,16 @@ export default {
     },
     async getData(category='article') {
       try {
-        const response = await axios.get('/assets/service/blog/data.json');
+        const response = await axios.get('https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdata.json?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879');
         const responseData = response.data.data;
-        this.dataArticleOrEvent = responseData.sort((a, b) => b.id - a.id).filter((item)=>item.category === category.toUpperCase())
-        // console.log('Data:', data);
-        // Process the data as needed
-        // this.blogData = data;
-        // this.dataArticleOrEvent = data.filter((item) => item.category === category.toUpperCase());
+        this.countPagination = Math.ceil(responseData.filter((item)=>item.category === category.toUpperCase()).length / 12);
+        this.dataArticleOrEvent = responseData
+                                  .sort((a, b) => b.id - a.id)
+                                  .filter((item)=>item.category === category.toUpperCase())
+                                  .slice(((this.currentPage-1)*12), (12*this.currentPage));
       } catch (error) {
         console.error('Error fetching blog data:', error);
       }
-      // axios.get('/assets/service/blog/data.json')
-      //     .then(response => {
-      //       // console.log("Success fetching data: ", category.toUpperCase());
-      //       const responseData = response.data.data;
-      //       this.dataArticleOrEvent = responseData.filter((item)=>item.category === category.toUpperCase())
-      //     })
-      //     .catch(error => {
-      //       console.error("Error fetching data: ", error);
-      //     });
     },
   },
   mounted() {
@@ -151,9 +143,9 @@ export default {
     showRightEllipsis() {
       return this.currentPage < this.countPagination - 2;
     },
-    countPagination() {
-      return this.dataArticleOrEvent.countPagination;
-    },
+    // countPagination() {
+    //   return this.dataArticleOrEvent.countPagination;
+    // },
   }
 }
 </script>
