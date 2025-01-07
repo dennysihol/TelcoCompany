@@ -1,6 +1,6 @@
 [
     {
-      "origin": ["http://localhost:5173", "https://karaoke-reactjs.vercel.app"],
+      "origin": ["http://localhost:5173", "https://pjdweb.vercel.app"],
       "method": ["GET"],
       "maxAgeSeconds": 3600
     }

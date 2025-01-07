@@ -27,3 +27,28 @@ npm run dev
 ```sh
 npm run build
 ```
+
+# Install Firebase CLI
+```sh
+npm install -g firebase-tools
+```
+
+# Log in to Firebase
+```sh
+firebase login
+```
+
+# Initialize Firebase in your project (if not already done)
+```sh
+firebase init
+```
+
+# Apply CORS configuration
+```sh
+gsutil cors set cors.json gs://pinjamduit-84ca8.appspot.com
+```
+
+# Verify CORS configuration
+```sh
+gsutil cors get gs://pinjamduit-84ca8.appspot.com
+```
