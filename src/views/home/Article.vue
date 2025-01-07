@@ -131,7 +131,7 @@ export default {
         },
         async getData(category='article') {
             try {
-                const response = await axios.get('/assets/service/blog/data.json');
+                const response = await axios.get('https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdata.json?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879');
                 const responseData = response.data.data;
                 this.dataArticleOrEvent = responseData
                 .sort((a, b) => b.id - a.id)
