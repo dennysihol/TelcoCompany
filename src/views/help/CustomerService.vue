@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-10 text-center">
           <div class="row pt-3 pb-3">
-            <h2>Layanan Pelanggan</h2>
+            <h2>Layanan Pengaduan</h2>
           </div>
           <div class="row pb-5">
             <div class="col-lg-6">
@@ -26,30 +26,40 @@
                 <form @submit.prevent="sendForm">
                   <div class="form-group select-wrapper">
                     <select
-                        v-model="form.jenis_pengaduan"
-                        :class="{'selected': form.jenis_pengaduan !== ''}"
+                        v-model="form.type"
+                        :class="{'selected': form.type !== ''}"
                         required
                     >
                       <option value="" disabled selected>Jenis Pengaduan</option>
-                      <option value="Kritik / Saran">Kritik / Saran</option>
-                      <option value="Pengaduan Pengguna">Pengaduan Pengguna</option>
+                      <option value="0">Kritik / Saran</option>
+                      <option value="1">Pengaduan Pengguna</option>
                     </select>
                   </div>
 
                   <div class="form-group">
-                    <input type="text" v-model="form.nama" placeholder="Nama Lengkap" required />
+                    <input type="text" v-model="form.userName" placeholder="Nama Lengkap" required />
                   </div>
                   <div class="form-group">
-                    <input type="text" v-model="form.telepon" placeholder="No. Telepon" required />
+                    <input type="text" v-model="form.userPhone" placeholder="No. Telepon" required />
                   </div>
                   <div class="form-group">
-                    <input type="email" v-model="form.email" placeholder="Alamat e-mail" required />
+                    <input type="email" v-model="form.userEmail" placeholder="Alamat e-mail" required />
                   </div>
                   <div class="form-group">
-                    <textarea v-model="form.pesan" placeholder="Ketik pesan ..." maxlength="500" required></textarea>
-                    <p>{{ form.pesan.length }}/500</p>
+                    <textarea v-model="form.content" placeholder="Ketik pesan ..." maxlength="500" required></textarea>
+                    <p>{{ form.content.length }}/500</p>
                   </div>
-                  <button type="submit">Kirim Pesan</button>
+                  <div class="form-group text-end">
+                    <button type="submit" class="btn-custom btn-custom-2 active">Kirim Pesan</button>
+                  </div>
+                  <div class="form-group position-relative" style="height: 100px;">
+                    <Loading
+                      v-model:active="isLoading"
+                      :can-cancel="false"
+                      :is-full-page="fullPage"
+                    />
+                    {{ errorMessage }}
+                  </div>
                 </form>
               </div>
             </div>
@@ -62,37 +72,72 @@
 
 <script>
 import axios from 'axios';
+import Loading from "vue-loading-overlay";
 
 export default {
   data() {
     return {
+      isLoading: false,
+      fullPage: false,
+      errorMessage: '',
       form: {
-        jenis_pengaduan: '',
-        nama: '',
-        telepon: '',
-        email: '',
-        pesan: ''
+        type: '',
+        userName: '',
+        userPhone: '',
+        userEmail: '',
+        content: ''
       }
     };
   },
   methods: {
     async sendForm() {
-      try {
-        // const response = await axios.post('https://api.example.com/feedback', this.form);
-        alert('Pesan berhasil dikirim!');
-        this.form = {
-          jenis_pengaduan: '',
-          nama: '',
-          telepon: '',
-          email: '',
-          pesan: ''
-        };
-      } catch (error) {
-        console.error(error);
-        alert('Terjadi kesalahan saat mengirim pesan.');
-      }
+      this.isLoading = true;
+      axios
+        .post(
+          "https://h5.pinjamduit.co.id/to/feedbackWeb",
+          // "https://h5-test.pinjamduit.co.id/to/feedbackWeb",
+          new URLSearchParams(this.form),
+          {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+              "Accept-Encoding": "gzip, deflate, br, zstd",
+            },
+          }
+        )
+        .then((response) => {
+          this.isLoading = false;
+          console.log(response.data);
+          if (response.data.code == "0") {
+            this.isLoading = false;
+            this.errorMessage = response.data.message;
+            setTimeout(() => {
+              this.errorMessage = '';
+              this.resetForm();
+            }, 5000);
+          } else {
+            this.errorMessage = 'Terjadi kesalahan saat mengirim pesan.';
+            // this.errorMessage = response.data.message;
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          this.errorMessage = 'Terjadi kesalahan saat mengirim pesan.';
+          this.isLoading = false;
+        });
+    },
+    resetForm() {
+      this.form = {
+        type: '',
+        userName: '',
+        userPhone: '',
+        userEmail: '',
+        content: ''
+      };
     }
-  }
+  },
+  components: {
+    Loading,
+  },
 };
 </script>
 
@@ -112,39 +157,6 @@ export default {
   font-size: 1.8em;
   margin-bottom: 30px;
 }
-
-/* .row {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-} */
-
-/* .column {
-  flex: 1;
-} */
-
-/* .left {
-  padding-right: 40px;
-} */
-/* 
-.left p {
-  text-align: left;
-  margin-bottom: 20px;
-  line-height: 1.5;
-  color: #555;
-} */
-/* 
-.left img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin-top: 20px;
-} */
-
-/* Form Section */
-/* .right {
-  padding: 0;
-} */
 
 .form-group {
   margin-bottom: 15px;

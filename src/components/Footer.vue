@@ -105,6 +105,15 @@
               <img src="@/assets/image/ic_phone.png" height="15" />
               &nbsp;
               <span style="color: white; margin-top: 15px">021-5086-8888</span>
+              <p style="color: white; font-size: 14px; margin-top: 20px">
+                PT Stanford Teknologi Indonesia<br />
+                (Kantor Operational)
+              </p>
+              <p style="color: white; font-size: 14px; margin-top: 10px">
+                Jl. Kramat Jaya baru IV<br />
+                Blok F2 No 304, Johar Baru Jakarta Pusat.<br />
+                <a href="https://maps.app.goo.gl/qVr6k6aSgmsHKDTo6" class="text-white" target="_blank">Lokasi</a>
+              </p>
             </div>
           </div>
           <div class="col-xl-2 ud-footer-box">
