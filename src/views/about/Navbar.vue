@@ -29,6 +29,17 @@
                   <a
                       href="#"
                       class="navbar-link"
+                      :class="{ active: selected === 'shareholders' }"
+                      @click.prevent="selectTab('shareholders')"
+                  >
+                    Pemegang Saham
+                  </a>
+                </li>
+                <a class="divider"></a>
+                <li>
+                  <a
+                      href="#"
+                      class="navbar-link"
                       :class="{ active: selected === 'sertifikasi' }"
                       @click.prevent="selectTab('sertifikasi')"
                   >
@@ -66,6 +77,9 @@
             <div v-if="selected === 'direksi'">
               <DirectorCommissioner/>
             </div>
+            <div v-if="selected === 'shareholders'">
+              <Shareholders/>
+            </div>
             <div v-if="selected === 'sertifikasi'" class="content-widget">
               <Certification/>
             </div>
@@ -84,6 +98,7 @@
 <script>
 import {Information} from "@/views/home/index.js";
 import DirectorCommissioner from "./DirectorCommissioner.vue";
+import Shareholders from "./Shareholders.vue";
 import Certification from "./Certification.vue";
 import Statistic from "./StatisticDashboard.vue";
 import FinancialReport from "./FinancialReport.vue";
@@ -94,6 +109,7 @@ export default {
     Information,
     Statistic,
     DirectorCommissioner,
+    Shareholders,
     Certification,
     FinancialReport,
   },
@@ -240,7 +256,7 @@ export default {
 
   padding: 0;
   width: 100%;
-  margin: 20rem auto;
+  margin: 20rem 0 5rem 0;
 }
 
 
