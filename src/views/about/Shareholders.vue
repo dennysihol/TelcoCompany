@@ -1,0 +1,307 @@
+<template>
+  <div class="content-section2 ">
+    <div class="col-lg-10 article-gap w-100">
+      <h1 style="margin-top: 40px; margin-left: 40px;">Pemegang Saham</h1>
+      <div style="margin: 30px 40px 20px 40px;">
+        <span style="color: #2B2B2B; font-size: 18px;">
+          Berdasarkan Akta Pernyataan Keputusan Para Pemegang Saham PT Stanford Teknologi Indonesia Nomor 28 Tanggal 20 Maret 2018, komposisi pemegang saham Perseroan adalah sebagai berikut:
+        </span>
+        <span style="margin-top: 30px; color: #525252; font-size: 24px; font-weight: 500; width: 100%; text-align: center;">
+          Profil Pemegang Saham Perseroan
+        </span>
+      </div>
+      <div class="row d-flex justify-content-center gap-5" style="margin-bottom: 20px;">
+        <div class="col-md-3" v-for="item in dataDirector" :key="item.id">
+          <div class="card-article2 d-flex flex-column pb-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
+            @click="selectedProfile(item)">
+            <div class="card-article-image">
+              <img :src="item.urlImage" class="w-100" alt="item-article-1">
+            </div>
+            <div class="card-article-title">{{ item.name }}</div>
+            <div class="card-article-date d-flex">
+              {{ item.role }}
+            </div>
+            <div class="card-article-read-more" style="margin-top: 10px;">
+              Lihat Profile
+              <font-awesome-icon :icon="['fas', 'chevron-right']" size="xs" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal -->
+  <div class="modal fade modal-info-profile" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true" ref="myModal">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content border-radius-8">
+        <div class="modal-body p-0">
+          <div class="row fs-14">
+            <div class="col-lg-3 p-5 border-radius-8" style="background-color: rgba(246, 251, 255, 1)">
+              <img class="image-profile" :src="dataSelected.urlImage" alt="img-1">
+              Nama :
+              <div class="fw-bold">{{ dataSelected.name }}</div>
+              Kewarganegaraan :
+              <div class="fw-bold">{{ dataSelected.citizenship }}</div>
+            </div>
+            <div class="col-lg-9 p-5 border-radius-8 position-relative">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <ul class="ps-0">
+                <li class="list-style-none fw-bold">Penunjukan</li>
+                <ul :class="dataSelected.appointment.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.appointment.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.appointment">{{ item }}</li>
+                </ul>
+                <li class="list-style-none fw-bold">Pendidikan</li>
+                <ul :class="dataSelected.education.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.education.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.education">{{ item }}</li>
+                </ul>
+                <li class="list-style-none fw-bold">Pengalaman kerja</li>
+                <ul :class="dataSelected.experience.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.experience.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.experience">{{ item }}</li>
+                </ul>
+                <li class="list-style-none fw-bold">Hubungan afiliasi</li>
+                <ul :class="dataSelected.affiliateRelationships.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
+                  <li :class="dataSelected.affiliateRelationships.length == 1 ? 'list-style-none' : ''"
+                    v-for="item in dataSelected.affiliateRelationships">{{ item }}</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+
+export default {
+  name: 'Shareholders',
+  components: {},
+  data() {
+    return {
+      tabSelected: "director",
+      dataDirector: [
+        {
+          "id": 1,
+          "name": 'Hendri',
+          "role": "Direktur Utama",
+          "citizenship": "Indonesia",
+          "appointment": [
+            "Akta Pernyataan Keputusan Para Pemegang Saham Nomor 1 Tanggal 25 Juni 2024",
+          ],
+          "education": [
+            "Doctor in Business Administration, Philippine Women's University (2024)",
+            "Magister Hukum, STIH IBLAM, Jakarta (2022)",
+            "Master of Business Administration, Calwest University (2021)",
+            "Magister Manajemen, STIE IPWIJA, Jakarta (2015)"
+          ],
+          "experience": [
+            "Direktur Utama di PT Stanford Teknologi Indonesia (2020-Sekarang)",
+            "Komisaris di PT Stanford Teknologi Indonesia (2019-2020)",
+            "Komisaris Utama di PT Stanford Teknologi Indonesia (2018-2019)",
+            "Komisaris di PT Stanford Teknologi Indonesia (2017-2018)",
+            "Indonesia Office Deputy Director di Fuhai Group (2015-2017)",
+            "Bergabung dengan PT Megatop Inti Selaras (Fuhai Group) pada tahun 2013 sebagai External Affairs Manager, dan diangkat menjadi Sekretaris Direktur Utama pada tahun 2015.",
+          ],
+          "affiliateRelationships": [
+            "Pemegang Saham"
+          ],
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirut.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        },
+        {
+          "id": 2,
+          "name": 'Jun Zhang',
+          "role": "Direktur",
+          "citizenship": "Turki",
+          "appointment": [
+            "Akta Pernyataan Keputusan Para Pemegang Saham Nomor 1 Tanggal 25 Juni 2024",
+          ],
+          "education": [
+            "Sarjana Ekonomi jurusan Ekonomi Dunia, Universitas Fudan, Shanghai (2005)",
+          ],
+          "experience": [
+            "Direktur di PT Stanford Teknologi Indonesia (2020-Sekarang)",
+            "Direktur Utama di PT Stanford Teknologi Indonesia (2018-2020)",
+            "Direktur di PT Recome Teknologi Indonesia (2019- sekarang)",
+            "Direktur di PT Stanford Teknologi Indonesia (2017-2018)",
+            "Founder di Shanghai Baigong Network Technology Co.,Ltd (2016- Sekarang)",
+            "Direktur di Shanghai Yizhu Financial Services Co.,Ltd (2014-2017)",
+            "Presiden Direktur di Shanghai Li Cai Financial Services Co.,Ltd (2010-2016)",
+            "Presiden Direktur di Hainan Jinfei Isalnd Real Estate Development Co.,Ltd (2002-2010)",
+            "Founder di Shanghai nijia.com (2000-2002)",
+            "Founder di Shanghai Stanford Trade Co.,Ltd (1995-2000)",
+          ],
+          "affiliateRelationships": [
+            "Pemegang saham utama"
+          ],
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirektur.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        }
+      ],
+      dataCommissioner: [
+        {
+          "id": 1,
+          "name": 'Maximilianus Maria Kolbe Fair Antero',
+          "role": "Komisaris",
+          "citizenship": "Indonesia",
+          "appointment": [
+            "Akta Pernyataan Keputusan Para Pemegang Saham Nomor 1 Tanggal 25 Juni 2024",
+          ],
+          "education": [],
+          "experience": [
+            "Komisaris di PT Stanford Teknologi Indonesia (2022-Sekarang)",
+            "Founder PT Hijau Sentosa Bersama (2021 - Sekarang)",
+            "Head of HRD di PT Stanford Teknologi Indonesia (2019- 2021)",
+            "Founder PT Hijau Sentosa Abadi (2017 - Sekarang)",
+            "GM Human Capital di PT Pharos Indonesia (2015- 2019)",
+            "Komisaris PT Cipta Abdi Perkasa (2012 - 2017)",
+            "GM HRD di Circle International, LTD (2007-2015)",
+            "Co Founder PT Cipta Abdi Perkasa (2005 - Sekarang)",
+          ],
+          "affiliateRelationships": [
+            "Tidak ada (Profesional)"
+          ],
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fkomisaris.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        },
+      ],
+      dataSelected: {
+        appointment: [],
+        education: [],
+        experience: [],
+        affiliateRelationships: [],
+      },
+      loading: false,
+      error: null,
+    };
+  },
+  methods: {
+    handleTab(nameTab) {
+      this.tabSelected = nameTab;
+    },
+    // openModal() {
+    //   const modalElement = this.$refs.myModal;
+    //   const modalInstance = new bootstrap.Modal(modalElement);
+    //   modalInstance.show();
+    // },
+    // closeModal() {
+    //   const modalElement = this.$refs.myModal;
+    //   const modalInstance = new bootstrap.Modal(modalElement);
+    //   modalInstance.hide();
+    // },
+    selectedProfile(item) {
+      this.dataSelected = item;
+      // this.openModal();
+    },
+  },
+
+}
+</script>
+<style scoped>
+/* Content Section Styling */
+.content-section2 {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 0 30px 0;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.bg-article {
+  background: rgba(246, 251, 255, 1);
+}
+
+.container-article {
+  padding: 5rem 0 5rem 0;
+}
+
+.article-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card-article2 {
+  border: 1px solid rgba(217, 217, 217, 1);
+  background: rgba(255, 255, 255, 1);
+  border-radius: 14px;
+  padding: 0 0 10px 20px;
+  cursor: pointer;
+
+  .card-article-image {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      border-radius: 0 10px 0 10px;
+    }
+  }
+
+  .card-article-date {
+    font-size: 16px;
+    font-weight: 400;
+    color: #737373;
+  }
+
+  .card-article-title {
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-article-read-more {
+    color: rgba(43, 43, 43, 1);
+    font-weight: 400;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.border-radius-8 {
+  border-radius: 8px;
+}
+
+.modal-info-profile {
+  ul {
+    list-style-type: disc;
+
+    .list-style-none {
+      list-style-type: none;
+    }
+  }
+
+
+  .image-profile {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+
+  .btn-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .p-5 {
+    padding: 1rem !important;
+  }
+}
+</style>

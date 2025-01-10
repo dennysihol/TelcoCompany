@@ -23,7 +23,7 @@
                 <div class="container-image">
                   <a class="ud-menu-scroll" href="/">
                     <img src="../assets/image/logo_pjd.png" alt="Logo" style="height: 34px; margin-right: 8px;" />
-                    <img src="../assets/image/logo_afpi.png" alt="Logo" style="height: 24px;" />
+                    <img src="../assets/image/logo_afpi.png" alt="Logo" style="height: 40px;" />
                   </a>
                 </div>
                 <ul id="nav" class="navbar-nav mx-auto" @click="toggleNavbar" >
