@@ -129,7 +129,7 @@
                   <li :class="dataSelected.appointment.length == 1 ? 'list-style-none' : ''"
                     v-for="item in dataSelected.appointment">{{ item }}</li>
                 </ul>
-                <li class="list-style-none fw-bold">Pendidikan</li>
+                <li class="list-style-none fw-bold" v-if="dataSelected.education.length > 0">Pendidikan</li>
                 <ul :class="dataSelected.education.length == 1 ? 'ps-0 pb-3' : 'pb-3'">
                   <li :class="dataSelected.education.length == 1 ? 'list-style-none' : ''"
                     v-for="item in dataSelected.education">{{ item }}</li>

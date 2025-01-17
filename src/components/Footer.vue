@@ -112,14 +112,23 @@
               <p style="color: white; font-size: 14px; margin-top: 10px">
                 Jl. Kramat Jaya baru IV<br />
                 Blok F2 No 304, Johar Baru Jakarta Pusat.<br />
-                <a href="https://maps.app.goo.gl/qVr6k6aSgmsHKDTo6" class="text-white" target="_blank">Lokasi</a>
+                <!-- <a href="https://maps.app.goo.gl/qVr6k6aSgmsHKDTo6" class="text-white" target="_blank">Lokasi</a> -->
               </p>
             </div>
           </div>
           <div class="col-xl-2 ud-footer-box">
-            <div class="ud-widget">
+            <div class="ud-widget d-flex gap-3 flex-column">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4001572514185!2d106.81609237573127!3d-6.210837060837876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f402650f551d%3A0x6004b088aa5ea110!2sSahid%20Sudirman%20Centre%2C%20Jl.%20Jenderal%20Sudirman%20No.Kav.%2013-15%2C%20RT.10%2FRW.11%2C%20Karet%20Tengsin%2C%20Kecamatan%20Tanah%20Abang%2C%20Kota%20Jakarta%20Pusat%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2010250!5e0!3m2!1sen!2sid!4v1727753096165!5m2!1sen!2sid"
+                width="240"
+                height="250"
+                style="border: 0; border-radius: 3%"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d495.8244199249545!2d106.8538133!3d-6.1848724!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTEnMDQuOCJTIDEwNsKwNTEnMTQuNiJF!5e0!3m2!1sen!2sid!4v1737083043522!5m2!1sen!2sid"
                 width="240"
                 height="250"
                 style="border: 0; border-radius: 3%"

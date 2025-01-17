@@ -86,7 +86,7 @@ export default {
         },
         {
           question: "Berapa Limit Pinjaman di PinjamDuit?",
-          answer: `Limit pinjaman berbeda untuk setiap peminjam, mulai dari Rp100.000 hingga Rp20.000.000.`,
+          answer: `Limit pinjaman berbeda untuk setiap peminjam, mulai dari Rp100.000 hingga Rp50.000.000.`,
           open: false,
           isList: false
         },
