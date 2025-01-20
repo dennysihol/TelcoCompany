@@ -40,7 +40,7 @@
                     <input type="text" v-model="form.userName" placeholder="Nama Lengkap" required />
                   </div>
                   <div class="form-group">
-                    <input type="text" v-model="form.userPhone" placeholder="No. Telepon" required />
+                    <input type="text" v-model="form.userPhone" placeholder="No. Telepon" @input="validateNumber" required />
                   </div>
                   <div class="form-group">
                     <input type="email" v-model="form.userEmail" placeholder="Alamat e-mail" required />
@@ -124,6 +124,11 @@ export default {
           this.errorMessage = 'Terjadi kesalahan saat mengirim pesan.';
           this.isLoading = false;
         });
+    },
+    validateNumber(event) {
+      // Remove any non-numeric characters
+      const value = event.target.value.replace(/\D/g, '');
+      this.form.userPhone = value;
     },
     resetForm() {
       this.form = {

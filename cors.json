@@ -1,6 +1,13 @@
 [
     {
-      "origin": ["http://localhost:5173", "https://pjdweb.vercel.app"],
+      "origin": [
+        "http://localhost:5173",
+        "http://127.0.0.1:5500",
+        "http://8.215.197.177:5173/",
+        "https://pjdweb.vercel.app",
+        "https://pinjamduit.co.id",
+        "https://8.215.197.177:5173/"
+      ],
       "method": ["GET"],
       "maxAgeSeconds": 3600
     }

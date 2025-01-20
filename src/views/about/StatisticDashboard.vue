@@ -9,11 +9,11 @@
                 <img src="@/assets/image/item-advantages-1.png" alt="Icon">
               </div>
               <div class="card-content">
-                <p>Total Penerima Dana Sejak Berdiri</p>
+                <p>{{ value.desc1 }}</p>
                 <p class="value">{{ value.total }}</p>
-                <p>Total Pada Tahun Berjalan</p>
+                <p>{{ value.desc2 }}</p>
                 <p class="value">{{ value.thisYear }}</p>
-                <p>Total Aktif Berupa Posisi Akhir</p>
+                <p>{{ value.desc3 }}</p>
                 <p class="value">{{ value.active }}</p>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default {
           desc3: "Total Pemberi Dana Aktif Berupa Posisi Akhir",
           total: "9",
           thisYear: "6",
-          active: "6",
+          active: "5",
         },
         toRepayAmount: {
           type:"toRepayAmount",

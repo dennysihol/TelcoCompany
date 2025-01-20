@@ -16,7 +16,7 @@
                   type="range"
                   class="inputRange"
                   min="100000"
-                  max="20000000"
+                  max="50000000"
                   step="100000"
                   v-model="rangeValue" 
                   @input="updateSliderBackground"
@@ -27,7 +27,7 @@
               </div>
               <div class="d-flex flex-row justify-content-between fw-semibold">
                 <div class="fw-normal fs-12">100.000</div>
-                <div class="fw-normal fs-12">20.000.000</div>
+                <div class="fw-normal fs-12">50.000.000</div>
               </div>
               <div class="pt-3 pb-3">
                 <div class="hr"></div>
@@ -81,7 +81,7 @@ export default {
     data() {
       return {
         data: [],
-        rangeValue: 10000000, // Initial range value
+        rangeValue: 25000000, // Initial range value
         sliderBackground: '', // To hold the dynamic background
         isHeldSlider: false,
         percentagePlatformFee: 0.45,

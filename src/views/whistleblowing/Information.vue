@@ -49,7 +49,7 @@
                     <div class="row">
                         <div class="description-complaint">
                             Apabila anda menemukan adanya tindakan pelanggaran dapat melaporkannya melalui Email: <span
-                                style="font-weight: 600;">wbs@stanfordtek.com</span>
+                                style="font-weight: 600;">wbs@pinjamduit.co.id</span>
                         </div>
                     </div>
                     <div class="row">

@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/', 
   plugins: [
     vue(),
     vueDevTools(),
@@ -14,5 +15,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  server: {
+    historyApiFallback: true, // Enable SPA fallback
   }
 })
