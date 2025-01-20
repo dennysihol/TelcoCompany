@@ -111,21 +111,37 @@ export default {
           "id": 8,
           "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_8.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         },
+        // {
+        //   "id": 9,
+        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_9.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        // },
+        // {
+        //   "id": 10,
+        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_10.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        // },
+        // {
+        //   "id": 11,
+        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_11.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        // },
+        // {
+        //   "id": 12,
+        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_12.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+        // },
         {
           "id": 9,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_9.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_14.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         },
         {
           "id": 10,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_10.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_15.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         },
         {
           "id": 11,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_11.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_16.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         },
         {
           "id": 12,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_12.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_17.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
         },
         {
           "id": 13,

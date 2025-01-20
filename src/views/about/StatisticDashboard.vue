@@ -76,7 +76,7 @@ export default {
           desc3: "Total Pemberi Dana Aktif Berupa Posisi Akhir",
           total: "9",
           thisYear: "6",
-          active: "6",
+          active: "5",
         },
         toRepayAmount: {
           type:"toRepayAmount",

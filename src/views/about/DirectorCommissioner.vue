@@ -203,9 +203,9 @@ export default {
           "experience": [
             "Direktur di PT Stanford Teknologi Indonesia (2020-Sekarang)",
             "Direktur Utama di PT Stanford Teknologi Indonesia (2018-2020)",
-            "Direktur di PT Recome Teknologi Indonesia (2019- sekarang)",
+            "Direktur di PT Recome Teknologi Indonesia (2019-2024)",
             "Direktur di PT Stanford Teknologi Indonesia (2017-2018)",
-            "Founder di Shanghai Baigong Network Technology Co.,Ltd (2016- Sekarang)",
+            "Founder di Shanghai Baigong Network Technology Co.,Ltd (2016-2019)",
             "Direktur di Shanghai Yizhu Financial Services Co.,Ltd (2014-2017)",
             "Presiden Direktur di Shanghai Li Cai Financial Services Co.,Ltd (2010-2016)",
             "Presiden Direktur di Hainan Jinfei Isalnd Real Estate Development Co.,Ltd (2002-2010)",

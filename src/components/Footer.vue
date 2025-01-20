@@ -164,14 +164,14 @@
               <ul class="ud-widget-links">
                 <li>
                   <a
-                    href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fupdated%20syarat%20dan%20ketentuan%202024.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fsyarat-dan-ketentuan-2025.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
                     target="_blank"
                     >Syarat & Ketentuan</a
                   >
                 </li>
-                <li>
+                <!-- <li>
                   <a href="#">Kebijakan Privasi</a>
-                </li>
+                </li> -->
                 <li>
                   <a
                     href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FDisclaimer%20Risiko.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
@@ -180,7 +180,10 @@
                   >
                 </li>
                 <li>
-                  <a href="#">Publikasi Penanganan Pengaduan</a>
+                  <a
+                    href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FLaporan-Pengaduan-Pengguna-LP-2024.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    target="_blank"
+                    >Publikasi Penanganan Pengaduan</a>
                 </li>
                 <li>
                   <a href="/whistleblowing">Whistleblowing</a>

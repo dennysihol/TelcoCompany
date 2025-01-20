@@ -31,10 +31,10 @@
                   }" :spaceBetween="0" :loop="true" :effect="'fade'" :fadeEffect="{
                       crossFade: true
                     }" :modules="modules" @slideChange="onSlideChange" @swiper="onSwiper" class="mySwiper">
-                    <swiper-slide class="slide1"><img src="../../assets/image/phone-mockup-1.png" /></swiper-slide>
-                    <swiper-slide class="slide2"><img src="../../assets/image/phone-mockup-2.png" /></swiper-slide>
-                    <swiper-slide class="slide3"><img src="../../assets/image/phone-mockup-3.png" /></swiper-slide>
-                    <swiper-slide class="slide4"><img src="../../assets/image/phone-mockup-4.png" /></swiper-slide>
+                    <swiper-slide class="slide1"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
+                    <swiper-slide class="slide2"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
+                    <swiper-slide class="slide3"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
+                    <swiper-slide class="slide4"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
                   </swiper>
                 </div>
               </div>
