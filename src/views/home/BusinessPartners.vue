@@ -81,71 +81,55 @@ export default {
       dataPartner: [
         {
           "id": 1,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_1.png', import.meta.url).href
         },
         {
           "id": 2,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_2.png', import.meta.url).href
         },
         {
           "id": 3,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_3.png', import.meta.url).href
         },
         {
           "id": 4,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_4.png', import.meta.url).href
         },
         {
           "id": 5,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_5.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_5.png', import.meta.url).href
         },
         {
           "id": 6,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_6.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_6.png', import.meta.url).href
         },
         {
           "id": 7,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_7.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_7.png', import.meta.url).href
         },
         {
           "id": 8,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_8.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_8.png', import.meta.url).href
         },
-        // {
-        //   "id": 9,
-        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_9.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-        // },
-        // {
-        //   "id": 10,
-        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_10.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-        // },
-        // {
-        //   "id": 11,
-        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_11.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-        // },
-        // {
-        //   "id": 12,
-        //   "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_12.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
-        // },
         {
           "id": 9,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_14.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_14.png', import.meta.url).href
         },
         {
           "id": 10,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_15.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_15.png', import.meta.url).href
         },
         {
           "id": 11,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_16.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_16.png', import.meta.url).href
         },
         {
           "id": 12,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_17.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_17.png', import.meta.url).href
         },
         {
           "id": 13,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_partner_13.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/ic_partner_13.png', import.meta.url).href
         },
       ],
       loading: false,

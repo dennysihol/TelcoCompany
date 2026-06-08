@@ -31,10 +31,10 @@
                   }" :spaceBetween="0" :loop="true" :effect="'fade'" :fadeEffect="{
                       crossFade: true
                     }" :modules="modules" @slideChange="onSlideChange" @swiper="onSwiper" class="mySwiper">
-                    <swiper-slide class="slide1"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
-                    <swiper-slide class="slide2"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
-                    <swiper-slide class="slide3"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
-                    <swiper-slide class="slide4"><img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fphone-mockup-4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" /></swiper-slide>
+                    <swiper-slide class="slide1"><img src="../../assets/image/phone-mockup-1.png" /></swiper-slide>
+                    <swiper-slide class="slide2"><img src="../../assets/image/phone-mockup-2.png" /></swiper-slide>
+                    <swiper-slide class="slide3"><img src="../../assets/image/phone-mockup-3.png" /></swiper-slide>
+                    <swiper-slide class="slide4"><img src="../../assets/image/phone-mockup-4.png" /></swiper-slide>
                   </swiper>
                 </div>
               </div>
@@ -70,10 +70,10 @@ export default {
       currentIndex: 0, // Track the current active slide
       swiperInstance: null, // Store the swiper instance
       slides: [
-        { title: '1. Isi Data', image: 'src/assets/image/phone-mockup-1.png', description: 'Daftar akun dengan mengisi informasi yang dibutuhkan', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' },
-        { title: '2. Verifikasi', image: 'src/assets/image/phone-mockup-2.png', description: 'Sistem sedang memverifikasi data kamu untuk mendapatkan limit pinjaman', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' },
-        { title: '3. Ajukan Pinjaman', image: 'src/assets/image/phone-mockup-3.png', description: 'Ajukan besaran pinjaman yang kamu inginkan', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' },
-        { title: '4. Pengembalian Pinjaman', image: 'src/assets/image/phone-mockup-4.png', description: 'Proses pengembalian pinjaman sangat mudah', icon: 'https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fic_submission_4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879' }
+        { title: '1. Isi Data', image: 'src/assets/image/phone-mockup-1.png', description: 'Daftar akun dengan mengisi informasi yang dibutuhkan', icon: new URL('../../assets/image/ic_submission_1.png', import.meta.url).href },
+        { title: '2. Verifikasi', image: 'src/assets/image/phone-mockup-2.png', description: 'Sistem sedang memverifikasi data kamu untuk mendapatkan limit pinjaman', icon: new URL('../../assets/image/ic_submission_2.png', import.meta.url).href },
+        { title: '3. Ajukan Pinjaman', image: 'src/assets/image/phone-mockup-3.png', description: 'Ajukan besaran pinjaman yang kamu inginkan', icon: new URL('../../assets/image/ic_submission_3.png', import.meta.url).href },
+        { title: '4. Pengembalian Pinjaman', image: 'src/assets/image/phone-mockup-4.png', description: 'Proses pengembalian pinjaman sangat mudah', icon: new URL('../../assets/image/ic_submission_4.png', import.meta.url).href }
       ],
     };
   },
@@ -137,7 +137,7 @@ p {
   margin-top: 20px;
   
   .step-process {
-    color: black;
+    color: var(--body-color);
     padding: 10px;
     border-radius: 10px;
     display: flex;
@@ -148,23 +148,24 @@ p {
     cursor: pointer;
   }
   .step-process.active {
-    background-color: white;
-    color: #0087FF;
+    background-color: var(--color-background);
+    color: var(--color-primary);
   }
 }
 
 .custom-pagination button {
-  background-color: #f0f0f0;
+  background-color: var(--color-background-soft);
   border: none;
   padding: 10px;
   margin: 5px;
   cursor: pointer;
   border-radius: 5px;
+  color: var(--body-color);
 }
 
 .custom-pagination button.active {
-  background-color: #0087FF;
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--white);
 }
 
 @media (max-width: 768px) {

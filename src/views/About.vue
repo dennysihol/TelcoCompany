@@ -4,7 +4,7 @@
          :data-bs-interval="intervalBanner" data-bs-pause="false">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-tentang.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" class="d-block w-100" alt="home-banner-3">
+          <img src="@/assets/image/bg-tentang.png" class="d-block w-100" alt="home-banner-3">
           <div class="banner-content">
             <!-- Add other content as needed -->
           </div>

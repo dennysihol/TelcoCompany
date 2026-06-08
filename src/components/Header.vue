@@ -6,7 +6,6 @@
           <nav class="navbar navbar-expand-lg">
             <div class="navbar-tkb" v-for="(item, index) in tkbData.dataPercentage" :key="index">
               <div class="navbar-brand">
-                <p>{{ item.tkbName }}: <span>{{ item.tkb }}%<b/></span></p>
               </div>
             </div>
           </nav>
@@ -22,8 +21,7 @@
               <div class="d-flex justify-content-between w-100">
                 <div class="container-image">
                   <a class="ud-menu-scroll" href="/">
-                    <img src="../assets/image/logo_pjd.png" alt="Logo" style="height: 34px; margin-right: 8px;" />
-                    <img src="../assets/image/logo_afpi.png" alt="Logo" style="height: 40px;" />
+                    <img src="https://datatelindo.com/wp-content/uploads/2021/06/Logo-Datatel-768x450.png" alt="Logo" style="height: 70px; margin-right: 8px;" />
                   </a>
                 </div>
                 <ul id="nav" class="navbar-nav mx-auto" @click="toggleNavbar" >
@@ -31,7 +29,7 @@
                     <router-link to="/" exact-active-class="active-link">Home</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/funding" exact-active-class="active-link">Pendanaan</router-link>
+                    <router-link to="/funding" exact-active-class="active-link">Proyek</router-link>
                   </li>
                   <li class="nav-item">
                     <router-link to="/about" exact-active-class="active-link">Tentang Kami</router-link>
@@ -54,7 +52,7 @@
 
 <style scoped>
 .bg.container-fluid {
-  background-color: #e91e63;
+  background-color: var(--color-primary);
   background-size: cover;
 }
 
@@ -63,7 +61,7 @@
 }
 
 u {
-  text-decoration-color: #e91e63;
+  text-decoration-color: var(--color-secondary);
 }
 
 .navbar-collapse {
@@ -82,8 +80,8 @@ u {
 }
 
 .nav-link:hover {
-  background-color: #e91e63; /* Background color on hover */
-  color: white; /* Change text color on hover */
+  background-color: var(--color-primary);
+  color: var(--white);
 }
 
 /* Center the nav items in the burger menu */

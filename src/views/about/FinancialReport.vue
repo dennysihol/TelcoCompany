@@ -48,26 +48,26 @@ export default {
                 {
                     "id": 1,
                     "title": 'Laporan Keuangan Tahun 2020',
-                    "link": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FLaporan Keuangan Tahun 2020.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Flaporan_1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    "link": new URL('../../assets/docs/Laporan Keuangan Tahun 2020.pdf', import.meta.url).href,
+                    "urlImage": new URL('../../assets/image/laporan_1.png', import.meta.url).href
                 },
                 {
                     "id": 2,
                     "title": 'Laporan Keuangan Tahun 2021',
-                    "link": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FLaporan Keuangan Tahun 2021.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Flaporan_2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    "link": new URL('../../assets/docs/Laporan Keuangan Tahun 2021.pdf', import.meta.url).href,
+                    "urlImage": new URL('../../assets/image/laporan_2.png', import.meta.url).href
                 },
                 {
                     "id": 3,
                     "title": 'Laporan Keuangan Tahun 2022',
-                    "link": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FLaporan Keuangan Tahun 2022.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Flaporan_3.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    "link": new URL('../../assets/docs/Laporan Keuangan Tahun 2022.pdf', import.meta.url).href,
+                    "urlImage": new URL('../../assets/image/laporan_3.png', import.meta.url).href
                 },
                 {
                     "id": 4,
                     "title": 'Laporan Keuangan Tahun 2023',
-                    "link": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FLaporan Keuangan Tahun 2023.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879",
-                    "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Flaporan_4.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    "link": new URL('../../assets/docs/Laporan Keuangan Tahun 2023.pdf', import.meta.url).href,
+                    "urlImage": new URL('../../assets/image/laporan_4.png', import.meta.url).href
                 },
             ],
             loading: false,

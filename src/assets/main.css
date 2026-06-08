@@ -141,7 +141,33 @@ p {
 
 .ud-main-btn:hover {
   color: var(--white);
-  background: var(--heading-color);
+  background: var(--color-primary-strong);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--white);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.active,
+.btn-primary:active {
+  background-color: var(--color-primary-strong);
+  border-color: var(--color-primary-strong);
+}
+
+.btn-secondary {
+  background-color: var(--color-background-mute);
+  border-color: var(--color-background-mute);
+  color: var(--body-color);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--color-background-soft);
+  color: var(--body-color);
 }
 
 @media (max-width: 767px) {
@@ -212,7 +238,7 @@ p {
 
 
 .navbar-float {
-  background-color: #0087ff;
+  background-color: var(--color-primary);
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
   align-items: end;
@@ -220,7 +246,7 @@ p {
 }
 
 .sticky .navbar-float {
-  background-color: #0087ff;
+  background-color: var(--color-primary);
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
   align-items: end;
@@ -331,7 +357,7 @@ p {
 
 @media only screen and (min-width: 1080px) {
   .navbar-tkb {
-    background-color: #0777da;
+    background-color: var(--color-primary);
     border-radius: 8px;
     margin-left: 15px;
   }
@@ -339,14 +365,14 @@ p {
 
 @media only screen and (max-width: 915px) {
   .navbar-tkb {
-    background-color: #0777da;
+    background-color: var(--color-primary);
     border-radius: 8px;
   }
 }
 
 @media only screen and (max-width: 1079px) {
   .navbar-tkb {
-    background-color: #0777da;
+    background-color: var(--color-primary);
     border-radius: 8px;
   }
 }
@@ -354,7 +380,7 @@ p {
 .navbar-nav .nav-item > a {
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: var(--body-color);
   -webkit-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
   position: relative;
@@ -362,11 +388,11 @@ p {
 }
 
 .navbar-nav .nav-item .router-link-active {
-  color: #0087ff;
+  color: var(--color-primary);
 }
 
 .navbar-nav .nav-item > a:hover {
-  color: #0065bf;
+  color: var(--color-primary-strong);
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
@@ -382,7 +408,7 @@ p {
   (max-width: 767px) {
   .navbar-nav .nav-item > a:hover,
   .navbar-nav .nav-item > a.active {
-    color: #0065bf;
+    color: var(--color-primary-strong);
     opacity: 1;
   }
 }
@@ -427,14 +453,14 @@ p {
 }
 
 .navbar-nav .nav-item:hover > a {
-  color: #0065bf;
+  color: var(--color-primary-strong);
   opacity: 1;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px),
   (max-width: 767px) {
   .navbar-nav .nav-item:hover > a {
-    color: #0065bf;
+    color: var(--color-primary-strong);
     opacity: 1;
   }
 }
@@ -515,12 +541,12 @@ p {
 }
 
 .sticky .navbar-nav .nav-item .router-link-active {
-  color: #0087ff;
+  color: var(--color-primary);
 }
 
 .sticky .navbar-nav .nav-item a.active,
 .sticky .navbar-nav .nav-item a:hover {
-  color: #0065bf;
+  color: var(--color-primary-strong);
   opacity: 1;
 }
 
@@ -1669,7 +1695,7 @@ p {
 
 /* ===== Footer CSS ===== */
 .ud-footer {
-  background: #0087ff;
+  background: var(--color-primary);
   padding-top: 50px;
   position: relative;
   z-index: 1;
@@ -1802,7 +1828,7 @@ p {
 }
 
 .ud-footer-bottom {
-  background-color: #0087ff;
+  background-color: var(--color-primary);
   padding-bottom: 30px;
 }
 

@@ -17,7 +17,7 @@
                   membantu mewujudkan impian hidup anda!
                 </p>
                 <img
-                  src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg_customer_services.png?alt=media&token=4741bc2c-61cc-4f2f-962b-3f7d73857ae6"
+                  src="@/assets/image/bg-tentang.png"
                   alt="Customer Service"
                   width="600"
                 />

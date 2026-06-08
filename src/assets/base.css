@@ -23,16 +23,28 @@
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-primary: #007979;
+  --color-primary-strong: #006064;
+  --color-primary-soft: #25b1b1;
+  --color-secondary: #ffd2a3;
+  --color-accent: #ffe2c8;
 
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
+  --body-color: #233a3a;
+  --heading-color: #005d5d;
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-background: #fff8f3;
+  --color-background-soft: #fff3eb;
+  --color-background-mute: #ffe7d4;
+  --color-surface: #fff9f5;
+  --color-surface-alt: #fff1e7;
 
+  --color-border: rgba(0, 121, 121, 0.18);
+  --color-border-hover: rgba(0, 121, 121, 0.32);
+
+  --color-heading: var(--heading-color);
+  --color-text: var(--body-color);
+
+  --white: #ffffff;
   --section-gap: 160px;
 }
 

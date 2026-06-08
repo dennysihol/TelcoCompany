@@ -174,7 +174,7 @@
                 </li> -->
                 <li>
                   <a
-                    href="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2FDisclaimer%20Risiko.pdf?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+                    href="/assets/docs/Disclaimer Risiko.pdf"
                     target="_blank"
                     >Disclaimer Resiko</a
                   >
@@ -320,7 +320,7 @@
           </div>
         </div>
         <div class="modal-body">
-          <form @submit="checkPhone">
+          <form @submit.prevent="checkPhone">
             <p class="modal-text">
               Masukan nomor telepon kamu yang didaftarkan di
               <span style="font-weight: bold">Aplikasi PinjamDuit</span
@@ -635,7 +635,7 @@
 import "@/assets/main.css";
 import axios, { isCancel } from "axios";
 import { ref, onMounted, getCurrentInstance } from "vue";
-import { v4 as uuidv4 } from "uuid";
+import { uuid as uuidv4 } from "uuidv4";
 import * as bootstrap from "bootstrap";
 window.bootstrap = bootstrap;
 import Loading from "vue-loading-overlay";
@@ -733,6 +733,10 @@ export default {
         .catch((error) => {
           this.isLoading = false;
           console.error("Error:", error);
+          this.errorMessage =
+            error.response?.data?.message ||
+            error.message ||
+            "Terjadi kesalahan jaringan. Silakan coba lagi.";
         });
 
       // var response = { 
@@ -797,6 +801,10 @@ export default {
         .catch((error) => {
           console.error("Error:", error);
           this.isLoading = false;
+          this.errorMessage =
+            error.response?.data?.message ||
+            error.message ||
+            "Terjadi kesalahan jaringan. Silakan coba lagi.";
         });
       // var response = { 
       //   "data" : {
@@ -892,6 +900,11 @@ export default {
         .catch((error) => {
           console.error("Error:", error);
           this.isLoading = false;
+          this.otpError = true;
+          this.errorMessage =
+            error.response?.data?.message ||
+            error.message ||
+            "Terjadi kesalahan saat memverifikasi kode OTP.";
         });
       
       // var response = { 
@@ -964,6 +977,10 @@ export default {
         .catch((error) => {
           console.error("Error:", error);
           this.isLoading = false;
+          this.errorMessage =
+            error.response?.data?.message ||
+            error.message ||
+            "Terjadi kesalahan saat menghapus akun. Silakan coba lagi.";
         });
       
       // var response = { 
@@ -1010,8 +1027,6 @@ export default {
     const fifthModal = ref(null);
     const sixthModal = ref(null);
     const seventhModal = ref(null);
-    const phone = ref('');
-    const errorMessage = ref('');
     let bootstrapFirstModal = null;
     let bootstrapSecondModal = null;
     let bootstrapThirdModal = null;
@@ -1198,8 +1213,6 @@ export default {
       fifthModal,
       sixthModal,
       seventhModal,
-      phone,
-      errorMessage,
     };
   },
 };
@@ -1211,7 +1224,8 @@ export default {
 }
 
 .btn-primary {
-  background-color: #0087ff;
+  background-color: var(--color-primary);
+  color: var(--white);
   width: 150px;
   padding: 10px 20px;
   border-radius: 30px;
@@ -1223,12 +1237,13 @@ export default {
 }
 
 .btn-primary:disabled {
-  background-color: #d9edff;
+  background-color: rgba(0, 121, 121, 0.16);
   cursor: not-allowed;
 }
 
 .btn-secondary {
-  background-color: #d9edff;
+  background-color: var(--color-background-mute);
+  color: var(--body-color);
   width: 150px;
   padding: 10px 20px;
   border-radius: 30px;

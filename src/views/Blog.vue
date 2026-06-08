@@ -23,7 +23,7 @@ export default {
       dataBanner: [
         {
           "id": 1,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-blog.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../assets/image/bg-tentang.png', import.meta.url).href
         }
       ],
       loading: true,

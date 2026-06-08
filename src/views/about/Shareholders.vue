@@ -111,7 +111,7 @@ export default {
           "affiliateRelationships": [
             "Pemegang Saham"
           ],
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirut.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/dirut.png', import.meta.url).href
         },
         {
           "id": 2,
@@ -139,7 +139,7 @@ export default {
           "affiliateRelationships": [
             "Pemegang saham utama"
           ],
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fdirektur.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/direktur.png', import.meta.url).href
         }
       ],
       dataCommissioner: [
@@ -165,7 +165,7 @@ export default {
           "affiliateRelationships": [
             "Tidak ada (Profesional)"
           ],
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fkomisaris.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": new URL('../../assets/image/komisaris.png', import.meta.url).href
         },
       ],
       dataSelected: {

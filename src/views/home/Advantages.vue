@@ -1,7 +1,7 @@
 <template>
     <section id="advantages" class="position-relative">
         <div class="position-absolute top-0 start-0 w-100 h-100">
-            <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-advantages.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+            <img src="../../assets/image/bg-advantages.png"
                 class="d-block w-100 bg-advantages" alt="bg-advantages">
         </div>
         <div class="container position-relative vh-100">

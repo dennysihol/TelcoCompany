@@ -61,11 +61,11 @@ export default {
       dataBanner: [
         {
           "id": 1,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fhome-banner-1.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": 'https://cdn.prod.website-files.com/69bd021879c27d1f6b47b2ad/69fe015310ab427d2eda1732_D1_IndonesiaTelecoTowers_Image.jpeg'
         },
         {
           "id": 2,
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fhome-banner-2.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879"
+          "urlImage": 'https://anchorcomllc.com/images/hero-towers.png'
         }
       ],
       loading: true,

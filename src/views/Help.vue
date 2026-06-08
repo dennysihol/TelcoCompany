@@ -32,7 +32,7 @@ export default {
         {
           "id": 1,
           "title": "Kami siap membantu jika mengalami kendala seputar aplikasi PinjamDuit",
-          "urlImage": "https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-help-text.png?alt=media&token=271856b4-8189-4efd-8ee5-ca4dacd70083"
+          "urlImage": new URL('../assets/image/bg-tentang.png', import.meta.url).href
         }
       ],
       loading: true,

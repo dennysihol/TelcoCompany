@@ -4,7 +4,7 @@
       <div class="col-10 text-center ps-0 pe-0 vh-100">
         <h2>Simulasi Perhitungan Pinjaman</h2>
         <div class="body-calculate position-relative mt-5 mb-5 text-start">
-          <img src="https://firebasestorage.googleapis.com/v0/b/pinjamduit-84ca8.appspot.com/o/pjdweb%2Fbg-simulasi-calculate.png?alt=media&token=07bd71fa-5516-4f61-8da7-60c92d729879" alt="bg-calculate-simulation" class="bg-calculate-simulation">
+          <img src="@/assets/image/bg-submission.png" alt="bg-calculate-simulation" class="bg-calculate-simulation">
           <div class="card-calculate">
             <div class="row">
               <div class="d-flex flex-row justify-content-between fw-semibold">
