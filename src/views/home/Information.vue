@@ -2,20 +2,26 @@
   <section id="information" class="floating-widget">
     <div class="feature">
       <img src="../../assets/image/ic_verifikasi_cepat.png" alt="Verifikasi Cepat">
-      <h5>Verifikasi Cepat</h5>
-      <p>Verifikasi cepat dan tidak perlu menunggu lama untuk proses pinjaman</p>
+      <h5>PROFESIONAL DAN BERPENGALAMAN</h5>
+      <p>Kami telah berhasil menyelesaikan berbagai proyek konstruksi di seluruh pualu Jawa, Kalimantan Timur, 
+        Sulawesi, dan Bali sejak tahun 2004. Semua proyek telah kita selesaikan dengan sikap yang profesional 
+        dengan mengutamakan kualitas untuk proyek.</p>
     </div>
     <div class="divider"></div>
     <div class="feature">
       <img src="../../assets/image/ic_sistem_online.png" alt="Sistem Online">
-      <h5>Sistem Online</h5>
-      <p>Sistem online 24 jam, pinjaman dapat diajukan kapanpun dan dimanapun</p>
+      <h5>JUJUR DAN DAPAT DIANDALKAN</h5>
+      <p>Bagi kami, kejujuran adalah suatu sikap yang kami jaga dengan intergritas. Kepercayaan adalah faktor 
+        penting untuk menjaga hubungan yang baik demi mencapai dan menyelesaikan proyek dengan hasil yang maksumal. 
+        Bukan hanya dengan klien, tetapi juga dengan semua yang berkontribusi di proyek tersebut.</p>
     </div>
     <div class="divider"></div>
     <div class="feature">
       <img src="../../assets/image/ic_security_info.png" alt="Keamanan Informasi">
-      <h5>Keamanan Informasi</h5>
-      <p>Keamanan informasi, perlindungan privasi ganda untuk mencegah kebocoran informasi</p>
+      <h5>EFEKTIF DAN EFISIEN</h5>
+      <p>Selalu berinovasi dalam pengerjaan dan bekerja bersama dengan tenaga – tenaga ahli merupakan suatu strategi 
+        yang selalu kita gunakan agar pekerjaan konstruksi dapat terselesaikan dengan efektif dan efisien tanpa melupakan 
+        perhatian terhadap detil dan memastikan bahwa semua terselesaikan dengan benar.</p>
     </div>
   </section>
 </template>
