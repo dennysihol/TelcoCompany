@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-lg-10 article-gap pb-5">
                     <div class="d-flex gap-3 justify-content-center mb-3">
-                        <button :class="tabSelected == 'article'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('article')">Artikel</button>
-                        <button :class="tabSelected == 'event'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('event')">Event</button>
+                        <button :class="tabSelected == 'article'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('article')">Proyek</button>
+                        <button :class="tabSelected == 'event'? 'btn-custom btn-custom-2 active' : 'btn-custom btn-custom-2'" type="button" @click="handleTab('event')">Karir</button>
                     </div>
-                    <div class="fs-3 fw-bold text-center mb-3">Informasi Terkini, Berita dan Event</div>
+                    <div class="fs-3 fw-bold text-center mb-3">Informasi Proyek dan Karir</div>
                         <div class="row">
                             <div class="col-md-6 col-xl-3 mb-4" v-for="item in dataArticleOrEvent" :key="item.id">
                                 <div class="card-article d-flex flex-column gap-3 pb-3"
@@ -47,30 +47,30 @@ export default {
                 data: [
                     {
                         "id": 1,
-                        "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
+                        "titleArticle": 'Standar Keselamatan Konstruksi Menara BTS di Indonesia',
                         "location": "Jakarta",
-                        "dateArticle": "26 Mar 2023",
+                        "dateArticle": "26 Mar 2024",
                         "urlImage": new URL('../../assets/image/item-article-1.png', import.meta.url).href
                     },
                     {
                         "id": 2,
-                        "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-                        "location": "Bandar Lampung",
-                        "dateArticle": "13 Maret 2022",
+                        "titleArticle": 'Inovasi Teknologi dalam Konstruksi Infrastruktur Telekomunikasi',
+                        "location": "Surabaya",
+                        "dateArticle": "13 Februari 2024",
                         "urlImage": new URL('../../assets/image/item-article-2.png', import.meta.url).href
                     },
                     {
                         "id": 3,
-                        "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-                        "location": "Palembang",
-                        "dateArticle": "2-3 Mei 2019",
+                        "titleArticle": 'Pengalaman Kami Membangun Menara BTS di Seluruh Indonesia',
+                        "location": "Bandung",
+                        "dateArticle": "2-3 Januari 2024",
                         "urlImage": new URL('../../assets/image/item-article-3.png', import.meta.url).href
                     },
                     {
                         "id": 4,
-                        "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
-                        "location": "Bandung",
-                        "dateArticle": "30 April 2019",
+                        "titleArticle": 'Maintenance Rutin untuk Optimalisasi Kinerja Menara BTS',
+                        "location": "Medan",
+                        "dateArticle": "30 Desember 2023",
                         "urlImage": new URL('../../assets/image/item-article-4.png', import.meta.url).href
                     }
                 ],
@@ -82,30 +82,30 @@ export default {
                 data: [
                     {
                         "id": 4,
-                        "titleArticle": 'Seminar Pendidikan Peran Teknologi Komunikasi dalam Bisnis Financial',
-                        "location": "Bandung",
-                        "dateArticle": "30 April 2019",
+                        "titleArticle": 'Maintenance Rutin untuk Optimalisasi Kinerja Menara BTS',
+                        "location": "Medan",
+                        "dateArticle": "30 Desember 2023",
                         "urlImage": new URL('../../assets/image/item-article-4.png', import.meta.url).href
                     },
                     {
                         "id": 3,
-                        "titleArticle": 'OJK Fintech Days Palembang 2019 Otoritas Jasa Keuangan dan',
-                        "location": "Palembang",
-                        "dateArticle": "2-3 Mei 2019",
+                        "titleArticle": 'Pengalaman Kami Membangun Menara BTS di Seluruh Indonesia',
+                        "location": "Bandung",
+                        "dateArticle": "2-3 Januari 2024",
                         "urlImage": new URL('../../assets/image/item-article-3.png', import.meta.url).href
                     },
                     {
                         "id": 2,
-                        "titleArticle": 'Muda Paham Fintech "Inovasi Keuangan Untuk Generasi Muda"',
-                        "location": "Bandar Lampung",
-                        "dateArticle": "13 Maret 2022",
+                        "titleArticle": 'Inovasi Teknologi dalam Konstruksi Infrastruktur Telekomunikasi',
+                        "location": "Surabaya",
+                        "dateArticle": "13 Februari 2024",
                         "urlImage": new URL('../../assets/image/item-article-2.png', import.meta.url).href
                     },
                     {
                         "id": 1,
-                        "titleArticle": 'Obrolan Pintar "Build Your Future, Be Smart About Money"',
+                        "titleArticle": 'Standar Keselamatan Konstruksi Menara BTS di Indonesia',
                         "location": "Jakarta",
-                        "dateArticle": "26 Mar 2023",
+                        "dateArticle": "26 Mar 2024",
                         "urlImage": new URL('../../assets/image/item-article-1.png', import.meta.url).href
                     }
                 ],

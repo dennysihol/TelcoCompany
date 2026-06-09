@@ -7,7 +7,7 @@
         <div class="container position-relative vh-100">
             <div class="row" style="padding-top: 5rem;">
                 <div class="col-lg-10 advantages-gap">
-                    <div class="fs-3 fw-bold text-center mb-3">Mengapa Memilih Aplikasi PinjamDuit?</div>
+                    <div class="fs-3 fw-bold text-center mb-3">Layanan Kami</div>
                     <div class="row d-flex flex-row justify-content-between advantages-row advantages-row-1">
                         <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
@@ -15,10 +15,10 @@
                                     <img src="@/assets/image/item-advantages-1.png" alt="item-advantages-1">
                                 </div>
                                 <div class="col-8 advantages-body">
-                                    <div class="fw-bold">Legalitas</div>
+                                    <div class="fw-bold">Pengadaan & Konstruksi BTS</div>
                                     <ul class="list-desc">
-                                        <li>Telah Berizin & diawasi oleh OJK</li>
-                                        <li>Anggota Terdaftar dari AFTECH dan AFPI</li>
+                                        <li>Pengadaan barang dan jasa menara telekomunikasi</li>
+                                        <li>Konstruksi menara BTS berkualitas tinggi</li>
                                     </ul>
                                 </div>
                             </div>
@@ -26,12 +26,13 @@
                         <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
                                 <div class="col-4 advantages-logo">
-                                    <img src="@/assets/image/item-advantages-2.png" alt="item-advantages-1">
+                                    <img src="@/assets/image/item-advantages-2.png" alt="item-advantages-2">
                                 </div>
                                 <div class="col-8 advantages-body">
-                                    <div class="fw-bold">Keunggulan</div>
+                                    <div class="fw-bold">Konstruksi Bangunan</div>
                                     <ul class="list-desc">
-                                        <li>Proses pinjaman mudah, pencairan cepat</li>
+                                        <li>Pembangunan gedung, kantor, pabrik</li>
+                                        <li>Bangunan komersial profesional</li>
                                     </ul>
                                 </div>
                             </div>
@@ -44,9 +45,10 @@
                                     <img src="@/assets/image/item-advantages-3.png" alt="item-advantages-3">
                                 </div>
                                 <div class="col-8 advantages-body">
-                                    <div class="fw-bold">Layanan</div>
+                                    <div class="fw-bold">Jaminan Kualitas</div>
                                     <ul class="list-desc">
-                                        <li>Layanan berkualitas, biaya transparan, aman dan terpercaya</li>
+                                        <li>Standar internasional dalam setiap proyek</li>
+                                        <li>Sertifikasi dan akreditasi lengkap</li>
                                     </ul>
                                 </div>
                             </div>
@@ -54,14 +56,14 @@
                         <div class="col-xl-3 col-lg-6 col-sm-12 card-advantages">
                             <div class="row h-100">
                                 <div class="col-4 advantages-logo">
-                                    <img src="@/assets/image/item-advantages-4.png" alt="item-advantages-4" style="width: 90%;"
+                                    <img src="@/assets/image/item-advantages-4.png" alt="item-advantages-4" style="width: 90%;">
                                 </div>
                                 <div class="col-8 advantages-body">
-                                    <div class="fw-bold">Total Biaya <br>
-                                        <span style="font-size: 14px; font-weight: bold;">(Bunga + biaya layanan)</span>
+                                    <div class="fw-bold">Pengalaman Luas <br>
+                                        <span style="font-size: 14px; font-weight: bold;">(Sejak tahun 2004)</span>
                                     </div>
                                     <ul class="list-desc">
-                                        <li>Total biaya max 0.3% per hari</li>
+                                        <li>Proyek di seluruh Jawa, Kalimantan, Sulawesi, Bali</li>
                                     </ul>
                                 </div>
                             </div>

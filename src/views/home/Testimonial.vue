@@ -3,8 +3,8 @@
     <div class="col-10">
       <div class="row d-flex justify-content-between">
         <div class="col-md-3 col-sm-3 pb-3">
-          <div class="mb-2 fs-20">Testimonial</div>
-          <div class="title fs-20">Apa yang mereka katakan tentang kami</div>
+          <div class="mb-2 fs-20">Testimoni</div>
+          <div class="title fs-20">Apa yang klien kami katakan</div>
         </div>
         <div class="col-xl-9 col-md-8 col-sm-6 overflow-hidden">
           <div class="row w-sm-24">
@@ -93,45 +93,45 @@ export default {
         dataTestimonial: [
           {
             "id": 1,
-            "comment": "Transfer cepat setelah Anda diverifikasi, tetapi saya hanya bisa membayar melalui transfer di BNI saja, tidak ada opsi bank lain. Mohon pertimbangkan untuk menambah lebih banyak akun bank. Tetap semangat, tim pinjamduit. Terima kasih",
+            "comment": "Tim profesional dan berpengalaman. Mereka menyelesaikan proyek menara BTS kami dengan kualitas terbaik dan tepat waktu. Sangat merekomendasikan!",
             "star": 5,
-            "username": "Google User",
+            "username": "PT. Telekomunikasi",
             "urlImage": new URL('../../assets/image/img-account-male.png', import.meta.url).href,
           },
           {
             "id": 2,
-            "comment": "Saya tidak pernah berpikir meminjam uang bisa semudah ini. Aplikasi ini membuat prosesnya cepat, aman, dan bebas stres.",
+            "comment": "Kejujuran dan integritas adalah prioritas mereka. Proyek konstruksi kantor kami diselesaikan dengan hasil yang maksimal dan sesuai budget.",
             "star": 5,
-            "username": "Payne Diel",
+            "username": "PT. Anugrah Teknik",
             "urlImage": new URL('../../assets/image/img-account-male.png', import.meta.url).href,
           },
           {
             "id": 3,
-            "comment": "Sangat membantu.. terima kasih banyak. Aplikasi pinjaman yang nyata.. proses cepat, mudah digunakan, dan dapat dipercaya",
+            "comment": "Efisien dan inovatif dalam setiap pekerjaan. Tim ahli mereka sangat detail dan memastikan semua terselesaikan dengan benar.",
             "star": 5,
-            "username": "Clara Shinta",
-            "urlImage": new URL('../../assets/image/img-account-female.png', import.meta.url).href,
+            "username": "Dinas Komunikasi",
+            "urlImage": new URL('../../assets/image/img-account-male.png', import.meta.url).href,
           },
           {
             "id": 4,
-            "comment": "Proses sangat baik karena syarat dan ketentuan, dan saya puas menjadi klien. Tidak terlalu sulit untuk mendapatkan persetujuan selama memiliki kerjasama yang baik",
+            "comment": "Pengalaman puluhan tahun di bidang konstruksi telekomunikasi. Kami percaya pada kompetensi dan dedikasi mereka untuk setiap proyek.",
             "star": 5,
-            "username": "Google User",
+            "username": "PT. Transmisi Digital",
             "urlImage": new URL('../../assets/image/img-account-male.png', import.meta.url).href,
           },
           {
             "id": 5,
-            "comment": "Bagus, Simple, Cepat",
+            "comment": "Layanan maintenance mereka sangat responsif dan profesional. BTS tower kami selalu dalam kondisi optimal.",
             "star": 5,
-            "username": "Justinus U",
+            "username": "Manager Teknis PT. Indosat",
             "urlImage": new URL('../../assets/image/img-account-male.png', import.meta.url).href,
           },
           {
             "id": 6,
-            "comment": "Aplikasi ini mudah digunakan dan proses verifikasinya cukup cepat. Sangat membantu saat saya membutuhkan dana darurat. Terima kasih",
+            "comment": "Rekomendasi terbaik untuk kontraktor konstruksi. Tim mereka memahami setiap detail dan sangat berkomitmen.",
             "star": 5,
-            "username": "Shinta Rusli",
-            "urlImage": new URL('../../assets/image/img-account-female.png', import.meta.url).href,
+            "username": "Direktur CV. Bangun Maju",
+            "urlImage": new URL('../../assets/image/img-account-male.png', import.meta.url).href,
           },
         ],
         loading: false,

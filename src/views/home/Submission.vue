@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-10 ps-0 pe-0">
           <h2 class="title">
-            Proses Pengajuan Cepat dan Mudah
+            Proses Konstruksi Menara BTS
           </h2>
           <div class="ud-about-wrapper" style="margin: 50px 0 100px 0;">
             <div class="ud-about-content-wrapper">
@@ -70,10 +70,10 @@ export default {
       currentIndex: 0, // Track the current active slide
       swiperInstance: null, // Store the swiper instance
       slides: [
-        { title: '1. Isi Data', image: 'src/assets/image/phone-mockup-1.png', description: 'Daftar akun dengan mengisi informasi yang dibutuhkan', icon: new URL('../../assets/image/ic_submission_1.png', import.meta.url).href },
-        { title: '2. Verifikasi', image: 'src/assets/image/phone-mockup-2.png', description: 'Sistem sedang memverifikasi data kamu untuk mendapatkan limit pinjaman', icon: new URL('../../assets/image/ic_submission_2.png', import.meta.url).href },
-        { title: '3. Ajukan Pinjaman', image: 'src/assets/image/phone-mockup-3.png', description: 'Ajukan besaran pinjaman yang kamu inginkan', icon: new URL('../../assets/image/ic_submission_3.png', import.meta.url).href },
-        { title: '4. Pengembalian Pinjaman', image: 'src/assets/image/phone-mockup-4.png', description: 'Proses pengembalian pinjaman sangat mudah', icon: new URL('../../assets/image/ic_submission_4.png', import.meta.url).href }
+        { title: '1. Konsultasi Proyek', image: 'src/assets/image/phone-mockup-1.png', description: 'Diskusi kebutuhan dan spesifikasi proyek menara BTS Anda', icon: new URL('../../assets/image/ic_submission_1.png', import.meta.url).href },
+        { title: '2. Perancangan & Survei', image: 'src/assets/image/phone-mockup-2.png', description: 'Tim ahli kami melakukan survei lokasi dan merancang solusi konstruksi terbaik', icon: new URL('../../assets/image/ic_submission_2.png', import.meta.url).href },
+        { title: '3. Pengadaan Material', image: 'src/assets/image/phone-mockup-3.png', description: 'Pengadaan material berkualitas tinggi dan persiapan peralatan konstruksi', icon: new URL('../../assets/image/ic_submission_4.png', import.meta.url).href },
+        { title: '4. Pelaksanaan & Pengawasan', image: 'src/assets/image/phone-mockup-4.png', description: 'Konstruksi menara dengan pengawasan ketat dan standar keselamatan internasional', icon: new URL('../../assets/image/ic_submission_3.png', import.meta.url).href }
       ],
     };
   },

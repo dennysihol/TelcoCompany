@@ -35,10 +35,10 @@
                     <router-link to="/about" exact-active-class="active-link">Tentang Kami</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/blog" exact-active-class="active-link">Blog</router-link>
+                    <router-link to="/blog" exact-active-class="active-link">Karir</router-link>
                   </li>
                   <li class="nav-item">
-                    <router-link to="/help" exact-active-class="active-link">Bantuan</router-link>
+                    <router-link to="/help" exact-active-class="active-link">Kontak Kami</router-link>
                   </li>
                 </ul>
               </div>

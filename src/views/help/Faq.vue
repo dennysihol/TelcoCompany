@@ -61,50 +61,46 @@ export default {
       // FAQ items
       faqs: [
         {
-          question: "Apa itu PinjamDuit?",
-          answer: "PinjamDuit adalah platform peer-to-peer lending yang membantu masyarakat mengatasi masalah keuangan dengan menyediakan pinjaman uang secara mudah dan cepat. Platform ini telah berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK).",
+          question: "Apa itu PT. Datatel Indonesia?",
+          answer: "PT. Datatel Indonesia adalah perusahaan kontraktor profesional yang berdiri sejak 2004 dan melayani pengadaan barang, jasa konstruksi, dan pembangunan menara telekomunikasi BTS, rumah, kantor, pabrik, dan bangunan komersial di seluruh Indonesia.",
           open: false,
           isList: false
         },
         {
-          question: "Bagaimana Cara Mendaftar di PinjamDuit?",
+          question: "Layanan Apa Saja yang Kami Tawarkan?",
           answerList: [
             `<ul style="list-style-type: decimal;">
-              <li>Unduh Aplikasi: Download aplikasi PinjamDuit dari App Store atau Play Store.</li>
-              <li>Masuk ke Aplikasi: Buka aplikasi PinjamDuit.</li>
-              <li>Masukkan Nomor Telepon: Masukkan nomor telepon Anda untuk menerima kode OTP.</li>
-              <li>Masukkan Kode OTP: Setelah menerima kode OTP, masukkan kode tersebut.</li>
-              <li>Isi Informasi Pribadi: Isi informasi pribadi Anda dan klik simpan.</li>
-              <li>Masukkan Nomor Kontak Darurat: Masukkan nomor kontak darurat dan klik simpan.</li>
-              <li>Informasi E-KTP dan Verifikasi Wajah: Masukkan informasi E-KTP Anda, lakukan verifikasi wajah, dan klik simpan.</li>
-              <li>Pilih Rekening Bank: Pilih rekening bank yang akan Anda gunakan dan masukkan nomor rekening Anda, lalu klik simpan.</li>
+              <li>Pengadaan dan Konstruksi Menara BTS</li>
+              <li>Pembangunan Gedung dan Kantor</li>
+              <li>Konstruksi Pabrik dan Bangunan Industri</li>
+              <li>Pembangunan Bangunan Komersial</li>
+              <li>Jasa Maintenance dan Perbaikan Infrastruktur</li>
             </ul>`,
-            "Verifikasi Data: Sistem akan memverifikasi data Anda dan memberikan informasi mengenai limit pinjaman Anda."
           ],
           open: false,
-          isList: true // Indicate this is a list answer
+          isList: true
         },
         {
-          question: "Berapa Limit Pinjaman di PinjamDuit?",
-          answer: `Limit pinjaman berbeda untuk setiap peminjam, mulai dari Rp100.000 hingga Rp50.000.000.`,
+          question: "Bagaimana Proses Konsultasi Proyek?",
+          answer: `Hubungi tim kami melalui email atau WhatsApp. Kami akan melakukan konsultasi awal untuk memahami kebutuhan proyek Anda, melakukan survei lokasi, dan memberikan proposal yang sesuai.`,
           open: false,
           isList: false
         },
         {
-          question: "Bagaimana Cara Membayar Pinjaman ke PinjamDuit?",
+          question: "Berapa Durasi Umum Pelaksanaan Proyek?",
           answerList: [
             `<ul style="list-style-type: decimal;">
-              <li>Masuk ke aplikasi PinjamDuit.</li>
-              <li>Di halaman utama, klik tombol \"Bayar Sekarang\".</li>
-              <li>Anda dapat memilih untuk membayar pinjaman secara bertahap atau sekaligus.</li>
+              <li>Menara BTS: 2-4 bulan (tergantung tinggi dan kompleksitas)</li>
+              <li>Gedung Kantor: 6-12 bulan (tergantung luasan)</li>
+              <li>Pabrik/Komersial: Disesuaikan dengan desain dan spesifikasi</li>
             </ul>`
             ],
           open: false,
-          isList: true // Indicate this is a list answer
+          isList: true
         },
         {
-          question: "Apakah Bisa Kembali Meminjam di PinjamDuit Setelah Melunasi Pinjaman Sebelumnya?",
-          answer: "Ya, Anda bisa mengajukan pinjaman kembali setelah melunasi pinjaman sebelumnya. Jika hasil review dari sistem baik, Anda bahkan bisa meningkatkan limit pinjaman Anda.",
+          question: "Apakah Proyek Dijamin Kualitas dan Tepat Waktu?",
+          answer: "Kami berkomitmen memberikan kualitas terbaik dengan standar internasional dan selalu memenuhi jadwal proyek yang telah disepakati. Semua proyek dilengkapi sertifikasi dan dokumentasi lengkap.",
           open: false,
           isList: false
         }
